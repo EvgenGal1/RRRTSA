@@ -1,11 +1,80 @@
-# Getting Started with Create React App
+# Изучение React.Redux.TypeScript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+<h2 align="center">"Быстрый" старт</h2>
 
-## Available Scripts
+```js
+# на готовый проект
+npm install @reduxjs/toolkit react-redux
+# новый проект
+## Redux + JS шаблон
+npx create-react-app my-app --template redux
+или
+## Redux + TypeScript шаблон
+npx create-react-app my-app --template redux-typescript
+или
+## TypeScript шаблон
+npx create-react-app my-app --template typescript
+```
 
-In the project directory, you can run:
+<h2 align="center">ПРОЕКТЫ</h2>
 
+- [React & Redux & TypeScript](#React-&-Redux-&-TypeScript)
+<!-- - [ReactTransitionGroup](#ReactTransitionGroup) -->
+
+<h3 align="center">RReact & Redux & TypeScript</h3>
+<!-- <hr> -->
+<p align="center">???</p>
+
+### Подключение доп. зависимостей
+
+<p>(типы react-reduxe, сам redux, связь react-reduxe, redux-thiunk для асинхр экшенов, axios для запросов на сервер)</p>
+```js
+npm install @types/react-redux redux react-redux redux-thunk axios
+```
+
+#### Структура проекта
+
+```
+│
+src/
+├─ project/
+| ├─ RRTS_UlbiTV/
+| │ ├─ src/
+| | | ├─ components/          ──  компоненты
+| | | ├─ types/               ──  описание типов
+│ │ | └─ store/               ──  взаимодействие с Redux
+│ │ |   ├─ reducers/          ──  reduSers reduCers ???
+│ │ |   | ├─ useReducer.ts    ──  взаимодействие со списком пользователя приложения
+│ │ |   └─ index.ts           ──  инициализация store приложения
+│ │ └─ RRTS_UlbiTV.jsx        ──  сбора проекта
+│ ├─ App.css                  ──  общие стили
+│ ├─ App.tsx                  ──  сборка всех проектов
+│ └─ App.test.tsx             ──  тесты ???
+
+
+
+
+│ ├─ html/              ──  многостраничный проект HTML
+│ │ │─ views/         ──  одностраничные проекты HTML
+│ │ └─ includes/      ──  подкл. блоки к проектам HTML
+│ ├─ styles/            ──  стили проекта
+│ │  ├─ css/           ──  CSS стили + разбор
+│ │  └─ scss/          ──  SCSS стили + разбор
+│ ├─ js/                ──  доп. JS приложения, + включ. + разбор
+│ ├─ img/               ──  изображения проекта
+│ ├─ fonts/             ──  шрифты проекта
+│ ├─ index.html         ──  начальный файл HTML приложения
+│ ├─ index.js           ──  основной файл JS приложения, + включ.
+│ └─ webpack.config.js  ──  настройка webpack
+```
+
+#### Подкл. необходимые importы.
+
+#### Структура кода.
+
+- По YT видео [React & Redux & TypeScript](https://www.youtube.com/watch?v=ETWABFYv0GM&t)
+
+<!--
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -43,4 +112,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn React, check out the [React documentation](https://reactjs.org/). -->
