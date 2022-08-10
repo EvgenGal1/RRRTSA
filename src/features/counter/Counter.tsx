@@ -20,6 +20,7 @@ export function Counter() {
 
   return (
     <div>
+      1212
       <div className={styles.row}>
         <button
           className={styles.button}

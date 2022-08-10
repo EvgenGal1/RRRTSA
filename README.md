@@ -1,4 +1,4 @@
-# Изучение React.Redux.TypeScript
+<h1>Изучение React.Redux.TypeScript</h1>
 
 <h2 align="center">"Быстрый" старт</h2>
 
@@ -16,29 +16,22 @@ npx create-react-app my-app --template redux-typescript
 npx create-react-app my-app --template typescript
 ```
 
+<hr>
 <h2 align="center">ПРОЕКТЫ</h2>
 
 - [React & Redux & TypeScript](#React-&-Redux-&-TypeScript)
 <!-- - [ReactTransitionGroup](#ReactTransitionGroup) -->
 
-<h3 align="center">RReact & Redux & TypeScript</h3>
-<!-- <hr> -->
-<p align="center">???</p>
-
-### Подключение доп. зависимостей
-
-<p>(типы react-reduxe, сам redux, связь react-reduxe, redux-thiunk для асинхр экшенов, axios для запросов на сервер)</p>
-```js
-npm install @types/react-redux redux react-redux redux-thunk axios
-```
-
-#### Структура проекта
+<hr>
+<h2 align="center">Архитектура проекта</h2>
 
 ```
 │
 src/
 ├─ project/
-| ├─ RRTS_UlbiTV/
+| ├─ RR_Doc/                  ──  Доки от React-Redux
+| ├─ RR_UlbiTV/               ──  основы React и Redux от UlbiTV
+| ├─ RRTS_UlbiTV/             ──  полный курс React & Redux & TypeScript от UlbiTV
 | │ ├─ src/
 | | | ├─ components/          ──  компоненты
 | | | ├─ types/               ──  описание типов
@@ -68,10 +61,61 @@ src/
 │ └─ webpack.config.js  ──  настройка webpack
 ```
 
+<hr>
+<h3 align="center">React Redux Doc</h3>
+<p align="center">Разбор React Redux TypeScript по офицальной документации</p>
+<h4>Основные моменты;</h4>
+
+<hr>
+<h5>Порядок написания из Доков</h5>
+
+- Создаем папку и файл src/app/store.js - Хранилище Redux и его экспорт
+- Иморт Хранилище и Provider(Поставщик) в главные компонент.
+- Обёртка основного компонента в Provider. Хранилище передаём как св-во
+- Создаём папку и файл src/features/counter/counterSlice.js - срез состояния Redux
+- Создаём папку и файл src/features/counter/Counter.js - Используйте состояние Redux и действия в компонентах
+-
+
+<hr>
+<h5>Архитектура приложения</h5>
+
+```
+RR_Doc/                   ──  Проект по Докам от React-Redux
+├─ src/
+| ├─ store/               ──  взаимодействие с Redux(Хранилище Redux и его экспорт)
+| | └─ store.js           ──  хранилище Redux и его экспорта
+| └─ features         ──  компоненты
+|   └─ counter/          ──  компоненты
+|     ├─ counterSlice.js           ──  срез состояния Redux
+|     └─ Counter.js           ──  Используйте состояние Redux и действия в компонентах
+└─ RR_Doc.jsx           ──  Основной компонент Приложения с обёрткой
+```
+
+<hr>
+<h3 align="center">React & Redux & TypeScript</h3>
+<!-- <hr> -->
+<p align="center">???</p>
+
+### Подключение доп. зависимостей
+
+<p>(типы react-reduxe, сам redux, связь react-reduxe, redux-thiunk для асинхр экшенов, axios для запросов на сервер)</p>
+```js
+npm install @types/react-redux redux react-redux redux-thunk axios
+```
+
 #### Подкл. необходимые importы.
 
 #### Структура кода.
 
+#### Проекты
+
+##### React Redux Doc
+
+-
+
+##### UlbiTV
+
+- По YT видео [Redux и React](https://www.youtube.com/watch?v=5Qtqzeh5FeM)
 - По YT видео [React & Redux & TypeScript](https://www.youtube.com/watch?v=ETWABFYv0GM&t)
 
 <!--
