@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 
 import logo from "../../logo.svg";
 import { Counter } from "./src/features/counter/Counter.js";
+import { CounterTS } from "../../features/counter/Counter.tsx";
 
 function RR_DocApp() {
   return (
@@ -21,12 +22,17 @@ function RR_DocApp() {
           <div className="App">
             <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
+              1212
               <Counter />
+              3434 1212
+              <CounterTS />
+              3434
               <p>
-                Edit <code>src/App.js</code> and save to reload.
+                Редактировать <code>src/App.js</code> и сохранить, чтобы
+                перезагрузить.
               </p>
               <span>
-                <span>Learn </span>
+                <span>Учиться </span>
                 <a
                   className="App-link"
                   href="https://reactjs.org/"

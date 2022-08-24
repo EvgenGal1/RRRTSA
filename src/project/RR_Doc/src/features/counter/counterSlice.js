@@ -1,11 +1,15 @@
 // срез состояния Redux
 import { createSlice } from "@reduxjs/toolkit";
 
+// Вызов createSlice со строковым именем, начальным состоянием и именованными функциями редуктора
 export const counterSlice = createSlice({
+  // строковое имя
   name: "counter",
+  // начальное состояние
   initialState: {
     value: 0,
   },
+  // именованные функции. Функции редуктора могут «мутировать» состояние, используя Immer.
   reducers: {
     increment: (state) => {
       // Redux Toolkit позволяет нам писать «мутирующая» логика в редукторах.Это
@@ -27,7 +31,7 @@ export const counterSlice = createSlice({
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 
 // Функция ниже называется Thunk и позволяет нам выполнять асинхронную логику.Это
-// может быть отправлен как регулярное действие: `Dispatch (IncrementAsync (10))`.Этот
+// может быть отправлен как регулярное действие: `dispatch (incrementAsync (10))`.Этот
 // позвонит Thunk с функцией `Dispatch` как первый аргумент.Асинхро
 // затем можно выполнить код, а другие действия могут быть отправлены
 export const incrementAsync = (amount) => (dispatch) => {
