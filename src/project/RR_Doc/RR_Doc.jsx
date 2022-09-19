@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+
 // импорт хранилища
 import store from "./src/store/store.js";
 // импорт Поставщика для обёртки
@@ -24,7 +24,7 @@ function RR_DocApp() {
               <img src={logo} className="App-logo" alt="logo" />
               1212
               <Counter />
-              3434 1212
+              1212 3434
               <CounterTS />
               3434
               <p>

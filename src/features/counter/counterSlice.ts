@@ -29,7 +29,7 @@ export const incrementAsync = createAsyncThunk(
 export const counterSlice = createSlice({
   name: "counter",
   initialState,
-  // Поле `redooctorы` позволяет определить редукторы и генерировать связанные действия
+  // Поле `reductorы` позволяет определить редукторы и генерировать связанные действия
   reducers: {
     increment: (state) => {
       // Redux Toolkit позволяет нам написать «мультирной» логики в редукторах.Это

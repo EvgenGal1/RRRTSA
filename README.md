@@ -60,6 +60,21 @@ src/
 │ ├─ index.html         ──  начальный файл HTML приложения
 │ ├─ index.js           ──  основной файл JS приложения, + включ.
 │ └─ webpack.config.js  ──  настройка webpack
+
+
+РАССМОТРЕТЬ АРХИТЕКТУРУ ПРИЛОЖЕНИЯ
+https://webformyself.com/arxitektura-react-kak-strukturirovat-i-nastroit-prilozhenie/
+
+└── /src
+    ├── /assets           - глоб.статич.ресурсы (изо, SVG, лого)
+    ├── /components       - глоб. общ/повтор. компон, (формы, кнп, оболочки, навигация)
+    ├── /services         - модули JS
+    ├── /store            - глоб.хран. Redux
+    ├── /utils            - утилиты, помощники, константы
+    ├── /pages(views)     - станицы (осн.части приложений)
+    ├── /types            - проект TypeScript
+    ├── index.js          - точкой входа
+    └── App.jsx           - настр. аутентификации и маршрутизации
 ```
 
 <hr>

@@ -20,7 +20,7 @@ export function CounterTS() {
 
   return (
     <div>
-      1212
+      Counter.tsx
       <div className={styles.row}>
         <button
           className={styles.button}
@@ -64,6 +64,7 @@ export function CounterTS() {
           Добавьте, если нечетно
         </button>
       </div>
+      Counter.tsx
     </div>
   );
 }

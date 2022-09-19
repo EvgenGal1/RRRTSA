@@ -16,10 +16,11 @@ export function Counter() {
   const count = useSelector((state) => state.counter.value);
   // Получите dispatch функцию с useDispatch хуком и отправьте действия по мере необходимости
   const dispatch = useDispatch();
-  const [incrementAmount, setIncrementAmount] = useState("2");
+  const [incrementAmount, setIncrementAmount] = useState("3");
 
   return (
     <div>
+      Counter.js
       <div className={styles.row}>
         <button
           className={styles.button}
@@ -59,6 +60,7 @@ export function Counter() {
           Добавить асинхрон
         </button>
       </div>
+      Counter.js
     </div>
   );
 }
