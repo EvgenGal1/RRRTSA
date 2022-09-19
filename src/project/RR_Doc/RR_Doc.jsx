@@ -14,6 +14,7 @@ function RR_DocApp() {
   return (
     <>
       <div className="RR_DocApp">
+        {/* className="rr-docapp */}
         <div className="RR_DocApp__descript">
           По документации "React Redux" -
           https://react-redux.js.org/tutorials/quick-start
