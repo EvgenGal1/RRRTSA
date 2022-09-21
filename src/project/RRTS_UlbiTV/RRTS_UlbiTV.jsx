@@ -1,8 +1,8 @@
-import React from "react";
-import { useState } from "react";
+// import React from "react";
+// import { useState } from "react";
 
 function RRTS_UlbiTV() {
-  const [varlet, setvarlet] = useState(false);
+  // const [varlet, setvarlet] = useState(false);
   return (
     <div className="RRTS_UlbiTV">
       По видео "React & Redux & TypeScript" -

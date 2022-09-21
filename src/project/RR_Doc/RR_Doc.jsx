@@ -1,26 +1,29 @@
 import React from "react";
 
+// стили и лого
+import "./App.css";
+import logo from "../../logo.svg";
+
 // импорт хранилища
 import store from "./src/store/store.js";
 // импорт Поставщика для обёртки
 import { Provider } from "react-redux";
 // import * as serviceWorker from './serviceWorker';
 
-import logo from "../../logo.svg";
 import { Counter } from "./src/features/counter/Counter.js";
 import { CounterTS } from "../../features/counter/Counter.tsx";
 
 function RR_DocApp() {
   return (
     <>
-      <div className="RR_DocApp">
+      <div className="RR_DOC__desc">
         {/* className="rr-docapp */}
-        <div className="RR_DocApp__descript">
-          По документации "React Redux" -
-          https://react-redux.js.org/tutorials/quick-start
+        <div className="RR_DOC">
+          Имена классов должны быть в корпусе Kebab По документации "React
+          Redux" - https://react-redux.js.org/tutorials/quick-start
         </div>
-        <div className="RR_DocApp__content">
-          <div className="App">
+        <div className="RR_DOC__content">
+          <div className="RR_DOC__App">
             <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
               1212

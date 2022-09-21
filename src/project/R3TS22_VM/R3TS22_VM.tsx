@@ -1,8 +1,8 @@
-import React from "react";
-import { useState } from "react";
+// import React from "react";
+// import { useState } from "react";
 
 function R3TS22_VM() {
-  const [varlet, setvarlet] = useState(false);
+  // const [varlet, setvarlet] = useState(false);
   return (
     <div className="R3TS22_VM">
       По видео "React стек 2022. TypeScript, Redux Toolkit, RTKQuery, Tailwind"

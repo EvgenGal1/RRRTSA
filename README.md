@@ -1,4 +1,4 @@
-<h1>Изучение React.Redux.TypeScript</h1>
+<h1 align="center">Изучение React.Redux.TypeScript</h1>
 
 <h2 align="center">"Быстрый" старт</h2>
 
@@ -21,6 +21,7 @@ npx create-react-app my-app --template typescript
 
 - [React Redux Doc](#React-Redux-Doc)
 - [React & Redux & TypeScript](#React-&-Redux-&-TypeScript)
+- [React++ steak 2022](#React++-steak-2022)
 <!-- - [ReactTransitionGroup](#ReactTransitionGroup) -->
 
 <hr>
@@ -85,7 +86,7 @@ https://webformyself.com/arxitektura-react-kak-strukturirovat-i-nastroit-prilozh
 <h4 align="center">Основные моменты:</h4>
 
 <!-- <hr> -->
-<h4>Концепции и Термины</h4>
+<h4><b>Концепции и Термины</b></h4>
 
 <h4>Концепция одностороннего потока данных</р>
 
@@ -100,8 +101,8 @@ https://webformyself.com/arxitektura-react-kak-strukturirovat-i-nastroit-prilozh
 - <p>Dispatch - Диспетчер/сотрудник. Передаёт Action в Reducer</p>
 - <p>Reducer - Редуктор/передатчик. Измен State. Логика работы(Система).</p>
 
-<p>State - Текущее состояние приложения Redux</p>
-<p>Actions - Объ JS с полем type(описание категории/события), payload(доп.инфо).</p>
+<p><b>State</b> - Текущее состояние приложения Redux</p>
+<p><b>Actions</b> - Объ JS с полем type(описание категории/события), payload(доп.инфо).</p>
 
 ```js
 const addTodoAction = {
@@ -124,14 +125,14 @@ const addTodo = (text) => {
 - <p>Dispatch - Диспетчер/сотрудник. Передаёт Action в Reducer</p>
 
 * <p>Reducer - fn принимает текущий состояние и экшен (state и action), может обновл. state, возвращает новый state (раб как прослуш.событ. - обраб.событ. на основ.получ.действ.).
-    * <p>Правила:</p>
-        * <p>только вычисляет новое сост. на основе арг. state и action</p>
-        * <p>не измен существ.state. копир существ. внося измен. в копию</p>
-        * <p>не выполн. асинхр., др.вычислен</p>
-    * <p>Логика:</p>
-        * <p>проверка Reducerа на Actions</p>
-        * <p>при Actions, + копия, обновление, возврат</p>
-        * <p>если нет Actions, возврат сущест.state</p>
+  <p>Правила:</p>
+      <p>только вычисляет новое сост. на основе арг. state и action</p>
+      <p>не измен существ.state. копир существ. внося измен. в копию</p>
+      <p>не выполн. асинхр., др.вычислен</p>
+  <p>Логика:</p>
+      <p>проверка Reducerа на Actions</p>
+      <p>при Actions, + копия, обновление, возврат</p>
+      <p>если нет Actions, возврат сущест.state</p>
 
 ```js
 const initialState = { value: 0 };
@@ -193,6 +194,26 @@ RR_Doc/                    ──  Проект по Докам от React-Redux
 └─ RR_Doc.jsx              ──  Основной компонент Приложения с обёрткой
 ```
 
+<!-- ПРОЕКТ R3TS22_VM -->
+<hr>
+<h3 align="center">React стек 2022. TypeScript, Redux Toolkit, RTKQuery, Tailwind</h3>
+<!-- <hr> -->
+<p align="center">Продвинутый React. В видео технологии: TypeScript, Redux Toolkit, RTKQuery, Tailwind</p>
+
+<h4>Подключение доп. зависимостей</h4>
+
+<p>Tailwin - CSS-фреймворк со встроенными классами для стилей прямо в коде</p>
+
+```js
+# Установка CSS Tailwin
+npm install -D tailwindcss postcss autoprefixer
+# Запуск для генерации 2х файлов tailwind.config.js и postcss.config.js
+npx tailwindcss init -p
+```
+
+<p>Так же - redux toolkit, react-redux(связь м/у ними), react-router-dom(навигация)</p>
+
+<!-- ПРОЕКТ RRTS-UlbiTV -->
 <hr>
 <h3 align="center">React & Redux & TypeScript</h3>
 <!-- <hr> -->
@@ -219,6 +240,7 @@ npm install @types/react-redux redux react-redux redux-thunk axios
 
 - По YT видео [Redux и React](https://www.youtube.com/watch?v=5Qtqzeh5FeM)
 - По YT видео [React & Redux & TypeScript](https://www.youtube.com/watch?v=ETWABFYv0GM&t)
+- По YT видео [React++ steak 2022](https://www.youtube.com/watch?v=lkbm-zlcFvs)
 
 <!--
 ### `npm start`
