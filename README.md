@@ -1,4 +1,4 @@
-<h1 align="center">Изучение React.Redux.TypeScript</h1>
+<h1 align="center">Изучение React.Redux.Router.TypeScript</h1>
 
 <h2 align="center">"Быстрый" старт</h2>
 
@@ -30,7 +30,7 @@ npx create-react-app my-app --template typescript
 ```
 │
 src/
-├─ project/
+├─ projects/
 | ├─ RR_Doc/                  ──  Доки от React-Redux
 | ├─ RR_UlbiTV/               ──  основы React и Redux от UlbiTV
 | ├─ RRTS_UlbiTV/             ──  полный курс React & Redux & TypeScript от UlbiTV
@@ -201,6 +201,7 @@ RR_Doc/                    ──  Проект по Докам от React-Redux
 <p align="center">Продвинутый React. В видео технологии: TypeScript, Redux Toolkit, RTKQuery, Tailwind</p>
 
 <h4>Подключение доп. зависимостей</h4>
+<p>0.1</p>
 
 <p>Tailwin - CSS-фреймворк со встроенными классами для стилей прямо в коде</p>
 
@@ -211,7 +212,71 @@ npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
 
+<p>index.css и tailwind.config.js добавили код с сайта</p>
+
+```css
+# index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
 <p>Так же - redux toolkit, react-redux(связь м/у ними), react-router-dom(навигация)</p>
+
+<h4>Добавил Router</h4>
+<p>0.2</p>
+
+- в ./index.tsx + {BrowserRouter} и оборачивание App
+- ++ страниц в pages/ и projects/
+- в ./App.tsx + {Routes, Route}, + importы страниц
+- ++ components/Header.tsx, + {Link}, + структура nav с ссылками страниц
+- в App.tsx + структура маршрутов/путей/элементов
+
+<h4>Добавил Reduxe</h4>
+<p>0.3</p>
+
+- ++ store/index.ts, + {configureStore} + reducer
+- в ./index.tsx + {Provider, store} и оборачивание BrowserRouter/App
+
+<h4>Добавил API</h4>
+<p>0.4</p>
+
+- ++ store/github/ - логика/сущности раб. с github
+- ++ github/github.api.ts, + {createApi, fetchBaseQuery} - настройка API для раб. с поиском
+- ++ созд. API с настр. reducerPath(адрес кэш), baseQuery(базовый url), endpoints(конечные точки)
+- в store/index.ts reducer соед./регистр. API githubApi со store. ключя:значение
+- в github.api.ts при обращ. к `const {} = githubApi` в скобках есть авто.кастом.хуки
+- export хука useSearchUserQuery
+
+<h4>Используем кастомные hookи</h4>
+<p>0.5</p>
+
+- в HomePage.tsx пропис хук. `const {} = useSearchUserQuery()`
+- смотрим подсказку (ctrl+пробел) полей в фигурных скобках
+- пропис поля {isLoading,isError,data} (загрузка,ошибки,данные)
+- в хук TS ошибка т.к. не передали 2 параметра, исправ в github.api.ts
+- в github.api.ts указ. типизацию в endpoints:searchUser:query 2 джейнерика
+- дженерик — возможность созд. компоненты раб. с неск-ми типами
+- 1ый - ответ от сервера(врем. any), 2ой - принимаемый параметр для осущест. запроса(string)
+- указ. тип поиска, парам. запроса, св-во
+
+<h4>Запрос по API</h4>
+<p>0.6</p>
+
+- в HomePage.tsx в хук пропис. строку для поиска userov (например EvGen)
+- в браузере DevTools.Network видим асинхр запрос
+- типизацация в TS: из поля Response копир все и генерируем в http://json2ts.com
+- ++ modals/modals.ts вставл. из сайти, убираем наружн. объ. оставляя 2 export interface
+- в modals.ts переименов оба interface в IUser и ServerResponse + джейн. <T>
+
+<h4>Доработка API</h4>
+<p>0.6</p>
+
+- в github.api.ts указ. типизацию 1джейнермка - ServerResponse + передача ожидания <IUser>
+- лимит ответа с сервера в params - per_page
+
+<h4>Визуализация полученных данных</h4>
+<p>0.</p> 26:42
 
 <!-- ПРОЕКТ RRTS-UlbiTV -->
 <hr>
