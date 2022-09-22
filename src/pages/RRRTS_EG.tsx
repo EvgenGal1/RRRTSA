@@ -1,6 +1,36 @@
-<h1 align="center">Изучение React.Redux.Router.TypeScript</h1>
+import React from "react";
+import "./App.css";
 
-<h2 align="center">"Быстрый" старт</h2>
+export function RRRTS_EG() {
+  return (
+    <>
+      <div className="RRRTS_EG">
+        <h1
+          style={{
+            margin: "20px",
+            fontSize: "20px",
+            textAlign: "center",
+            fontWeight: "bold",
+          }}
+        >
+          Изучение React.Redux.Router.TypeScript
+        </h1>
+        <h2>
+          <b>"Быстрый" старт</b>
+        </h2>
+        <ul>
+          <li className="ert"># на готовый проект </li>
+          <li>npm install @reduxjs/toolkit react-redux </li>
+          <li className="ert"># новый проект </li>
+          <li>## Redux + JS шаблон </li>
+          <li>npx create-react-app my-app --template redux или </li>
+          <li className="ert">## Redux + TypeScript шаблон </li>
+          <li>npx create-react-app my-app --template redux-typescript или </li>
+          <li>## TypeScript</li>
+          <li>шаблон npx create-react-app my-app --template typescript</li>
+        </ul>
+      </div>
+      {/* <h2 align="center">"Быстрый" старт</h2>
 
 ```js
 # на готовый проект
@@ -359,4 +389,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/). -->
+To learn React, check out the [React documentation](https://reactjs.org/). --> */}
+    </>
+  );
+}

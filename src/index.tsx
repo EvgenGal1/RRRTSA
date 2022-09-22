@@ -2,9 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createRoot } from "react-dom/client";
 
+// 0.2
 import { BrowserRouter } from "react-router-dom";
-// import { Provider } from "react-redux";
-// import { store } from "./app/store";
+// 0.3
+import { Provider } from "react-redux";
+import { store } from "./projects/R3TS22_VM/src/store";
 
 import App from "./App";
 import "./index.css";
@@ -19,9 +21,13 @@ const container = document.getElementById("root")!;
 const root = createRoot(container);
 
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  // 0.3
+  <Provider store={store}>
+    {/* 0.2 */}
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 );
 //     <React.StrictMode>
 //   <BrowserRouter>

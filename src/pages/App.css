@@ -1,0 +1,12 @@
+.RRRTS_EG {
+  padding: 0 25px;
+}
+li {
+  margin-left: 1.3%;
+  list-style-type: armenian;
+  list-style-type: style;
+  list-style-type: none;
+}
+li.ert {
+  list-style-type: disclosure-closed;
+}
