@@ -8,7 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./projects/R3TS22_VM/src/store";
 
-import App from "./App";
+import { App } from "./App";
 import "./index.css";
 // import reportWebVitals from "./types/reportWebVitals";
 
@@ -29,13 +29,6 @@ root.render(
     </BrowserRouter>
   </Provider>
 );
-//     <React.StrictMode>
-//   <BrowserRouter>
-//    <Provider store={store}>
-//   <App />
-//    </Provider>
-// </BrowserRouter>
-//  </React.StrictMode>
 
 // Если вы хотите начать измерять производительность в своем приложении, передайте функцию
 // для регистрации результатов (например: ReportWebvitals (console.log)))

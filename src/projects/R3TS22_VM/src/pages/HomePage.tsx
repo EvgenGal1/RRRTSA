@@ -9,8 +9,7 @@ export function HomePage() {
   console.log(data);
   return (
     <>
-      <div>Home</div>
-      <span>&lt; &gt;</span>
+      <div>HomePage</div>
     </>
   );
 }
