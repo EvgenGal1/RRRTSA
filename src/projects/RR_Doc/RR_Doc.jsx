@@ -19,6 +19,7 @@ function RR_DocApp() {
       <div className="RR_DOC__desc">
         {/* className="rr-docapp */}
         <div className="RR_DOC">
+          <div>RR_Doc</div>
           По документации "React Redux" -
           https://react-redux.js.org/tutorials/quick-start
         </div>

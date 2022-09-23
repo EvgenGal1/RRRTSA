@@ -36,7 +36,7 @@ export function RoutesNav() {
           <Route path="favorites" element={<FavoritesPage />} />
           <Route path="HomePage" element={<HomePage />} />
         </Route>
-        <Route path="/RR_MN" element={<RR_MN />} />
+        <Route path="/RR_MN/*" element={<RR_MN />} />
       </Routes>
     </>
   );

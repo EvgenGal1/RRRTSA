@@ -1,30 +1,53 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Navigation.css";
+import React, { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
+import "./Navigation.scss";
 
 export function Navigation() {
+  // function activprob() {
+
+  // }
+  // activprob()
+  const [hover, setHover] = useState(false);
+
   return (
     <>
-      <header>
-        <nav className="flex justify-between items-center h-[50px] px-5 shadow-md bg-gray-500 text-white">
-          <Link to="/" className="font-bold">
+      <header className="header">
+        <nav className="header__nav-top nav-top flex justify-between items-center h-[50px] px-5 shadow-md bg-gray-500 text-white">
+          <Link to="/" className="nav-top__logo font-bold">
             <h3>RRRTS++</h3>
           </Link>
-          <span>
-            <Link to="/RR_Doc" className="mr-5">
-              RR_Doc
-            </Link>
-            <Link to="/R3TS22_VM" className="mr-5 --asd--">
-              R3TS22_VM
-            </Link>
-            {/* // ??? не раб - Warning: validateDOMNesting(...): <a> не может быть потомком <a>.  */}
-            {/* // * узнать о вложенностях ссылок в react для многоуровневых раскрывающихся списках-ссылках */}
-            <Link to="/favorites" className="mr-5 --asd2--">
-              favorites
-            </Link>
-            <Link to="/HomePage" className="mr-5 --asd2--">
-              HomePage
-            </Link>
+          <span className="nav-top__span top-span">
+            <span className="top-span__item mr-5 ">
+              <NavLink to="/RR_Doc" className="   ">
+                RR_Doc
+              </NavLink>
+            </span>
+            <span className="top-span__item top-item mr-5 ">
+              <NavLink
+                onMouseEnter={() => {
+                  setHover(true);
+                }}
+                onMouseLeave={() => {
+                  setHover(false);
+                }}
+                to="/R3TS22_VM"
+                className="top-item__NavL activ-prob"
+              >
+                R3TS22_VM
+              </NavLink>
+              <ul className="top-item__ul top-ul">
+                <li className="top-ul__li">
+                  <Link to="/favorites" className="">
+                    favorites
+                  </Link>
+                </li>
+                <li className="top-ul__li">
+                  <Link to="/HomePage" className="">
+                    HomePage
+                  </Link>
+                </li>
+              </ul>
+            </span>
             <Link to="/RR_UlbiTV" className="mr-5">
               RR_UlbiTV
             </Link>

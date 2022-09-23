@@ -10,7 +10,7 @@ export function R3TS22_VM() {
   return (
     <>
       <div className="R3TS22_VM">
-        <div>Home</div>
+        <div>R3TS22_VM</div>
         <div>
           По видео "React стек 2022. TypeScript, Redux Toolkit, RTKQuery,
           Tailwind" - https://www.youtube.com/watch?v=lkbm-zlcFvs
