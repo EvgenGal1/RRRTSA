@@ -1,7 +1,9 @@
 import React from "react";
 import { Routes, Route, NavLink, Link } from "react-router-dom";
 
-import { firstPage } from "./src/pages/ferstPage.tsx";
+import { FirstPage } from "./src/pages/FirstPage.tsx";
+import { SecondPage } from "./src/pages/SecondPage";
+import { ThirdPage } from "./src/pages/ThirdPage";
 // import { use  } from "react";
 export function RR_MN() {
   // const [, set] = use();
@@ -11,13 +13,13 @@ export function RR_MN() {
         {/* <Link to="firstPage">1</Link> */}
         <ul>
           <li>
-            <Link to="prob1">1</Link>
+            <Link to="/FirstPage">FirstPage link</Link>
           </li>
           <li>
-            <Link to="prob2">2</Link>
+            <Link to="/SecondPage">SecondPage link</Link>
           </li>
           <li>
-            <Link to="prob3">3</Link>
+            <Link to="/ThirdPage">ThirdPage link</Link>
           </li>
         </ul>
       </header>
@@ -29,13 +31,9 @@ export function RR_MN() {
         </p>
       </div>
       <Routes>
-        <Route
-          path="prob1"
-          element={<p>prob1</p>}
-          // style={{'margin: 10px'}}
-        />
-        <Route path="prob2" element={<p>prob2</p>} />
-        <Route path="prob3" element={<p>prob3</p>} />
+        <Route path="/FirstPage" element={<FirstPage />} />
+        <Route path="/SecondPage" element={<SecondPage />} />
+        <Route path="/ThirdPage" element={<ThirdPage />} />
       </Routes>
     </>
   );

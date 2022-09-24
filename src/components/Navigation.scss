@@ -6,16 +6,44 @@
     .nav-top__span {
       display: flex;
       .top-span__item {
+        width: 100px;
+        height: 30px;
         position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // text-align: center;
+        // подменю при неведении
         &:hover {
           .top-item__ul {
             // display: block;
             opacity: 1;
             visibility: visible;
+            // из ЕжеСвет
+            // hover ----------------------------------------------------------------------------------
+            opacity: 1;
+            visibility: visible;
+            transform: translate(0px, 0px);
+            pointer-events: all;
           }
         }
+        // NavLink (свой клас) - видим. эл. header
         .top-item__navl {
+          // a.active {
+          &.active {
+            // color: red;
+            // cursor: default;
+          }
+          // }
         }
+        // NavLink (ссылка) - видим. эл. header
+        > a.active {
+          color: #7a7a7a;
+          font-weight: bold;
+          background-color: #000000;
+          cursor: default;
+        }
+        // подменю
         .top-item__ul {
           // display: none;
           width: 100%;
@@ -23,6 +51,26 @@
           opacity: 0;
           visibility: hidden;
           z-index: 1;
+          // из ЕжеСвет
+          // @media 768 ----------------------------------------------------------------------------------
+          transform: translate(0px, 10%);
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease 0s;
+          pointer-events: none;
+          // умолч ----------------------------------------------------------------------------------
+          position: absolute;
+          top: 100%;
+          // font-style: italic;
+          font-size: 16px;
+          // font-weight: 900;
+          text-align: center;
+          width: 120px;
+          padding: 1px 3px 3px;
+          list-style-type: none;
+          border: 2px solid #000;
+          background: #ccc;
+          border-radius: 10px;
           .top-ul__li {
             width: 100%;
             display: flex;
