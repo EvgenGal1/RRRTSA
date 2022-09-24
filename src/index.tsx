@@ -8,7 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./projects/R3TS22_VM/src/store";
 
-import { App } from "./App";
+import { App } from "./projects/App";
 import "./index.css";
 // import reportWebVitals from "./types/reportWebVitals";
 
