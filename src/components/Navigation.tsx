@@ -31,7 +31,7 @@ export function Navigation() {
                   setHover(false);
                 }}
                 to="/R3TS22_VM"
-                className="top-item__NavL activ-prob"
+                className="top-item__navl activ-prob"
               >
                 R3TS22_VM
               </NavLink>

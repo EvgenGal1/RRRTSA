@@ -10,6 +10,7 @@ export function HomePage() {
   return (
     <>
       <div>HomePage</div>
+      <p>+ console.log(data)</p>
     </>
   );
 }

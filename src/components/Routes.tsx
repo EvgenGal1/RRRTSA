@@ -1,5 +1,6 @@
 import React from "react";
-import { Routes, Route, Link, Outlet } from "react-router-dom";
+import { useTransition, animated } from "react-spring";
+import { Routes, Route, Link, Outlet, useLocation } from "react-router-dom";
 // import "./App.css";
 
 // import { Navigation } from "./Navigation";
@@ -16,28 +17,60 @@ import { RR_MN } from "../projects/RR_MN/RR_MN";
 
 export function RoutesNav() {
   // export const RoutesNav = () => (
+
+  const location = useLocation();
+  const transitions = useTransition(location, {
+    from: {
+      opacity: 0,
+      transform: "translateX(100%)",
+      // transitionTimingFunction: "cubic-bezier(0.5, -0.3, 0.51, 1.32)",
+      transitionTimingFunction: "ease",
+      // transitionDelay: ".5s"
+      // transform: 'translateY(50%)'
+    },
+    enter: {
+      opacity: 1,
+      transform: "translateX(0%)",
+      transitionTimingFunction: "ease",
+      // transitionTimingFunction: "ease"
+      // transform: 'translateY(50%)'
+    },
+    leave: {
+      opacity: 0,
+      transform: "translateX(-100%)",
+      transitionTimingFunction: "ease",
+      // transform: 'translateY(50%)'
+    },
+  });
+
   return (
     <>
       {/* <Navigation /> */}
-      <Routes>
-        <Route path="/" element={<RRRTS_EG />} />
-        <Route path="/RR_Doc" element={<RR_Doc />} />
-        <Route path="/R3TS22_VM" element={<R3TS22_VM />} />
-        <Route path="/RR_UlbiTV" element={<RR_UlbiTV />} />
-        <Route path="/RRTS_UlbiTV" element={<RRTS_UlbiTV />} />
-        {/* // ? не раб - Неперехваченная ошибка: [HomePage] не является компонентом <Route>. Все дочерние компоненты <Routes> должны быть <Route> или <React.Fragment> */}
-        {/* <Route path="/HomePage">
-          <HomePage />
-        </Route> */}
-        <Route path="/favorites" element={<FavoritesPage />} />
-        <Route path="/HomePage" element={<HomePage />} />
-        <Route path="users/*" element={<Users />} />
-        <Route path="R3TS22_VMVlos" element={<R3TS22_VMVlos />}>
-          <Route path="favorites" element={<FavoritesPage />} />
-          <Route path="HomePage" element={<HomePage />} />
-        </Route>
-        <Route path="/RR_MN/*" element={<RR_MN />} />
-      </Routes>
+      <main>
+        {/* // ??? не раб - после добавления обёртки transitions.animated.location, наведение на .top-span__item работает только в header. е/и курсор уйдёт с блока, то hover откл */}
+        {transitions((props, item) => (
+          <animated.div style={props}>
+            <div style={{ position: "absolute", width: "100%" }}>
+              <Routes location={item}>
+                {/* <Routes> */}
+                <Route path="/" element={<RRRTS_EG />} />
+                <Route path="/RR_Doc" element={<RR_Doc />} />
+                <Route path="/R3TS22_VM" element={<R3TS22_VM />} />
+                <Route path="/RR_UlbiTV" element={<RR_UlbiTV />} />
+                <Route path="/RRTS_UlbiTV" element={<RRTS_UlbiTV />} />
+                <Route path="/favorites" element={<FavoritesPage />} />
+                <Route path="/HomePage" element={<HomePage />} />
+                <Route path="users/*" element={<Users />} />
+                <Route path="R3TS22_VMVlos" element={<R3TS22_VMVlos />}>
+                  <Route path="favorites" element={<FavoritesPage />} />
+                  <Route path="HomePage" element={<HomePage />} />
+                </Route>
+                <Route path="/RR_MN/*" element={<RR_MN />} />
+              </Routes>
+            </div>
+          </animated.div>
+        ))}
+      </main>
     </>
   );
 }
