@@ -1,101 +1,127 @@
 // HEADER (ШАПКА) ----------------------------------------------------------------------------------
 .header {
-  &__nav-top {
-    .nav-top__logo {
+  // max-width: 1750px;
+  .header-container {
+    padding: 0 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    font-weight: bold;
+    &:hover {
+      color: gold;
     }
-    .nav-top__span {
-      display: flex;
-      .top-span__item {
-        width: 100px;
-        height: 30px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        // text-align: center;
-        // подменю при неведении
-        &:hover {
-          .top-item__ul {
-            // display: block;
-            opacity: 1;
-            visibility: visible;
-            // из ЕжеСвет
-            // hover ----------------------------------------------------------------------------------
-            opacity: 1;
-            visibility: visible;
-            transform: translate(0px, 0px);
-            pointer-events: all;
-          }
-        }
-        // NavLink (свой клас) - видим. эл. header
-        .top-item__navl {
-          // a.active {
-          &.active {
-            // color: red;
-            // cursor: default;
-          }
-          // }
-        }
-        // NavLink (ссылка) - видим. эл. header
-        > a.active {
-          color: #7a7a7a;
+  }
+  &__menu {
+    display: flex;
+    flex-direction: column;
+  }
+  // ВЕРХНЕЕ МЕНЮ
+  &__menu-top {
+    // .menu-top__span {
+    display: flex;
+    // затемняет сосед. эл. при наведении (меню)
+    &:hover span:not(:hover) {
+      opacity: 0.5;
+    }
+    // затемняет сосед. эл. при наведении (подменю)
+    &:hover li:not(:hover) {
+      opacity: 0.5;
+      color: white !important;
+    }
+    .menu-top__items {
+      position: relative;
+      margin-right: 15px;
+
+      // НАВЕДЕНИЕ на дочерние эл-ты
+      &:hover {
+        // ссылки
+        .m-t-items__navlink {
           font-weight: bold;
-          background-color: #000000;
-          cursor: default;
+          color: #000;
+          box-shadow: 1px 1px 3px #000 inset, 1px 1px 3px black;
         }
-        // подменю
-        .top-item__ul {
-          // display: none;
-          width: 100%;
-          position: absolute;
-          opacity: 0;
-          visibility: hidden;
-          z-index: 1;
+        // подменю при неведении
+        .m-t-items__ul {
+          // display: block;
+          opacity: 1;
+          visibility: visible;
           // из ЕжеСвет
-          // @media 768 ----------------------------------------------------------------------------------
-          transform: translate(0px, 10%);
-          opacity: 0;
-          visibility: hidden;
-          transition: all 0.3s ease 0s;
-          pointer-events: none;
-          // умолч ----------------------------------------------------------------------------------
-          position: absolute;
-          top: 100%;
-          // font-style: italic;
-          font-size: 16px;
-          // font-weight: 900;
-          text-align: center;
-          width: 120px;
-          padding: 1px 3px 3px;
-          list-style-type: none;
-          border: 2px solid #000;
-          background: #ccc;
-          border-radius: 10px;
-          .top-ul__li {
-            width: 100%;
-            display: flex;
-            margin-top: 2px;
-            // padding: 0px 5px;
-            text-align: center;
-            background: #8d0000;
-            border-radius: 7px;
-            color: yellow;
-            // align-content: center;
-            // justify-content: center;
-            // align-items: center;
-            a {
-              width: inherit;
-              // text-align: center;
-              /* width: 100%; */
-              // height: 100%;
-              /* background: gray; */
-              // border-radius: 5px;
+          // hover ----------------------------------------------------------------------------------
+          opacity: 1;
+          visibility: visible;
+          transform: translate(0px, 0px);
+          pointer-events: all;
+        }
+      }
+      // видимые ссылки в header --------------------------------------------------------------------
+      // NavLink (на родителя) - видимый эл. header (е/и в родителе есть <а> с .active)
+      &:has(a[class$="active"]) {
+        background: #474747;
+        background: #474a4e;
+        // border-radius: 10px;
+      }
+      // NavLink (свой клас на ссылку) - видимый эл. header
+      .m-t-items__navlink {
+        &.active {
+          color: black;
+          color: gold;
+          // font-weight: bold;
+        }
+        // position: relative;
+        width: 150px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #000;
+        box-shadow: -1px -1px 1px #000 inset, 1px 1px 1px black;
+      }
+      // NavLink (из док на ссылку) - видимый эл. header
+      > a.active {
+        color: #7a7a7a;
+        font-weight: bold;
+        // font-weight: bold;
+        // background-color: #000000;
+        // cursor: default;
+      }
+      // ПОДМЕНЮ
+      .m-t-items__ul {
+        // частично из ЕжеСвет
+        width: 100%;
+        position: absolute;
+        padding: 1px 3px 3px;
+        opacity: 0;
+        visibility: hidden;
+        font-size: 16px;
+        text-align: center;
+        transform: translate(0px, 10%);
+        transition: all 0.3s ease 0s;
+        pointer-events: none;
+        border: 2px solid #000;
+        background: #ccc;
+        z-index: 1;
+        .m-t-its-ul__li {
+          margin-top: 2px;
+          background: #8d0000;
+          color: yellow;
+          padding: 2px 0px;
+          a {
+            &:hover {
+              // color: green;
             }
           }
         }
       }
     }
+    // }
   }
-  &__nav-botom {
+  // НИЖНЕЕ МЕНЮ
+  &__menu-bottom {
+    display: flex;
   }
 }

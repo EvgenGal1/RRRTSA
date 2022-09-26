@@ -52,7 +52,7 @@ export function MainRoutes() {
         className="container"
         style={{ position: "relative", height: "150vmax", overflow: "hidden" }}
       >
-        {/* // ^ зараб - после добавления обёртки transitions.animated.location, при наведение на .top-span__item, блоки .top-item__ul видны только в header. е/и курсор уйдёт с header, то hover откл - исправл. доав. к .top-item__ul z-индекса в css */}
+        {/* // ^ зараб - после добавления обёртки transitions.animated.location, при наведение на .menu-top__items, блоки .m-t-items__ul видны только в header. е/и курсор уйдёт с header, то hover откл - исправл. доав. к .m-t-items__ul z-индекса в css */}
         {transitions((props, item) => (
           <animated.div style={props}>
             {/* <animated.div style={{position: "absolute", ${props}}}> */}
