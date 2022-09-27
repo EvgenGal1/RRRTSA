@@ -9,7 +9,8 @@ export function RR_MN() {
   // const [, set] = use();
   return (
     <>
-      <header>
+      000
+      <div>
         {/* <Link to="firstPage">1</Link> */}
         <ul>
           <li>
@@ -22,7 +23,7 @@ export function RR_MN() {
             <Link to="/ThirdPage">ThirdPage link</Link>
           </li>
         </ul>
-      </header>
+      </div>
       <div>
         <h1>RR_MN</h1>
         <p>
@@ -30,11 +31,15 @@ export function RR_MN() {
           https://www.youtube.com/watch?v=U7c7k-NBtQg
         </p>
       </div>
+      111
       <Routes>
-        <Route path="/FirstPage" element={<FirstPage />} />
+        <Route path="/FirstPage" element={<FirstPage />}>
+          FirstPage 000
+        </Route>
         <Route path="/SecondPage" element={<SecondPage />} />
         <Route path="/ThirdPage" element={<ThirdPage />} />
       </Routes>
+      222
     </>
   );
 }
