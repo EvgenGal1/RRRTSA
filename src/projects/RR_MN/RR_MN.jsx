@@ -5,10 +5,12 @@ import { FirstPage } from "./src/pages/FirstPage.tsx";
 import { SecondPage } from "./src/pages/SecondPage";
 import { ThirdPage } from "./src/pages/ThirdPage";
 // import { use  } from "react";
+import "./RR_MN.scss";
+
 export function RR_MN() {
   // const [, set] = use();
   return (
-    <>
+    <div className="RR_MN">
       000
       <div>
         {/* <Link to="firstPage">1</Link> */}
@@ -17,7 +19,7 @@ export function RR_MN() {
             <Link to="/FirstPage">FirstPage link</Link>
           </li>
           <li>
-            <Link to="/SecondPage">SecondPage link</Link>
+            <Link to="/SecondPage">NavLink и его кастомизация</Link>
           </li>
           <li>
             <Link to="/ThirdPage">ThirdPage link</Link>
@@ -40,6 +42,6 @@ export function RR_MN() {
         <Route path="/ThirdPage" element={<ThirdPage />} />
       </Routes>
       222
-    </>
+    </div>
   );
 }
