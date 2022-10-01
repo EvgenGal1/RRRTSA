@@ -20,43 +20,8 @@ import { ThirdPage } from "../projects/RR_MN/src/pages/ThirdPage";
 import { Layout } from "./Layout";
 
 export function Router() {
-  // export const RoutesNav = () => (
-
-  // const location = useLocation();
-  // const transitions = useTransition(location, {
-  //   from: {
-  //     opacity: 0,
-  //     transform: "translateX(100%)",
-  //     // transitionTimingFunction: "cubic-bezier(0.5, -0.3, 0.51, 1.32)",
-  //     transitionTimingFunction: "ease",
-  //     // transitionDelay: ".5s"
-  //     // transform: 'translateY(50%)'
-  //   },
-  //   enter: {
-  //     opacity: 1,
-  //     transform: "translateX(0%)",
-  //     transitionTimingFunction: "ease",
-  //     // transform: 'translateY(50%)'
-  //   },
-  //   leave: {
-  //     opacity: 0,
-  //     transform: "translateX(-100%)",
-  //     transitionTimingFunction: "ease",
-  //     // transform: 'translateY(50%)'
-  //   },
-  // });
-
   return (
     <>
-      {/* <Navigation /> */}
-      {/* <main
-        className="container"
-        style={{ position: "relative", height: "150vmax", overflow: "hidden" }}
-      >
-        {transitions((props, item) => (
-          <animated.div style={props}>
-            <div style={{ position: "absolute", width: "100%" }}> */}
-      {/* <Routes location={item}> */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<RRRTS_EG />} />
@@ -77,10 +42,6 @@ export function Router() {
           </Route>
         </Route>
       </Routes>
-      {/* </div>
-          </animated.div>
-        ))}
-      </main> */}
     </>
   );
 }

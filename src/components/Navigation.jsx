@@ -2,83 +2,47 @@ import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./Navigation.scss";
 
+// hooks для KeyDown/KeyUp
+// ч/з хуки Multi и Key
 import { useKeyPress } from "../hooks/useKeyPress.js";
 import {
   useMultiKeyPress,
   areKeysPressed,
   MultiKeysPressed,
 } from "../hooks/useMultiKeyPress.js";
+// ч/з хук AllKey
+import { useAllKeysPress } from "../hooks/useAllKeysPress";
 
 export function Navigation() {
-  // function activprob() {
+  // пробы key ч/з хуки Multi и Key ----------------------------------------------------------
+  // // const pressKeyL: boolean = useKeyPress("l");
+  // // const pressKeyJ: boolean = useKeyPress("j");
+  // // const pressKeyG: boolean = useKeyPress("g");
+  // const pressKeyL = useKeyPress("l");
+  // const pressKeyJ = useKeyPress("j");
+  // const pressKeyG = useKeyPress("g");
+  // // --
+  // const [hideDopMenu, setHhideDopMenu] = useState(false);
+  // // --
+  // const keysPressed = useMultiKeyPress();
+  // const hsrfPressed = areKeysPressed(["Alt", "Control", "Shift"], keysPressed);
+  // пробы key ч/з хуки Multi и Key ----------------------------------------------------------
 
-  // }
-  // activprob()
-  // const [hover, setHover] = useState(false);
-
-  // пробы key ----------------------------------------------------------
-  // const pressKeyL: boolean = useKeyPress("l");
-  // const pressKeyJ: boolean = useKeyPress("j");
-  // const pressKeyG: boolean = useKeyPress("g");
-  const pressKeyL = useKeyPress("l");
-  const pressKeyJ = useKeyPress("j");
-  const pressKeyG = useKeyPress("g");
-  // --
-  const [hideDopMenu, setHhideDopMenu] = useState(false);
-  // --
-  const keysPressed = useMultiKeyPress();
-  const hsrfPressed = areKeysPressed(["Alt", "Control", "Shift"], keysPressed);
-  // const hsrfPressed = areKeysPressed(["c", "v", "b"], keysPressed);
-  // --
-
-  // const keysHead = document.querySelector(".header");
-  // console.log("keysHead : " + keysHead);
-  // document.addEventListener("keydown", function (event) {
-  //   if (event.keyCode == 32 && event.ctrlKey) console.log("Продолжаем!")
-  //   keysHead.style.background = "violet";;
-  // });
-  // --
-  // document.addEventListener("keydown", function (event) {
-  //   if (event.repeat == false) {
-  //     console.log("первичное срабатывание");
-  //   } else {
-  //     console.log("повторное срабатывание");
-  //   }
-  // });
-  // --
-  // document.addEventListener("keypress", function (event) {
-  //   console.log(String.fromCharCode(event.charCode));
-  // });
-  // --
-  // document.addEventListener("keydown", function (event) {
-  //   console.log(
-  //     "keydown 1 ",
-  //     event.key,
-  //     event.keyCode,
-  //     event.code,
-  //     event.charCode
-  //   );
-  // });
-  // document.addEventListener("keypress", function (event) {
-  //   console.log(
-  //     "keypress 2 ",
-  //     event.key,
-  //     event.keyCode,
-  //     event.code,
-  //     event.charCode
-  //   );
-  // });
-  // document.addEventListener("keyup", function (event) {
-  //   console.log(
-  //     "keyup 3 ",
-  //     event.key,
-  //     event.keyCode,
-  //     event.code,
-  //     event.charCode
-  //   );
-  // });
-  // --
-  // пробы key ----------------------------------------------------------
+  // пробы key ч/з хук AllKey ----------------------------------------------------------------
+  const [provCombinePress, setProvCombinePress] = useState(false);
+  // массив букв после хука (возвращ true е/и переданные и нажатые равны)
+  const combinePress = useAllKeysPress({
+    userKeys: ["d", "o", "p", "m", "n"],
+    order: true,
+  });
+  // console.log("combinePress : " + combinePress);
+  // console.log("provCombinePress : " + provCombinePress);
+  useEffect(() => {
+    if (combinePress === true) {
+      setProvCombinePress(true);
+    }
+  }, [combinePress, provCombinePress]);
+  // пробы key ч/з хук AllKey ----------------------------------------------------------------
   return (
     <>
       <header className="header shadow-md bg-gray-500">
@@ -87,11 +51,15 @@ export function Navigation() {
             <h3>RRRTS++</h3>
           </Link>
           <div className="header__menu">
-            <nav className="header__menu-top menu-top flex flex-wrap justify-between items-center    text-white">
+            <nav className="header__menu-top menu-top flex flex-wrap justify-between items-center text-white">
               {/* h-[50px] px-5 pr-5 - высота padding margin */}
               {/* <span className="menu-top__span top-span"> */}
-              <span className="menu-top__items  m-t-items">
-                <NavLink to="/RR_Doc" className="m-t-items__navlink activ-prob">
+              <span className="menu-top__items m-t-items">
+                <NavLink
+                  to="/RR_Doc"
+                  // className={({ isActive }) => (isActive ? "active-prob" : "")}
+                  className="m-t-items__navlink activ-prob"
+                >
                   RR_Doc
                 </NavLink>
               </span>
@@ -147,7 +115,7 @@ export function Navigation() {
                   </li>
                   <li className="m-t-its-ul__li">
                     <Link to="/SecondPage" className="">
-                      SecondPage
+                      NavLink
                     </Link>
                   </li>
                   <li className="m-t-its-ul__li">
@@ -180,28 +148,33 @@ export function Navigation() {
                 */}
               {/* </span> */}
             </nav>
-            <nav className="header__menu-bottom">
-              <span>
-                {pressKeyL && pressKeyJ && pressKeyG && (
-                  <span>
-                    <a href="#">1</a>
-                  </span>
-                )}
+            {provCombinePress && (
+              <nav className="header__menu-bottom menu-bottom flex flex-wrap justify-between items-center mt-4">
+                <span
+                  className="ml-3"
+                  onClick={() => {
+                    setProvCombinePress(false);
+                  }}
+                >
+                  <a href="#">1</a>
+                </span>
                 <span>
                   <a href="#">2</a>
                 </span>
                 <span>
                   <a href="#">3</a>
                 </span>
-                <MultiKeysPressed
+                {/* <MultiKeysPressed
+                  keys={["Alt", "a"]}
                   // keys={["Alt", "Control", "Shift"]}
                   // keys={["Shift", "x", "z"]}
-                  keys={["q", "w", "e"]}
+                  // keys={["q", "w", "e"]}
                   keysPressed={keysPressed}
                   emoji="WIN"
-                />
-              </span>
-            </nav>
+                /> */}
+              </nav>
+            )}
+            {/* {pressKeyL && pressKeyJ && pressKeyG && ( */}
           </div>
         </div>
       </header>
