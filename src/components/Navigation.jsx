@@ -48,7 +48,7 @@ export function Navigation() {
       <header className="header shadow-md bg-gray-500">
         <div className="header-container">
           <Link to="/" className="header__logo font-bold">
-            <h3>RRRTS++</h3>
+            <h3>RRRTSA++</h3>
           </Link>
           <div className="header__menu">
             <nav className="header__menu-top menu-top flex flex-wrap justify-between items-center text-white">
