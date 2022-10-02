@@ -114,7 +114,7 @@ export function Navigation() {
                     </Link>
                   </li>
                   <li className="m-t-its-ul__li">
-                    <Link to="/SecondPage" className="">
+                    <Link to="SecondPage" className="">
                       NavLink
                     </Link>
                   </li>
@@ -126,27 +126,30 @@ export function Navigation() {
                 </ul>
               </span>
               <span className="menu-top__items m-t-items">
-                <NavLink to="users/*" className="m-t-items__navlink activ-prob">
-                  users
+                <NavLink to="Users/*" className="m-t-items__navlink activ-prob">
+                  Users
                 </NavLink>
+                <ul className="m-t-items__ul m-t-its-ul">
+                  <li className="m-t-its-ul__li">
+                    <Link to="/HomePage" className="">
+                      HomePage
+                    </Link>
+                  </li>
+                  <li className="m-t-its-ul__li">
+                    <Link to="favorites" className="">
+                      favorites
+                    </Link>
+                  </li>
+                </ul>
               </span>
-              <span className="menu-top__items m-t-items">
+              {/* <span className="menu-top__items m-t-items">
                 <NavLink
-                  to="R3TS22_VMVlos"
+                  to="Users2/*"
                   className="m-t-items__navlink activ-prob"
                 >
-                  R3TS22_VMVlos
+                  Users2
                 </NavLink>
-              </span>
-              {/* 
-                // Либо так можно
-                <ul>
-                  <li>
-                    <Link></Link>
-                  </li>
-                </ul> 
-                */}
-              {/* </span> */}
+              </span> */}
             </nav>
             {provCombinePress && (
               <nav className="header__menu-bottom menu-bottom flex flex-wrap justify-between items-center mt-4">

@@ -20,7 +20,7 @@ export interface IUser {
   site_admin: boolean;
   score: number;
 }
-// 0.6. переименю в ответ сервера + джейнерик <T>
+// 0.6. переимен. в ответ сервера + джейнерик <T>
 export interface ServerResponse<T> {
   total_count: number;
   incomplete_results: boolean;

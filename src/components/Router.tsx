@@ -16,6 +16,7 @@ import { RR_MN } from "../projects/RR_MN/RR_MN";
 import { FirstPage } from "../projects/RR_MN/src/pages/FirstPage";
 import { SecondPage } from "../projects/RR_MN/src/pages/SecondPage";
 import { ThirdPage } from "../projects/RR_MN/src/pages/ThirdPage";
+import { Users } from "../projects/R3TS22_VM/src/pages/Users";
 
 import { Layout } from "./Layout";
 
@@ -31,56 +32,59 @@ export function Router() {
           <Route path="HomePage" element={<HomePage />} />
           <Route path="/RR_UlbiTV" element={<RR_UlbiTV />} />
           <Route path="/RRTS_UlbiTV" element={<RRTS_UlbiTV />} />
-          <Route path="/RR_MN/*" element={<RR_MN />}></Route>
-          <Route path="/FirstPage" element={<FirstPage />} />
-          <Route path="/SecondPage" element={<SecondPage />} />
-          <Route path="/ThirdPage" element={<ThirdPage />} />
-          <Route path="users/*" element={<Users />} />
-          <Route path="R3TS22_VMVlos" element={<R3TS22_VMVlos />}>
+          <Route path="RR_MN/*" element={<RR_MN />}></Route>
+          <Route path="FirstPage" element={<FirstPage />} />
+          <Route path="SecondPage" element={<SecondPage />} />
+          <Route path="ThirdPage" element={<ThirdPage />} />
+          <Route path="Users/*" element={<Users />} />
+          {/* <Route path="Users2/*" element={<Users />}>
             <Route path="favorites" element={<FavoritesPage />} />
             <Route path="HomePage" element={<HomePage />} />
-          </Route>
+          </Route> */}
         </Route>
       </Routes>
     </>
   );
 }
 
-function Users() {
-  return (
-    <div>
-      <nav>
-        <Link to="HomePage">My HomePage</Link>
-        <Link to="favorites">My favorites</Link>
-      </nav>
-      000
-      <Routes>
-        222
-        <Route path="HomePage" element={<HomePage />} />
-        <Route path="favorites" element={<FavoritesPage />} />
-        333 444
-        {/* <Route path=":id" element={<UserProfile />} /> */}
-        {/* <Route path="me" element={<OwnUserProfile />} /> */}
-      </Routes>
-      111
-    </div>
-  );
-}
+// залито в отдельн файл
+// function Users() {
+//   return (
+//     <div>
+//       <b>перед Link</b>
+//       <nav>
+//         <Link to="HomePage">My HomePage</Link>
+//         <Link to="favorites">My favorites</Link>
+//       </nav>
+//       <b>после Link</b>
+//       <b>перед Router</b>
+//       <Routes>
+//         222
+//         <Route path="HomePage" element={<HomePage />} />
+//         <Route path="favorites" element={<FavoritesPage />} />
+//         333 444
+//         {/* <Route path=":id" element={<UserProfile />} /> */}
+//         {/* <Route path="me" element={<OwnUserProfile />} /> */}
+//       </Routes>
+//       <b>после Router</b>
+//     </div>
+//   );
+// }
 
-function R3TS22_VMVlos() {
-  return (
-    <div>
-      <nav>
-        <Link to="HomePage">My HomePage</Link>
-        <Link to="favorites">My favorites</Link>
-      </nav>
-      00000
-      <Outlet />
-      11111
-      {/* <Link to="/HomePage">My HomePage</Link> */}
-      {/* <Link to="/favorites">My favorites</Link> */}
-    </div>
-  );
-}
+// function Users2() {
+//   return (
+//     <div>
+//       <nav>
+//         <Link to="HomePage">My HomePage</Link>
+//         <Link to="favorites">My favorites</Link>
+//       </nav>
+//       00000
+//       <Outlet />
+//       11111
+//       {/* <Link to="/HomePage">My HomePage</Link> */}
+//       {/* <Link to="/favorites">My favorites</Link> */}
+//     </div>
+//   );
+// }
 
 // export default App;
