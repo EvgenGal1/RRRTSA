@@ -11,7 +11,7 @@ import { Provider } from "react-redux";
 // import * as serviceWorker from './serviceWorker';
 
 import { Counter } from "./src/features/counter/Counter.js";
-import { CounterTS } from "../../features/counter/Counter.tsx";
+import { CounterTS } from "../../features/counter/Counter";
 
 function RR_DocApp() {
   return (

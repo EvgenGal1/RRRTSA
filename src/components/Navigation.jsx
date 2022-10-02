@@ -4,12 +4,12 @@ import "./Navigation.scss";
 
 // hooks для KeyDown/KeyUp
 // ч/з хуки Multi и Key
-import { useKeyPress } from "../hooks/useKeyPress.js";
-import {
-  useMultiKeyPress,
-  areKeysPressed,
-  MultiKeysPressed,
-} from "../hooks/useMultiKeyPress.js";
+// import { useKeyPress } from "../hooks/vr/useKeyPress.js";
+// import {
+//   useMultiKeyPress,
+//   areKeysPressed,
+//   MultiKeysPressed,
+// } from "../hooks/vr/useMultiKeyPress.js";
 // ч/з хук AllKey
 import { useAllKeysPress } from "../hooks/useAllKeysPress";
 

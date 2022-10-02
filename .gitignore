@@ -23,10 +23,17 @@ yarn-debug.log*
 yarn-error.log*
 
 # Своё пока не нужное 
+# папка временных/пока не нужных файлов. для игнора и случайно залитых
+vr/
+
 # js
 src/scripts/*
 src/hooks/useKeyPress.js
 src/hooks/useMultiKeyPress.js
+/src/hooks/useMultiKeyPress.js
+useMultiKeyPress.js
+# hooks/*.js
+# src/hooks/
 
 # scss
 src/styles/all.scss

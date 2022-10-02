@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, NavLink, Link } from "react-router-dom";
 
-import { FirstPage } from "./src/pages/FirstPage.tsx";
+import { FirstPage } from "./src/pages/FirstPage";
 import { SecondPage } from "./src/pages/SecondPage";
 import { ThirdPage } from "./src/pages/ThirdPage";
 // import { use  } from "react";
