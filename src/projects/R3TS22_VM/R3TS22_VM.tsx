@@ -1,19 +1,39 @@
 import React from "react";
-import { useSearchUserQuery } from "./src/store/github/github.api";
+import { Routes, Route, NavLink } from "react-router-dom";
+
+import { HomePage } from "./src/pages/HomePage";
+import { FavoritesPage } from "./src/pages/FavoritesPage";
+
+import { useSearchUsersQuery } from "./src/store/github/github.api";
 
 export function R3TS22_VM() {
-  // 0.5. использ. кастом. хук. в подсказе поля для раб с запросами {индикатор загрузки, ошибки при загрузке, получаемые данные}.
-  // в хуке TS ошибка т.к. не передали параметры, исправ в github.api.ts
-  // 0.6 временно передаём строку (EvGenGal), по которой будет идти поиск в пользователях
-  // const { isLoading, isError, data } = useSearchUserQuery("EvGenG");
-  // console.log(data);
   return (
     <>
       <div className="R3TS22_VM">
-        <div>R3TS22_VM</div>
-        <div>
-          По видео "React стек 2022. TypeScript, Redux Toolkit, RTKQuery,
-          Tailwind" - https://www.youtube.com/watch?v=lkbm-zlcFvs
+        <div className="R3TS22_VM--nav">
+          <b>перед NavLink</b>
+          <nav>
+            <NavLink to="HomePage">My HomePage</NavLink>
+            <NavLink to="favorites">My favorites</NavLink>
+          </nav>
+          <b>после NavLink</b>
+        </div>
+        <div className="R3TS22_VM--body">
+          <h1>R3TS22_VM</h1>
+          <div>
+            По видео "React стек 2022. TypeScript, Redux Toolkit, RTKQuery,
+            Tailwind" - https://www.youtube.com/watch?v=lkbm-zlcFvs
+          </div>
+        </div>
+        <div className="R3TS22_VM--pages">
+          <b>перед Router</b>
+          <Routes>
+            222
+            <Route path="HomePage" element={<HomePage />} />
+            <Route path="favorites" element={<FavoritesPage />} />
+            333 444
+          </Routes>
+          <b>после Router</b>
         </div>
       </div>
     </>

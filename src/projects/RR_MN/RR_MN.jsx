@@ -11,7 +11,7 @@ export function RR_MN() {
   // const [, set] = use();
   return (
     <div className="RR_MN">
-      <span>перед Link в RR_MN 0</span>
+      <b>перед Link в RR_MN 0</b>
       <div>
         {/* <Link to="firstPage">1</Link> */}
         <ul>
@@ -26,7 +26,7 @@ export function RR_MN() {
           </li>
         </ul>
       </div>
-      <span>после Link в RR_MN 1</span>
+      <b>после Link в RR_MN 1</b>
       <div>
         <div>
           <h1>RR_MN</h1>
@@ -43,39 +43,80 @@ export function RR_MN() {
           </ul>
         </div>
         {/* <br /> */}
-        <p>Сейчас есть два варианта - <span>RR_MN</span> и <span>users/R3TS22_VMVlos</span></p>
-        <p>Сейчас в <b>Routes</b> все обёрнуто в <b>Layout</b> - сбор больших файлов, anim и <b>Outlet</b></p>
+        <p>
+          Сейчас есть два варианта - <span>RR_MN</span> и{" "}
+          <span>users/R3TS22_VMVlos</span>
+        </p>
+        <p>
+          Сейчас в <b>Routes</b> все обёрнуто в <b>Layout</b> - сбор больших
+          файлов, anim и <b>Outlet</b>
+        </p>
         <div>
           <h2>RR_MN</h2>
           <p>
-            В Router.tsx отдельн подкл Route.RR_MN и его вложен. стр. рядом ниже. С обёртк Layout можно <span>path без/со слешами</span>. В файл RR_MN прописаны Link.
+            В Router.tsx отдельн подкл Route.RR_MN и его вложен. стр. рядом
+            ниже. С обёртк Layout можно <span>path без/со слешами</span>. В файл
+            RR_MN прописаны Link.
           </p>
-          <p>В header(Navigation) ссылки на дочки рядом с родителем. Клик по робителю - переходит в родителя. По дочке - сразу на стр. дочки. </p>
-          <p>В родителе RR_MN отражены ссылки <span>Link с <b>to="/Page</b> без слеша</span>. Клик по ним <span>переход только в дочку</span>.</p>
+          <p>
+            В header(Navigation) ссылки на дочки рядом с родителем. Клик по
+            робителю - переходит в родителя. По дочке - сразу на стр. дочки.{" "}
+          </p>
+          <p>
+            В родителе RR_MN отражены ссылки{" "}
+            <span>
+              Link с <b>to="/Page</b> без слеша
+            </span>
+            . Клик по ним <span>переход только в дочку</span>.
+          </p>
           {/* <p></p> */}
         </div>
         <div>
           <h2>Users/Users2</h2>
           <p>
-            В Router.tsx вложен. стр. можно подкл. 2 способами. Вкладывать Route дочек тут же в родителя а Link в отдельн. fn|файл (<span>Users</span>) или объедин. в одном месте(<span>users</span>).</p>
-          <p>Во втором варике путь к дочкам усил. звездой<span><b>path="Users/*"</b></span>. В файле Users Link и Routes.Route</p>
+            В Router.tsx вложен. стр. можно подкл. 2 способами. Вкладывать Route
+            дочек тут же в родителя а Link в отдельн. fn|файл (
+            <span>Users2</span>) или Route рядом, а Link объедин. в отдельн.
+            fn|файл(<span>Users</span>).
+          </p>
+          <p>
+            Во втором варике путь к дочкам усил. звездой
+            <span>
+              <b>path="Users/*"</b>
+            </span>
+            . В файле Users Link и Routes.Route
+          </p>
           <p>В header(Navigation) всё аналогично</p>
-          <p>В родителе Users отражены ссылки <span>Link с <b>to="Page</b> со слешем</span>. Клик по ним <span>подгружает дочку ниже родителя</span>. Route без слеша</p>
+          <p>
+            В родителе Users отражены ссылки{" "}
+            <span>
+              Link с <b>to="Page</b> со слешем
+            </span>
+            . Клик по ним <span>подгружает дочку ниже родителя</span>. Route без
+            слеша
+          </p>
         </div>
-        <div><h3>Выбор </h3>
+        <div>
+          <h2>Выбор </h2>
           <p>Какой вариант лучше пока не понятно.</p>
-          <p>В перевом варике (<b>RR_MN</b>) <b>все пути отражены в Router.tsx</b> и <b>откр. дочек на отдельных страницах</b></p>
-          <p>Во втором варике (<b>Users</b>) <b>Router.tsx чище</b>и <b>подгрузка дочек ниже стр.</b></p>
+          <p>
+            В перевом варике (<b>RR_MN</b>) в родителе{" "}
+            <b>откр. дочек на отдельных страницах</b>
+          </p>
+          <p>
+            Во втором варике (<b>Users</b>) в родителе{" "}
+            <b>подгрузка дочек ниже стр.</b>
+          </p>
         </div>
-
       </div>
-      <span>перед Routes в RR_MN 0</span>
+      <b>перед Routes в RR_MN 0</b>
       {/* для вложенности в Routes. Отражает страницы вместе с данными вверху */}
-      <Routes><Route path="/FirstPage" element={<FirstPage />} />
+      <Routes>
+        <Route path="/FirstPage" element={<FirstPage />} />
         <Route path="/SecondPage" element={<SecondPage />} />
         <Route path="/ThirdPage" element={<ThirdPage />} />
       </Routes>
-      <span>после Routes в RR_MN 1</span>
+      <b>после Routes в RR_MN 1</b>
     </div>
   );
 }

@@ -246,12 +246,12 @@ npx tailwindcss init -p
 - ++ созд. API с настр. reducerPath(адрес кэш), baseQuery(базовый url), endpoints(конечные точки)
 - в store/index.ts reducer соед./регистр. API githubApi со store. ключя:значение
 - в github.api.ts при обращ. к `const {} = githubApi` в скобках есть авто.кастом.хуки
-- export хука useSearchUserQuery
+- export хука useSearchUsersQuery
 
 <h4>Используем кастомные hookи</h4>
 <p>0.5</p>
 
-- в HomePage.tsx пропис хук. `const {} = useSearchUserQuery()`
+- в HomePage.tsx пропис хук. `const {} = useSearchUsersQuery()`
 - смотрим подсказку (ctrl+пробел) полей в фигурных скобках
 - пропис поля {isLoading,isError,data} (загрузка,ошибки,данные)
 - в хук TS ошибка т.к. не передали 2 параметра, исправ в github.api.ts
@@ -284,8 +284,7 @@ npx tailwindcss init -p
 
 - в console должен быть Warning от RTK-Query по отсутствию middleware (кэш, авто обновление, )
 - middleware - fn послед-но вызыв. в процессе обновления данных в хранилище
-- в store/index.ts + парам middleware (промежуточное ПО) ч/з метод getDefaultMiddleware
-- получен массив конкатенируем с middleware от githubApi
+- в store/index.ts + парам middleware (промежуточное ПО) где ч/з метод getDefaultMiddleware, получаем массив, конкатенируем с middleware от githubApi
 
 <h4>Визуализация полученных данных</h4>
 <p>0.</p> 26:22

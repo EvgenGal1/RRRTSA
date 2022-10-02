@@ -276,12 +276,12 @@ npx tailwindcss init -p
 - ++ созд. API с настр. reducerPath(адрес кэш), baseQuery(базовый url), endpoints(конечные точки)
 - в store/index.ts reducer соед./регистр. API githubApi со store. ключя:значение
 - в github.api.ts при обращ. к `const {} = githubApi` в скобках есть авто.кастом.хуки
-- export хука useSearchUserQuery
+- export хука useSearchUsersQuery
 
 <h4>Используем кастомные hookи</h4>
 <p>0.5</p>
 
-- в HomePage.tsx пропис хук. `const {} = useSearchUserQuery()`
+- в HomePage.tsx пропис хук. `const {} = useSearchUsersQuery()`
 - смотрим подсказку (ctrl+пробел) полей в фигурных скобках
 - пропис поля {isLoading,isError,data} (загрузка,ошибки,данные)
 - в хук TS ошибка т.к. не передали 2 параметра, исправ в github.api.ts

@@ -11,6 +11,8 @@ export const githubApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://api.github.com/",
   }),
+  // 0.18.
+  refetchOnFocus: true,
   // 0.4. 'конечные точки' это fn приним парам build(`строить`). возвращ объ. с перечислением всех конеч.точек
   endpoints: (build) => ({
     // 0.4. получ. список пользователей (searchUser назв.). ключ объ.: с build формир запрос (метод query - запросы/получене данных, mutation - изменения)
@@ -20,7 +22,7 @@ export const githubApi = createApi({
     // 0.6. указ 1ый джейн. - ServerResponse + передача ожидания <IUser>
     // searchUser: build.query<ServerResponse<IUser>, string>({
     // 0.6. после transformResponse меняем ожидание на массив IUsers
-    searchUser: build.query<IUser[], string>({
+    searchUsers: build.query<IUser[], string>({
       // 0.4. передаём объ. с описанием запроса (либо объ. как здесь, либо строкой ("search/users" стр. конкотенируется с baseUrl))
       // 0.5. явно указ. тип поиска - строка
       query: (search: string) => ({
@@ -40,5 +42,5 @@ export const githubApi = createApi({
   }),
 });
 
-// 0.4. при обращении `const {} = githubApi`, в скобках (подсказка ctrl+пробел) видно автосгенерированй кастомный хук. Генерация зависит от настроек endpoints
-export const { useSearchUserQuery } = githubApi;
+// 0.4. при обращении `const {} = githubApi`, в скобках (подсказка ctrl+пробел) видно автосгенерированй кастомный хук(useSearchUsersQuery). Генерация зависит от настроек endpoints
+export const { useSearchUsersQuery } = githubApi;

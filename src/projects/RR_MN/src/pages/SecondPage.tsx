@@ -1,5 +1,5 @@
 import React from "react";
-// import { useSearchUserQuery } from "../store/github/github.api";
+// import { useSearchUsersQuery } from "../store/github/github.api";
 
 export function SecondPage() {
   // const [, set] = use();

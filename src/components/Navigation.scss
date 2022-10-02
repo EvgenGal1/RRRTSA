@@ -72,6 +72,7 @@
         &.active {
           color: black;
           color: gold;
+          box-shadow: 1px 1px 3px #000 inset, 1px 1px 3px black;
           // font-weight: bold;
         }
         // position: relative;
