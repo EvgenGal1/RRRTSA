@@ -4,7 +4,7 @@ import { Routes, Route, NavLink } from "react-router-dom";
 import { HomePage } from "./src/pages/HomePage";
 import { FavoritesPage } from "./src/pages/FavoritesPage";
 
-import { useSearchUsersQuery } from "./src/store/github/github.api";
+// import { useSearchUsersQuery } from "./src/store/github/github.api";
 
 export function R3TS22_VM() {
   return (

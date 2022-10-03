@@ -11,10 +11,10 @@ export const store = configureStore({
     // 0.4. [ключ]: значение - хранит данные API. значение - регистрация
     [githubApi.reducerPath]: githubApi.reducer,
   },
-  // 0.7. парам `промежуточное ПО`: получ метод getDefaultMiddleware, возвращ вызом метода получая массив + конкат (сливаем вместе) с middleware от githubApi
+  // 0.8. парам `промежуточное ПО`: получ метод getDefaultMiddleware, возвращ вызом метода получая массив + конкат (сливаем вместе) с middleware от githubApi
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(githubApi.middleware),
 });
 
-// 0.18.
+// 0.19.
 setupListeners(store.dispatch);

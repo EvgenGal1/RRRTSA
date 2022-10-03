@@ -201,7 +201,7 @@ RR_Doc/                    ──  Проект по Докам от React-Redux
 <p align="center">Продвинутый React. В видео технологии: TypeScript, Redux Toolkit, RTKQuery, Tailwind</p>
 
 <h4>Подключение доп. зависимостей</h4>
-<p>0.1</p>
+<p>0.1.</p>
 
 <p>Tailwin - CSS-фреймворк со встроенными классами для стилей прямо в коде</p>
 
@@ -224,7 +224,7 @@ npx tailwindcss init -p
 <p>Так же - redux toolkit, react-redux(связь м/у ними), react-router-dom(навигация)</p>
 
 <h4>Добавил Router</h4>
-<p>0.2</p>
+<p>0.2.</p>
 
 - в ./index.tsx + {BrowserRouter} и оборачивание App
 - ++ страниц в pages/ и projects/
@@ -233,13 +233,13 @@ npx tailwindcss init -p
 - в App.tsx + структура маршрутов/путей/элементов
 
 <h4>Добавил store от Reduxe</h4>
-<p>0.3</p>
+<p>0.3.</p>
 
 - ++ store/index.ts, + {configureStore} + reducer
 - в ./index.tsx + {Provider, store} и оборачивание BrowserRouter/App
 
 <h4>Добавил API</h4>
-<p>0.4</p>
+<p>0.4.</p>
 
 - ++ store/github/ - логика/сущности раб. с github
 - ++ github/github.api.ts, + {createApi, fetchBaseQuery} - настройка API для раб. с поиском
@@ -249,7 +249,7 @@ npx tailwindcss init -p
 - export хука useSearchUsersQuery
 
 <h4>Используем кастомные hookи</h4>
-<p>0.5</p>
+<p>0.5.</p>
 
 - в HomePage.tsx пропис хук. `const {} = useSearchUsersQuery()`
 - смотрим подсказку (ctrl+пробел) полей в фигурных скобках
@@ -260,17 +260,17 @@ npx tailwindcss init -p
 - 1ый - ответ от сервера(врем. any), 2ой - принимаемый параметр для осущест. запроса(string)
 - указ. тип поиска, парам. запроса, св-во
 
-<h4>Запрос по API</h4>
-<p>0.6</p>
+<h4>Запрос по API и интерфейсы</h4>
+<p>0.6.</p>
 
 - в HomePage.tsx в хук пропис. строку для поиска userov (например EvGen)
 - в браузере DevTools.Network видим асинхр запрос
-- типизацация в TS: из поля Response копир все и генерируем в http://json2ts.com
+- типизацация в TS: из поля Response копир все и генерируем в JSON? на http://json2ts.com
 - ++ modals/modals.ts вставл. из сайти, убираем наружн. объ. оставляя 2 export interface
-- в modals.ts переименов оба interface в IUser и ServerResponse + джейн. &lt;T&gt;
+- в modals.ts переименов оба interface в IUser и ServerResponse + джейнерик &lt;T&gt;
 
 <h4>Доработка API</h4>
-<p>0.6</p>
+<p>0.7.</p>
 
 - в github.api.ts указ. типизацию 1джейнермка - ServerResponse + передача ожидания &lt;IUser&gt;
 - пропис. лимит ответа с сервера в params - per_page
@@ -279,8 +279,8 @@ npx tailwindcss init -p
 - в query, после transformResponse, меняем ожидание на массив IUsers
 - проверка данных console.log(data); в HomePage.tsx
 
-<h4>Доработка store</h4>
-<p>0.7</p>
+<h4>Доработка store ПО middleware</h4>
+<p>0.8.</p>
 
 - в console должен быть Warning от RTK-Query по отсутствию middleware (кэш, авто обновление, )
 - middleware - fn послед-но вызыв. в процессе обновления данных в хранилище
@@ -288,6 +288,10 @@ npx tailwindcss init -p
 
 <h4>Визуализация полученных данных</h4>
 <p>0.</p> 26:22
+
+<h4>Настройки ввода поиска</h4>
+<p>0.9. - 0.19.</p>
+<p>Описание в файлах. Сюда, возможно, залью позже</p>
 
 <p>По видео "React стек 2022. TypeScript, Redux Toolkit, RTKQuery, Tailwind" - https://www.youtube.com/watch?v=lkbm-zlcFvs</p>
 
@@ -301,7 +305,7 @@ npx tailwindcss init -p
 <h4>Добавил Router</h4>
 
 <div>Многие процессы работы отражены в projects/RR_MN</div>
-<p>Основные моменты внесу после изучения</p>
+<p>Основные моменты внесу после изучения.</p>
 
 <p>По видео "React Router 6 - базовый роутинг React-приложения" - https://www.youtube.com/watch?v=0auS9DNTmzE&list=PLiZoB8JBsdznY1XwBcBhHL9L7S_shPGVE</p>
 

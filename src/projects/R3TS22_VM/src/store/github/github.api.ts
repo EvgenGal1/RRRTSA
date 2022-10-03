@@ -11,7 +11,7 @@ export const githubApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://api.github.com/",
   }),
-  // 0.18.
+  // 0.19.
   refetchOnFocus: true,
   // 0.4. 'конечные точки' это fn приним парам build(`строить`). возвращ объ. с перечислением всех конеч.точек
   endpoints: (build) => ({
@@ -19,9 +19,9 @@ export const githubApi = createApi({
     // searchUser: build.query({
     // 0.5. указ типизацию. 2 джейнерика. 1ый - ответ от сервера(врем. any), 2ой - принимаемый параметр для осущест. запроса (здесь string получаемая в query)
     // searchUser: build.query<any, string>({
-    // 0.6. указ 1ый джейн. - ServerResponse + передача ожидания <IUser>
+    // 0.7. указ 1ый джейн. - ServerResponse + передача ожидания <IUser>
     // searchUser: build.query<ServerResponse<IUser>, string>({
-    // 0.6. после transformResponse меняем ожидание на массив IUsers
+    // 0.7. после transformResponse меняем ожидание на массив IUsers
     searchUsers: build.query<IUser[], string>({
       // 0.4. передаём объ. с описанием запроса (либо объ. как здесь, либо строкой ("search/users" стр. конкотенируется с baseUrl))
       // 0.5. явно указ. тип поиска - строка
@@ -36,7 +36,7 @@ export const githubApi = createApi({
           per_page: 10,
         },
       }),
-      // 0.6. колбэк для трансформ. данных из ответа
+      // 0.7. колбэк для трансформ. данных из ответа
       transformResponse: (response: ServerResponse<IUser>) => response.items,
     }),
   }),
