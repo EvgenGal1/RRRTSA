@@ -98,11 +98,14 @@ https://webformyself.com/arxitektura-react-kak-strukturirovat-i-nastroit-prilozh
 
 - <p>State - Хранилище/банк</p>
 - <p>Actions - Действие/собятия. Описание событий в приложении</p>
-- <p>Dispatch - Диспетчер/сотрудник. Передаёт Action в Reducer</p>
-- <p>Reducer - Редуктор/передатчик. Измен State. Логика работы(Система).</p>
+- <p>Dispatch - Диспетчер/запуск. Передаёт Action в Reducer</p>
+- <p>Reducer - Прослушиватель/обработчик/передатчик. Принимает stete и action. Созд.нов. state. Логика работы(Система).</p>
 
 <p><b>State</b> - Текущее состояние приложения Redux</p>
-<p><b>Actions</b> - Объ. JS с полем type(описание категории/события), payload(доп.инфо).</p>
+<p><b>Actions</b> - Простой объ. JS с полем type(описание - fn|категор. действия/произошедшее событие), payload(доп.инфо).</p>
+<p><b>Reducer<b> - fn получ. <b>state<b> и <b>action<b>. Опред. как обнов. сост. е/и надо, возвращ. нов. сост.</p>
+<p><b>Dispatch</b> - метод для единств-го обновл. сост. и передачи action</p>
+<p><b>Selectors<b> - fn для извлеч. опред. сост из store</p>
 
 ```js
 const addTodoAction = {
@@ -122,7 +125,7 @@ const addTodo = (text) => {
 };
 ```
 
-- <p>Dispatch - Диспетчер/сотрудник. Передаёт Action в Reducer</p>
+- <p>Dispatch - Диспетчер/сотрудник. Передаёт Action и state в Reducer</p>
 
 * <p>Reducer - fn принимает текущий состояние и экшен (state и action), может обновл. state, возвращает новый state (раб как прослуш.событ. - обраб.событ. на основ.получ.действ.).
   - <p>Правила:</p>

@@ -1,6 +1,9 @@
 import React from "react";
-import { useTransition, animated } from "react-spring";
-import { Routes, Route, Link, Outlet, useLocation } from "react-router-dom";
+// import { useTransition, animated } from "react-spring";
+import {
+  Routes,
+  Route /* Link, Outlet, useLocation */,
+} from "react-router-dom";
 // import "./App.css";
 
 // import { Navigation } from "./Navigation";

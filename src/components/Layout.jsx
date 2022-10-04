@@ -1,6 +1,6 @@
 import { Link, Outlet, Routes, useLocation } from "react-router-dom";
 import { useTransition, animated } from "react-spring";
-import { Navigation } from "./Navigation.jsx";
+import { Navigation } from "./Navigation";
 
 const Layout = () => {
   const location = useLocation();
@@ -39,6 +39,7 @@ const Layout = () => {
             {/* <animated.div style={{position: "absolute", ${props}}}> */}
             <div style={{ position: "absolute", width: "100%" }}>
               {/* <Routes location={item}> */}
+              {/* ??? не раб - ошб при формате tsx - (property) location: Location. Тип "{ location: Location; }" не может быть назначен для типа "IntrinsicAttributes & OutletProps". Свойство "location" не существует в типе "IntrinsicAttributes & OutletProps" */}
               <Outlet location={item} />
               {/* </Routes> */}
             </div>
