@@ -21,6 +21,7 @@ import { RR_ULBITV } from "../projects/RR_ULBITV/RR_ULBITV";
 import { RRTS_ULBITV } from "../projects/RRTS_ULBITV/RRTS_ULBITV";
 import { Lesson2 } from "../projects/RR_ULBITV/scr/pages/Lesson2";
 import { Lesson3 } from "../projects/RR_ULBITV/scr/pages/Lesson3";
+import { Lesson4 } from "../projects/RR_ULBITV/scr/pages/Lesson4";
 //
 import { RR_MN } from "../projects/RR_MN/RR_MN";
 import { FirstPage } from "../projects/RR_MN/src/pages/FirstPage";
@@ -47,6 +48,7 @@ export function Router() {
           <Route path="RR_ULBITV/*" element={<RR_ULBITV />} />
           <Route path="Lesson2" element={<Lesson2 />} />
           <Route path="Lesson3" element={<Lesson3 />} />
+          <Route path="Lesson4" element={<Lesson4 />} />
           {/*  */}
           <Route path="/RRTS_ULBITV" element={<RRTS_ULBITV />} />
           {/*  */}

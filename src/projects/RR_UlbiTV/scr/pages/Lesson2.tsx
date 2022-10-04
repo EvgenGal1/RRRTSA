@@ -5,7 +5,7 @@ export function Lesson2() {
     <div className="RR_ULBITV--body__lesson2">
       <h2>Lesson2</h2>
       <div>
-        <span>store</span> - объ. с неск-ми методами.
+        <span>store</span> Хранилище сост. Объ. с неск-ми методами.
         <ul>
           <li>
             <b>getState()</b> - `получить состояние` получить сост.
@@ -25,9 +25,9 @@ export function Lesson2() {
       </div>
       <div>
         <b>store</b> создан. с fn <b>createStore</b>. первый парам{" "}
-        <b>reducer</b>, второй -{" "}
+        <b>reducer</b>, второй - middleware (промежут. ПО выполн. м/у
+        запрос-ответ)
       </div>
-      урок
       <div>
         <span>reducer</span> - чистая fn (и простая и стрелочная) приним 2 парам
         - <b>state</b> и <b>action</b>.

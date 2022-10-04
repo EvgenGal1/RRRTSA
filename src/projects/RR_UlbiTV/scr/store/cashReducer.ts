@@ -1,7 +1,7 @@
 // состояние по умолчанию
 const defaultState = {
   // раб. с числами
-  cash: 0,
+  cashNum: 0,
 };
 // попытка исправ ошб. от composeWithDevTools - Ни одна перегрузка не соответствует этому вызову
 // interface defStNum {
@@ -18,9 +18,9 @@ const cashReducer = (state = defaultState, action: any) => {
   switch (action.type) {
     case "ADD_CASH":
       // ч/з спрет разворач стар.сост., обращ. к конкретн. полю и его изменяем
-      return { ...state, cash: state.cash + action.payload };
+      return { ...state, cashNum: state.cashNum + action.payload };
     case "GET_CASH":
-      return { ...state, cash: state.cash - action.payload };
+      return { ...state, cashNum: state.cashNum - action.payload };
     default:
       return state;
   }
