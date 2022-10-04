@@ -13,7 +13,7 @@ import "./index.css";
 // import reportWebVitals from "./types/reportWebVitals";
 
 // RR_UlbiTV ----------------------------------------------------------------------------------
-import { store } from "./projects/RR_UlbiTV/scr/store";
+import { store } from "./projects/RR_ULBITV/scr/store";
 // import { legacy_createStore as createStore } from "redux";
 
 // состояние по умолчанию

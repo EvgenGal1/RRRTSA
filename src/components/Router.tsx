@@ -9,18 +9,27 @@ import {
 // import { Navigation } from "./Navigation";
 import { RRRTS_EG } from "../pages/RRRTS_EG";
 
-import { RR_Doc } from "../projects/RR_Doc/RR_Doc";
+//
+import { RR_DOC } from "../projects/RR_DOC/RR_Doc";
+//
 import { R3TS22_VM } from "../projects/R3TS22_VM/R3TS22_VM";
 import { HomePage } from "../projects/R3TS22_VM/src/pages/HomePage";
 import { FavoritesPage } from "../projects/R3TS22_VM/src/pages/FavoritesPage";
-import { RR_UlbiTV } from "../projects/RR_UlbiTV/RR_UlbiTV";
-import { RRTS_UlbiTV } from "../projects/RRTS_UlbiTV/RRTS_UlbiTV";
+//
+import { RR_ULBITV } from "../projects/RR_ULBITV/RR_ULBITV";
+//
+import { RRTS_ULBITV } from "../projects/RRTS_ULBITV/RRTS_ULBITV";
+import { Lesson2 } from "../projects/RR_ULBITV/scr/pages/Lesson2";
+import { Lesson3 } from "../projects/RR_ULBITV/scr/pages/Lesson3";
+//
 import { RR_MN } from "../projects/RR_MN/RR_MN";
 import { FirstPage } from "../projects/RR_MN/src/pages/FirstPage";
 import { SecondPage } from "../projects/RR_MN/src/pages/SecondPage";
 import { ThirdPage } from "../projects/RR_MN/src/pages/ThirdPage";
+//
 import { Users } from "../projects/R3TS22_VM/src/pages/Users";
 
+//
 import { Layout } from "./Layout";
 
 export function Router() {
@@ -29,16 +38,23 @@ export function Router() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<RRRTS_EG />} />
-          <Route path="/RR_Doc" element={<RR_Doc />} />
-          <Route path="/R3TS22_VM/*" element={<R3TS22_VM />}></Route>
+          <Route path="RR_DOC" element={<RR_DOC />} />
+          {/*  */}
+          <Route path="R3TS22_VM/*" element={<R3TS22_VM />} />
           <Route path="favorites" element={<FavoritesPage />} />
           <Route path="HomePage" element={<HomePage />} />
-          <Route path="/RR_UlbiTV" element={<RR_UlbiTV />} />
-          <Route path="/RRTS_UlbiTV" element={<RRTS_UlbiTV />} />
-          <Route path="RR_MN/*" element={<RR_MN />}></Route>
+          {/*  */}
+          <Route path="RR_ULBITV/*" element={<RR_ULBITV />} />
+          <Route path="Lesson2" element={<Lesson2 />} />
+          <Route path="Lesson3" element={<Lesson3 />} />
+          {/*  */}
+          <Route path="/RRTS_ULBITV" element={<RRTS_ULBITV />} />
+          {/*  */}
+          <Route path="RR_MN/*" element={<RR_MN />} />
           <Route path="FirstPage" element={<FirstPage />} />
           <Route path="SecondPage" element={<SecondPage />} />
           <Route path="ThirdPage" element={<ThirdPage />} />
+          {/*  */}
           <Route path="Users/*" element={<Users />} />
           {/* <Route path="Users2/*" element={<Users />}>
             <Route path="favorites" element={<FavoritesPage />} />

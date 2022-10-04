@@ -5,15 +5,15 @@ import "./App.css";
 import logo from "../../logo.svg";
 
 // импорт хранилища
-import store from "./src/store/store.js";
+import store from "./src/store/store";
 // импорт Поставщика для обёртки
 import { Provider } from "react-redux";
 // import * as serviceWorker from './serviceWorker';
 
-import { Counter } from "./src/features/counter/Counter.js";
+import { Counter } from "./src/features/counter/Counter";
 import { CounterTS } from "../../features/counter/Counter";
 
-function RR_DocApp() {
+function RR_DOCAPP() {
   return (
     <>
       <div className="RR_DOC__desc">
@@ -82,12 +82,12 @@ function RR_DocApp() {
   );
 }
 
-function RR_Doc() {
+function RR_DOC() {
   return (
     // обёртка основного Компонента. Хранилище передано как св-во
     <Provider store={store}>
-      <RR_DocApp />
+      <RR_DOCAPP />
     </Provider>
   );
 }
-export { RR_Doc };
+export { RR_DOC };

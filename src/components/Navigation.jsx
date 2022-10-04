@@ -85,9 +85,21 @@ export function Navigation() {
                 </ul>
               </span>
               <span className="menu-top__items m-t-items">
-                <NavLink to="/RR_UlbiTV" className="m-t-items__navlink">
-                  RR_UlbiTV
+                <NavLink to="RR_UlbiTV" className="m-t-items__navlink">
+                  RR_ULBITV
                 </NavLink>
+                <ul className="m-t-items__ul m-t-its-ul">
+                  <li className="m-t-its-ul__li">
+                    <Link to="/Lesson2" className="">
+                      Lesson2
+                    </Link>
+                  </li>
+                  <li className="m-t-its-ul__li">
+                    <Link to="Lesson3" className="">
+                      Lesson3
+                    </Link>
+                  </li>
+                </ul>
               </span>
               <span className="menu-top__items m-t-items">
                 <NavLink to="/RRTS_UlbiTV" className="m-t-items__navlink">

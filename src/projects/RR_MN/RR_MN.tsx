@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, NavLink, Link } from "react-router-dom";
+import { Routes, Route, /* NavLink, */ Link } from "react-router-dom";
 
 import { FirstPage } from "./src/pages/FirstPage";
 import { SecondPage } from "./src/pages/SecondPage";

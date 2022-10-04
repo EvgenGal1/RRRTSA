@@ -1,24 +1,21 @@
-import { legacy_createStore as createStore } from "redux";
+// логика по раб с данными
+import { legacy_createStore as createStore, combineReducers } from "redux";
+import { cashReducer } from "./cashReducer";
+import { customReducer } from "./customReducer";
 
-// состояние по умолчанию
-const defaultState = {
-  cash: 0,
-};
+// подкл. инстр.развраб. для удобства разработки
+// стар способ
+import { composeWithDevTools } from "redux-devtools-extension";
+// нов. способ
+// import { composeWithDevTools } from "@redux-devtools/extension/lib/types/logOnly";
 
-// логика обработки сост. по state и action
-const reducer = (state = defaultState, action: any) => {
-  switch (action.type) {
-    case "ADD_CASH":
-      // ч/з спрет разворач стар.сост., обращ. к конкретн. полю и его изменяем
-      return { ...state, cash: state.cash + action.payload };
-    case "GET_CASH":
-      return { ...state, cash: state.cash - action.payload };
-    default:
-      return state;
-  }
-};
+// Объединяем редукторы ч/з объ. rootR и вызов fn combineR.
+const rootReducer = combineReducers({
+  // fn приним. парам-ом объ., куда добавл. reducerы назв.|ключ-значением
+  cashR: cashReducer,
+  customR: customReducer,
+});
 
 // создан. store
-const store = createStore(reducer);
-
-export { store /* defaultState, cash */ };
+// export const store = createStore(rootReducer);
+export const store = createStore(rootReducer, composeWithDevTools());

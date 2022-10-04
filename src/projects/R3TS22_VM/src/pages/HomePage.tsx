@@ -66,7 +66,7 @@ export function HomePage() {
             {/* 0.16. dropdown. ранее был div с lorem, измен. на ul + условия + .overflow.list */}
             {/* 0.18. показ выпад.списка по условию е/и он есть. для скрытия после очистки набора */}
             {dropdown && (
-              <ul className="list-none overflow-y-scroll top-[42px] left-0 right-0 max-h-[200px] shadow-md bg-white">
+              <ul className="list-none !important overflow-y-scroll top-[42px] left-0 right-0 max-h-[200px] shadow-md bg-white">
                 {/* absolute - врем убрал для одинаковыз растояний пред/след блоков */}
                 {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio,
               sunt! */}
@@ -77,6 +77,7 @@ export function HomePage() {
                   <li
                     key={user.id}
                     className="py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer"
+                    style={{ listStyle: "none" }}
                   >
                     {user.login}
                   </li>
