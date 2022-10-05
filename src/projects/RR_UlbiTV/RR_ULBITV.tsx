@@ -8,6 +8,8 @@ import { Lesson2 } from "./scr/pages/Lesson2";
 import { Lesson3 } from "./scr/pages/Lesson3";
 import { Lesson4 } from "./scr/pages/Lesson4";
 
+import { addCustomAction, removeCustomAction } from "./scr/store/customReducer";
+
 // export function RR_UlbiTV() {
 export function RR_ULBITV() {
   // function RR_UlbiTV() {
@@ -43,12 +45,16 @@ export function RR_ULBITV() {
       id: Date.now(),
     };
     // в dispatch передаём action(объ. с типом и данными)
-    dispatch({ type: "ADD_CUSTOM", payload: customer });
+    // dispatch({ type: "ADD_CUSTOM", payload: customer });
+    // рефактор. в dispatch вызов fn()addCustomAction(оптимизация передачи action) который возвращ.объ. куда передаём данные
+    dispatch(addCustomAction(customer));
   };
   // удален польз-ля из списка
   const removeCustom = (customer: any) => {
     // передаем тип и перебраный id customer
-    dispatch({ type: "REMOVE_CUSTOM", payload: customer.id });
+    // dispatch({ type: "REMOVE_CUSTOM", payload: customer.id });
+    // рефактор. передача action ч/з
+    dispatch(removeCustomAction(customer.id));
   };
 
   return (
