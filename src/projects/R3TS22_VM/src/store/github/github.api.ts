@@ -17,7 +17,7 @@ export const githubApi = createApi({
   endpoints: (build) => ({
     // 0.4. получ. список пользователей (searchUser назв.). ключ объ.: с build формир запрос (метод query - запросы/получене данных, mutation - изменения)
     // searchUser: build.query({
-    // 0.5. указ типизацию. 2 джейнерика. 1ый - ответ от сервера(врем. any), 2ой - принимаемый параметр для осущест. запроса (здесь string получаемая в query)
+    // 0.5. указ типизацию. 2 дженерика. 1ый - ответ от сервера(врем. any), 2ой - принимаемый параметр для осущест. запроса (здесь string получаемая в query)
     // searchUser: build.query<any, string>({
     // 0.7. указ 1ый джейн. - ServerResponse + передача ожидания <IUser>
     // searchUser: build.query<ServerResponse<IUser>, string>({

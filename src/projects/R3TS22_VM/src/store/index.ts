@@ -2,7 +2,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import { githubApi } from "./github/github.api";
-// import { githubApi } from "./github/github.api`";
 
 // 0.3. экспорт конст store созд. ч/з fn()configureStore(`настройка Хранилища`)
 export const store = configureStore({

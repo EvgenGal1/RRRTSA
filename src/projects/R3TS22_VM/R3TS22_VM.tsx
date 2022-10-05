@@ -19,29 +19,31 @@ export function R3TS22_VM() {
       {/* <Provider store={store}> */}
       <div className="R3TS22_VM">
         <div className="R3TS22_VM__nav">
-          <b>перед NavLink</b>
+          {/* <b>перед NavLink</b> */}
           <nav>
             <NavLink to="HomePage">My HomePage</NavLink>
             <NavLink to="favorites">My favorites</NavLink>
           </nav>
-          <b>после NavLink</b>
+          {/* <b>после NavLink</b> */}
         </div>
+        <hr />
         <div className="R3TS22_VM__body">
           <h1>R3TS22_VM</h1>
-          <div>
+          <p>
             По видео "React стек 2022. TypeScript, Redux Toolkit, RTKQuery,
             Tailwind" - https://www.youtube.com/watch?v=lkbm-zlcFvs
-          </div>
+          </p>
         </div>
+        <hr />
         <div className="R3TS22_VM__pages">
-          <b>перед Router</b>
+          {/* <b>перед Router</b> */}
           <Routes>
             222
             <Route path="HomePage" element={<HomePage />} />
             <Route path="favorites" element={<FavoritesPage />} />
             333 444
           </Routes>
-          <b>после Router</b>
+          {/* <b>после Router</b> */}
         </div>
       </div>
       {/* </Provider> */}

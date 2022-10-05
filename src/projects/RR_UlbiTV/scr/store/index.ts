@@ -1,9 +1,10 @@
 // логика по раб с данными
 import { legacy_createStore as createStore, combineReducers } from "redux";
+// подкл. reducerы
 import { cashReducer } from "./cashReducer";
 import { customReducer } from "./customReducer";
 
-// подкл. инстр.развраб. для удобства разработки
+// подкл. инстр.разраб. для удобства разработки/отслеж. сост в redux
 // стар способ
 import { composeWithDevTools } from "redux-devtools-extension";
 // нов. способ

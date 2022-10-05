@@ -19,8 +19,8 @@ export function RR_ULBITV() {
   const cashNum = useSelector((state: any) => state.cashR.cashNum);
   // console.log("cash : " + cash);
 
-  // les4. получ массив клиенртов? обращ. к ключу reducerа и затем к перем.
-  const customArr = useSelector((state: any) => state.customR.customArr);
+  // les4. получ массив клиентов. обращ. к ключу reducerа и затем к перем.
+  const customArrs = useSelector((state: any) => state.customR.customArrs);
 
   // fn по изменению суммы. указ по умолча. фиксир 5
   // const addCash = () => {
@@ -34,6 +34,23 @@ export function RR_ULBITV() {
   const getCash = (cash: string | number) => {
     dispatch({ type: "GET_CASH", payload: cash });
   };
+
+  // let4. fn добавл. польз-ля по клик. приним имя
+  const addCustom = (name: string | number | null) => {
+    // данные action - объ.полъз-ля. Парам. - имя и id.текущ.время
+    const customer = {
+      name,
+      id: Date.now(),
+    };
+    // в dispatch передаём action(объ. с типом и данными)
+    dispatch({ type: "ADD_CUSTOM", payload: customer });
+  };
+  // удален польз-ля из списка
+  const removeCustom = (customer: any) => {
+    // передаем тип и перебраный id customer
+    dispatch({ type: "REMOVE_CUSTOM", payload: customer.id });
+  };
+
   return (
     <>
       {/* // В `Провайдер` из react-redux, оборач приложения, для передачи store в компоненты */}
@@ -45,20 +62,12 @@ export function RR_ULBITV() {
             По видео "Redux и React" -
             https://www.youtube.com/watch?v=5Qtqzeh5FeM
           </p>
-          {/* cashNum" */}
           <div className="body--content">
+            {/* cashNum" */}
             <div className="content__cashNum">
-              <div className="cashNum--count">
-                <p>cashNum - {cashNum}</p>
-              </div>
               <div className="cashNum--button">
                 <button
                   type="button"
-                  style={{
-                    display: "flex",
-                    padding: "5px",
-                    marginRight: "5px",
-                  }}
                   // вызов fn addCash по клик
                   // onClick={addCash}
                   // передаём парам-ом fn promt, преобразов ввод к числу, т.к. приним. строку
@@ -68,29 +77,58 @@ export function RR_ULBITV() {
                 </button>
                 <button
                   type="button"
-                  style={{
-                    display: "flex",
-                    padding: "5px",
-                    marginRight: "5px",
-                  }}
                   // по клик вызов fn getCash
                   onClick={() => getCash(Number(prompt()))}
                 >
                   Снять
                 </button>
               </div>
+              <div className="cashNum--count">
+                <p>cashNum {cashNum}</p>
+              </div>
             </div>
-            {/* customArr */}
-            <div className="content__customArr">
-              <div className="customArr--count">
-                <p>customArr - {customArr}</p>
+            {/* customArrs */}
+            <div className="content__customArrs">
+              <div className="customArrs--button">
+                {/* let4. вызов fn addCustom добавл.кл. */}
+                <button
+                  type="button"
+                  // по клик вызов fn getCash
+                  onClick={() => addCustom(prompt())}
+                >
+                  Добавить клиента
+                </button>
+                {/* <button
+                  type="button"
+                  // по клик вызов fn getCash
+                  onClick={() => getCash(Number(prompt()))}
+                >
+                  Снять
+                </button> */}
               </div>
-              <div className="customArr--button">
-                <p>пока пусто</p>
-              </div>
+              {/* les4. вывод блока по условию длины массива */}
+              {customArrs.length > 0 ? (
+                <div className="customArrs--count">
+                  {/* е/и массив не пусто - ч\з map итерируем мас.customArrs и el.mame разворач в div */}
+                  {customArrs.map((customArr: any) => (
+                    // + слушатель клик на каждого для удаления из списка
+                    <li
+                      onClick={() => removeCustom(customArr)}
+                      key={customArr.id}
+                      style={{ listStyle: "none" }}
+                    >
+                      {customArr.name}
+                    </li>
+                  ))}
+                  {/* <p>customArrs {customArrs}</p> */}
+                </div>
+              ) : (
+                <div>Клиенты отсутствуют...</div>
+              )}
             </div>
           </div>
         </div>
+        <hr />
         <div className="RR_ULBITV__nav">
           <nav>
             <NavLink to="Lesson2">Lesson2</NavLink>
@@ -101,6 +139,7 @@ export function RR_ULBITV() {
           </li> */}
           </nav>
         </div>
+        <hr />
         <div className="RR_ULBITV__lessons">
           <Routes>
             <Route path="Lesson2" element={<Lesson2 />} />

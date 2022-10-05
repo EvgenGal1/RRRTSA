@@ -11,23 +11,26 @@ export function RR_MN() {
   // const [, set] = use();
   return (
     <div className="RR_MN">
-      <b>перед Link в RR_MN 0</b>
-      <div>
+      <div className="RR_MN__nav">
+        {/* <b>перед Link в RR_MN 0</b> */}
         {/* <Link to="firstPage">1</Link> */}
-        <ul>
-          <li>
-            <Link to="/FirstPage">FirstPage link</Link>
-          </li>
-          <li>
-            <Link to="/SecondPage">NavLink и его кастомизация</Link>
-          </li>
-          <li>
-            <Link to="/ThirdPage">ThirdPage link</Link>
-          </li>
-        </ul>
+        <nav>
+          {/* <ul> */}
+          {/* <li> */}
+          <Link to="/FirstPage">FirstPage link</Link>
+          {/* </li> */}
+          {/* <li> */}
+          <Link to="/SecondPage">NavLink</Link>
+          {/* </li> */}
+          {/* <li> */}
+          <Link to="/ThirdPage">ThirdPage link</Link>
+          {/* </li> */}
+          {/* </ul> */}
+        </nav>
+        {/* <b>после Link в RR_MN 1</b> */}
       </div>
-      <b>после Link в RR_MN 1</b>
-      <div>
+      <hr />
+      <div className="RR_MN__body">
         <div>
           <h1>RR_MN</h1>
           <p>
@@ -109,14 +112,17 @@ export function RR_MN() {
           </p>
         </div>
       </div>
-      <b>перед Routes в RR_MN 0</b>
-      {/* для вложенности в Routes. Отражает страницы вместе с данными вверху */}
-      <Routes>
-        <Route path="/FirstPage" element={<FirstPage />} />
-        <Route path="/SecondPage" element={<SecondPage />} />
-        <Route path="/ThirdPage" element={<ThirdPage />} />
-      </Routes>
-      <b>после Routes в RR_MN 1</b>
+      <hr />
+      <div className="RR_MN__pages">
+        {/* <b>перед Routes в RR_MN 0</b> */}
+        {/* для вложенности в Routes. Отражает страницы вместе с данными вверху */}
+        <Routes>
+          <Route path="/FirstPage" element={<FirstPage />} />
+          <Route path="/SecondPage" element={<SecondPage />} />
+          <Route path="/ThirdPage" element={<ThirdPage />} />
+        </Routes>
+        {/* <b>после Routes в RR_MN 1</b> */}
+      </div>
     </div>
   );
 }

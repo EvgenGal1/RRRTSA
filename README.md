@@ -258,7 +258,7 @@ npx tailwindcss init -p
 - смотрим подсказку (ctrl+пробел) полей в фигурных скобках
 - пропис поля {isLoading,isError,data} (загрузка,ошибки,данные)
 - в хук TS ошибка т.к. не передали 2 параметра, исправ в github.api.ts
-- в github.api.ts указ. типизацию в endpoints:searchUser:query 2 джейнерика
+- в github.api.ts указ. типизацию в endpoints:searchUser:query 2 дженерика
 - дженерик — возможность созд. компоненты раб. с неск-ми типами
 - 1ый - ответ от сервера(врем. any), 2ой - принимаемый параметр для осущест. запроса(string)
 - указ. тип поиска, парам. запроса, св-во
@@ -270,7 +270,7 @@ npx tailwindcss init -p
 - в браузере DevTools.Network видим асинхр запрос
 - типизацация в TS: из поля Response копир все и генерируем в JSON? на http://json2ts.com
 - ++ modals/modals.ts вставл. из сайти, убираем наружн. объ. оставляя 2 export interface
-- в modals.ts переименов оба interface в IUser и ServerResponse + джейнерик &lt;T&gt;
+- в modals.ts переименов оба interface в IUser и ServerResponse + дженерик &lt;T&gt;
 
 <h4>Доработка API</h4>
 <p>0.7.</p>

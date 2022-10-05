@@ -1,10 +1,12 @@
 main > div > div > div {
-  background-color: rgb(233, 218, 150);
-  // .RR_MN {
-  background-color: rgb(233, 218, 150);
-  padding: 15px 0px;
+  background-color: #e9da96;
+  // padding: 15px 2%;
+  padding: 0px 2%;
+  hr {
+    margin: 0 -2%;
+  }
   .SecondPage {
-    background-color: rgb(104, 93, 47);
+    background-color: #685d2f;
   }
   h1 {
     font-size: 20px;
@@ -15,10 +17,11 @@ main > div > div > div {
   h2 {
     font-weight: 800;
     font-size: 18px;
-    margin: 20px 0px 10px;
+    margin: 10px 0px;
   }
   div {
-    margin: 10px 0px;
+    // margin: 10px 0px;
+    padding: 10px 0px;
   }
   span {
     font-weight: bold;
@@ -73,7 +76,7 @@ main > div > div > div {
       display: flex;
       align-content: center;
       justify-content: space-evenly;
-      align-items: center;
+      // align-items: center;
       > div[class^="content__"] {
         // RR_ULBITV--body__content
         display: flex;
@@ -87,7 +90,11 @@ main > div > div > div {
           margin-right: 5px;
         }
         div[class$="--button"] {
-          display: flex;
+          button {
+            // display: flex;
+            padding: 5px;
+            margin-right: 5px;
+          }
         }
       }
     }
