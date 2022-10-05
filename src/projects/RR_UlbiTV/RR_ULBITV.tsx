@@ -7,6 +7,7 @@ import { Provider, useDispatch, useSelector } from "react-redux";
 import { Lesson2 } from "./scr/pages/Lesson2";
 import { Lesson3 } from "./scr/pages/Lesson3";
 import { Lesson4 } from "./scr/pages/Lesson4";
+import { Lesson5 } from "./scr/pages/Lesson5";
 
 import { addCustomAction, removeCustomAction } from "./scr/store/customReducer";
 
@@ -37,7 +38,7 @@ export function RR_ULBITV() {
     dispatch({ type: "GET_CASH", payload: cash });
   };
 
-  // let4. fn добавл. польз-ля по клик. приним имя
+  // les4. fn добавл. польз-ля по клик. приним имя
   const addCustom = (name: string | number | null) => {
     // данные action - объ.полъз-ля. Парам. - имя и id.текущ.время
     const customer = {
@@ -49,11 +50,11 @@ export function RR_ULBITV() {
     // рефактор. в dispatch вызов fn()addCustomAction(оптимизация передачи action) который возвращ.объ. куда передаём данные
     dispatch(addCustomAction(customer));
   };
-  // удален польз-ля из списка
+  // fn удален польз-ля из списка
   const removeCustom = (customer: any) => {
     // передаем тип и перебраный id customer
     // dispatch({ type: "REMOVE_CUSTOM", payload: customer.id });
-    // рефактор. передача action ч/з
+    // рефактор. передача action ч/з removeCustomAction
     dispatch(removeCustomAction(customer.id));
   };
 
@@ -96,7 +97,7 @@ export function RR_ULBITV() {
             {/* customArrs */}
             <div className="content__customArrs">
               <div className="customArrs--button">
-                {/* let4. вызов fn addCustom добавл.кл. */}
+                {/* les4. вызов fn addCustom добавл.кл. */}
                 <button
                   type="button"
                   // по клик вызов fn getCash
@@ -113,24 +114,31 @@ export function RR_ULBITV() {
                 </button> */}
               </div>
               {/* les4. вывод блока по условию длины массива */}
-              {customArrs.length > 0 ? (
-                <div className="customArrs--count">
-                  {/* е/и массив не пусто - ч\з map итерируем мас.customArrs и el.mame разворач в div */}
-                  {customArrs.map((customArr: any) => (
-                    // + слушатель клик на каждого для удаления из списка
-                    <li
-                      onClick={() => removeCustom(customArr)}
-                      key={customArr.id}
-                      style={{ listStyle: "none" }}
-                    >
-                      {customArr.name}
-                    </li>
-                  ))}
-                  {/* <p>customArrs {customArrs}</p> */}
-                </div>
-              ) : (
-                <div>Клиенты отсутствуют...</div>
-              )}
+              <div className="customArrs--count">
+                {customArrs.length > 0 ? (
+                  <>
+                    {/* е/и массив не пусто - ч\з map итерируем мас.customArrs и el.mame разворач в div */}
+                    {customArrs.map((customArr: any) => (
+                      // + слушатель клик на каждого для удаления из списка
+                      <li
+                        onClick={() => removeCustom(customArr)}
+                        key={customArr.id}
+                        style={{ listStyle: "none" }}
+                      >
+                        {customArr.name}
+                      </li>
+                    ))}
+                  </>
+                ) : (
+                  <>customArrs пуст...</>
+                )}
+              </div>
+            </div>
+            <div className="content__fetch">
+              <div className="fetch--button">
+                <button>button</button>
+              </div>
+              <div className="fetch--count">count</div>
             </div>
           </div>
         </div>
@@ -140,6 +148,7 @@ export function RR_ULBITV() {
             <NavLink to="Lesson2">Lesson2</NavLink>
             <NavLink to="Lesson3">Lesson3</NavLink>
             <NavLink to="Lesson4">Lesson4</NavLink>
+            <NavLink to="Lesson5">Lesson5</NavLink>
             {/* <li>
             <NavLink to="/ThirdPage">Lesson4</NavLink>
           </li> */}
@@ -151,6 +160,7 @@ export function RR_ULBITV() {
             <Route path="Lesson2" element={<Lesson2 />} />
             <Route path="Lesson3" element={<Lesson3 />} />
             <Route path="Lesson4" element={<Lesson4 />} />
+            <Route path="Lesson5" element={<Lesson5 />} />
           </Routes>
         </div>
       </div>

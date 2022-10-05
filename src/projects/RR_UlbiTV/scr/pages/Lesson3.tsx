@@ -4,6 +4,7 @@ export function Lesson3() {
   return (
     <div className="RR_ULBITV--body__lesson3">
       <h2>Lesson3</h2>
+      <h3>cashReducer(числа), Combine Reducers, Redux DevTools</h3>
       <div>
         Делаем <b>декомпозицию</b> (разделение на части). Для поддержки разных
         reducerов.
@@ -12,7 +13,7 @@ export function Lesson3() {
           ++ в store/ <span>cashReducer.ts</span> и{" "}
           <span>customReducer.ts</span>
         </p>
-        <p>Перенос перем. defaultState и reducerов в файлы</p>
+        <p>Перенос перем. defaultState из reducerов в файлы</p>
         <p>
           <span>cashReducer</span> раб с <span>number</span>
         </p>
@@ -26,8 +27,8 @@ export function Lesson3() {
         <p>+ export каждого</p>
       </div>
       <div>
-        Делаем <b>рефакторинг</b> (упрощение кода без изменения поведения для
-        обслуж.,расшир.,понимания).
+        Делаем <b>рефакторинг</b> - упрощение кода без изменения поведения для
+        обслуж.,расшир.,понимания.
         <p>
           ++ <span>store/index.ts</span>. Переносим сюда иниц-цию store + import
           createStore, + export store.
@@ -45,8 +46,8 @@ export function Lesson3() {
       </div>
       <div>
         <p>
-          Правим код в <b>useSelector</b> и где ранее вызыв. <b>payload</b>, от
-          ошб. т.к. счас reducerов неск-ко а обращаемся к одному полю. (счас из
+          Правим код в <b>useSelector</b> где ранее вызыв. <b>payload</b>, от
+          ошб. т.к. счас reducerов неск-ко, а обращаемся к одному полю. (счас из
           сост. получ. reducer, потом переменную - state.cashR.cash)
         </p>
       </div>
@@ -69,7 +70,8 @@ export function Lesson3() {
           + устан. расширен. для браузера - <span>Redux DevTools</span>
         </p>
         <p>
-          Для присмотра/контроля/наблюдения - откр. в браузере DevTools.Redux
+          Для присмотра/контроля/наблюдения - откр. в браузере{" "}
+          <b>DevTools.Redux</b>
           (счас для просмотра state RR_ULBITV нужно откл. Provider.stete в
           R3TS22_VM. Позже совмещу все reducerы)
         </p>

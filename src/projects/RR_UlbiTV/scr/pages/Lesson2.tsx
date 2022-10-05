@@ -4,6 +4,7 @@ export function Lesson2() {
   return (
     <div className="RR_ULBITV--body__lesson2">
       <h2>Lesson2</h2>
+      <h3>State, reducer, action + redux hooks useDispatch и useSelector</h3>
       <div>
         <span>store</span> Хранилище сост. Объ. с неск-ми методами.
         <ul>
@@ -41,32 +42,47 @@ export function Lesson2() {
         <p>reducer передаём первым парам в createStore</p>
       </div>
       <div>
-        <span>state</span> - объ./масс./примитив с хранящ. данными. Получ сост.
-        от хука <b>useSelector()</b>
+        <p>
+          <span>state</span> - объ./масс./примитив с хранящ. данными. Получ
+          сост. от хука <b>useSelector()</b>
+        </p>
         <p>
           <b>useSelector</b> парам-ом приним. fn, а fn приним. парам-ом state, а
           из state получ. переменную(счас cash). смотр в логах
         </p>
       </div>
       <div>
-        <span>actions</span> - простой объ. JS с полями type и payload (не
-        обязат.)
+        <p>
+          <span>actions</span> - простой объ. JS с полями type и payload (не
+          обязат.)
+        </p>
       </div>
       <div>
-        <span>dispatch</span> - fn для измен сост. Получаем от хука{" "}
-        <b>useDispatch()</b>. проброс action в reducer
+        <p>
+          <span>dispatch</span> - fn для измен сост. Получаем от хука
+          <b>useDispatch()</b>. проброс action в reducer
+        </p>
       </div>
       <div>
         <h2>Общая логика</h2>
-        <p>
-          <b>Dispatch</b> передаётся <b>action</b> в <b>reducer</b>. В{" "}
-          <b>reducer</b> определено как <b>action</b> будет изменять{" "}
-          <b>state</b>. <b>reducer</b> чиста fn принимающая <b>state</b> и{" "}
-          <b>action</b> и всегда возвращающая новый объект <b>state</b>.{" "}
-          <b>reducer</b> передается в <b>store</b>, а через обёртку{" "}
-          <b>Provider</b> этот <b>store</b> передается в компоненты, где
-          состояние используется.
-        </p>
+        <ul>
+          <li>
+            <b>Dispatch</b> передаётся <b>action</b> в <b>reducer</b>.
+          </li>
+          <li>
+            В <b>reducer</b> определено как <b>action</b> будет изменять
+            <b>state</b>.
+          </li>
+          <li>
+            <b>reducer</b> чиста fn принимающая <b>state</b> и <b>action</b> и
+            всегда возвращающая новый объект <b>state</b>.
+          </li>
+          <li>
+            <b>reducer</b> передается в <b>store</b>, а через обёртку{" "}
+            <b>Provider</b> этот
+            <b>store</b> передается в компоненты, где состояние используется.
+          </li>
+        </ul>
       </div>
     </div>
   );
