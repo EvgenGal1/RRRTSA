@@ -28,7 +28,11 @@ export const customReducer = (
     // les5. + нов. action к thunk для добавл. кучи польз-лей
     case ADD_MANY_CUSTOM:
       // возвращ.нов.объ.сост.{}, ...разворач.стар.сост., измен/присвой.нов.масс.:[] где ...разворач.стар.масс. + ...масс. с сервера переданый ч/з action
-      return { ...state, customArrs: [...state.customArrs, ...action.payload] };
+      // return { ...state, customArrs: [...state.customArrs, ...action.payload] };
+      return {
+        ...state,
+        customArrs: [...state.customArrs, { ...action.payload }],
+      };
     case ADD_CUSTOM:
       // les4. добавл. нов.польз-ля переданого ч/з action. ч/з спрет ...разворач.стар.масс., возвращ.нов.объ.: присваиваем нов.масс.[], где ...разворач.сущ-щий масс. + в конце объ.переданый ч/з action
       return { ...state, customArrs: [...state.customArrs, action.payload] };
@@ -56,6 +60,6 @@ export const removeCustomAction = (payload: any) => ({
 });
 // les5. fn() ~createAction к Many для оптимизации передачи action
 export const addManyCustomAction = (payload: any) => ({
-  type: ADD_CUSTOM,
+  type: ADD_MANY_CUSTOM,
   payload,
 });

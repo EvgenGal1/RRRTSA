@@ -60,7 +60,8 @@ export function Lesson5() {
         <p style={{ color: "red", backgroundColor: "black" }}>
           <b>
             в RR_ULBITV на onClick fn() dispatch(fetchManyCustomApi()) выдаёт
-            ошб
+            ошб - Аргумент типа "(dispatch: any) =&gt; void" нельзя назначить
+            параметру типа "AnyAction"
           </b>
         </p>
         <p>
@@ -70,7 +71,45 @@ export function Lesson5() {
         <p></p>
       </div>
       <div>
-        <p></p>
+        <p>
+          Перевел компоненты manyCustom.api.ts и RR_ULBITV.tsx{" "}
+          <b>в JS формат</b>.
+        </p>
+        <p>
+          От отсутстия типизации, ушла ошб.{" "}
+          <b>Аргумент типа ... типа "AnyAction"</b>
+        </p>
+        <p style={{ color: "red", backgroundColor: "black" }}>
+          Появила нов.ошб.{" "}
+          <b>Warning: Each child in a list should have a unique "key" prop.</b>
+        </p>
+        <p>
+          Куда приписать key и/или как вытащить из fetch json итерированый
+          список пока не разобрался
+        </p>
+        <p>
+          кнп с{" "}
+          <b>onClick=&#123;() =&gt; dispatch(fetchManyCustomApi())&#125;</b>{" "}
+          пока <b>заглушил</b>
+        </p>
+        <p>При различных попытка исправления получал такие ошибки:</p>
+        <ul style={{ color: "red", backgroundColor: "black" }}>
+          <li>
+            Uncaught (in promise) TypeError: Cannot read properties of undefined
+            (reading 'json')
+          </li>
+          <li>Check the render method of `RR_ULBITV`.</li>
+          <li>
+            uncaught TypeError: Cannot read properties of undefined (reading
+            'map')
+          </li>
+          <li>
+            manyCustom.api.js:28 Uncaught (in promise) TypeError: Cannot read
+            properties of undefined (reading 'error')
+          </li>
+          <li>Cannot read properties of undefined (reading 'now')</li>
+          <li>action.payload is not iterable</li>
+        </ul>
       </div>
       <p>
         <span>JSONPlaceholder</span> - Бесплатный поддельный API для

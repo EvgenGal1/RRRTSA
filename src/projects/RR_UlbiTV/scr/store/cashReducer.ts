@@ -6,11 +6,11 @@ const defaultState = {
 // попытка исправ ошб. от composeWithDevTools - Ни одна перегрузка не соответствует этому вызову
 // interface defStNum {
 //   // раб. с массивами
-//   cash: any;
+//   cashNum: number;
 // }
 // const defaultState: defStNum = {
 //   //  раб. с числами
-//   cash: 0,
+//   cashNum: 0,
 // };
 
 // логика обработки сост. по state и action
