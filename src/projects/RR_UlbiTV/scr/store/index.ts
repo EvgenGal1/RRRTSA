@@ -1,5 +1,9 @@
 // логика по раб с данными
-import { legacy_createStore as createStore, combineReducers } from "redux";
+import {
+  legacy_createStore as createStore,
+  combineReducers,
+  applyMiddleware,
+} from "redux";
 // подкл. reducerы
 import { cashReducer } from "./cashReducer";
 import { customReducer } from "./customReducer";
@@ -7,6 +11,7 @@ import { customReducer } from "./customReducer";
 // подкл. инстр.разраб. для удобства разработки/отслеж. сост в redux
 // стар способ
 import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
 // нов. способ
 // import { composeWithDevTools } from "@redux-devtools/extension/lib/types/logOnly";
 
@@ -19,4 +24,8 @@ const rootReducer = combineReducers({
 
 // создан. store
 // export const store = createStore(rootReducer);
-export const store = createStore(rootReducer, composeWithDevTools());
+// les5. подкл redux-thunk для алинхр. ч/з applyMiddleware
+export const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+);

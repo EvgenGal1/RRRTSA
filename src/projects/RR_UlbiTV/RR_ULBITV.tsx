@@ -10,6 +10,8 @@ import { Lesson4 } from "./scr/pages/Lesson4";
 import { Lesson5 } from "./scr/pages/Lesson5";
 
 import { addCustomAction, removeCustomAction } from "./scr/store/customReducer";
+// les5. fn асинхроного запроса
+import { fetchManyCustomApi } from "./scr/asyncActions/manyCustom.api.js";
 
 // export function RR_UlbiTV() {
 export function RR_ULBITV() {
@@ -136,7 +138,14 @@ export function RR_ULBITV() {
             </div>
             <div className="content__fetch">
               <div className="fetch--button">
-                <button>button</button>
+                {/* при клик деспатчим fn асинхр action */}
+                <button
+                  type="button"
+                  // по клик вызов fn getCash
+                  // onClick={() => dispatch(fetchManyCustomApi())}
+                >
+                  + Клиенты с базы
+                </button>
               </div>
               <div className="fetch--count">count</div>
             </div>
