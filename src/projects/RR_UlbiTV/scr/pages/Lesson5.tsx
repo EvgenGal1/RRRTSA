@@ -79,6 +79,7 @@ export function Lesson5() {
           От отсутстия типизации, ушла ошб.{" "}
           <b>Аргумент типа ... типа "AnyAction"</b>
         </p>
+        {/* // ??? не раб - Warning: Each child in a list should have a unique "key" prop. */}
         <p style={{ color: "red", backgroundColor: "black" }}>
           Появила нов.ошб.{" "}
           <b>Warning: Each child in a list should have a unique "key" prop.</b>
@@ -111,10 +112,53 @@ export function Lesson5() {
           <li>action.payload is not iterable</li>
         </ul>
       </div>
-      <p>
-        <span>JSONPlaceholder</span> - Бесплатный поддельный API для
-        тестирования и прототипирования - https://jsonplaceholder.typicode.com/
-      </p>
+      <div>
+        <p>
+          Добавил отдельн. сост. по умолчанию <b>customArrsMany</b>,
+          useSelector, блок для вывода, перебор
+        </p>
+        <p style={{ color: "red", backgroundColor: "black" }}>
+          Все равно ошб. - Each child in a list should have a unique "key" prop.
+        </p>
+      </div>
+      <div>
+        <p>
+          <span>ОШИБКА УШЛА!!!</span>
+        </p>
+        <p>
+          Не ясно как!!! Итерация списка в{" "}
+          <span>отд.блок.код fetch .content__fetch</span> была такой же.
+        </p>
+        <p>
+          <b>Отд.блок.код fetch .content__fetch</b>, настройки в reducer,
+          <b>оставил</b>
+        </p>
+        <p>
+          Теперь подгрузка с fetch загружает списки и{" "}
+          <b>в общий блок код и в отдельный</b>
+        </p>
+        <p>
+          В отд.блоке <b>не раб fn()removeCustom</b> удаления.{" "}
+          <b>Удаляет в общем</b> блоке, и больше элем. не фиксирует
+        </p>
+        <p>Удалил все стороние коды и комментарии</p>
+      </div>
+      <div>
+        Использ. ст.
+        <p>
+          https://tuhub.ru/posts/redux-i-thunk-vmeste-react-rukovodstvo-dlya-chajnikov
+        </p>
+        <p>
+          https://translated.turbopages.org/proxy_u/en-ru.ru.acd06840-633f6e06-af79a980-74722d776562/https/www.codeproject.com/Articles/5266467/React-Axios-and-Redux-Asynchronously-Fetch-and-Sav#step-2--installing-axios-redux-react-redux-and-redux-thunk
+        </p>
+      </div>
+      <div>
+        <p>
+          <span>JSONPlaceholder</span> - Бесплатный поддельный API для
+          тестирования и прототипирования -
+          https://jsonplaceholder.typicode.com/
+        </p>
+      </div>
     </div>
   );
 }

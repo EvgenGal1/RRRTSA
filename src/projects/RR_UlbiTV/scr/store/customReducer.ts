@@ -1,23 +1,36 @@
 // состояние по умолчанию
-const defaultState = {
+// const defaultState = {
+//   // раб. с массивами
+//   customArrs: [],
+//   // customArrs: [].map(
+//   //   (item) => `<div>
+//   // <div key=${item}>${item}</div>
+//   // </div>`
+//   // ),
+//   //   <li key={item.id}>{item.label}</li>
+//   // ))}
+// };
+// попытка исправ ошб. от composeWithDevTools - Ни одна перегрузка не соответствует этому вызову
+interface defStArr {
+  // раб. с массивами
+  customArrs: any[];
+  // отд.блок.код fetch
+  customArrsMany: any[];
+}
+const defaultState: defStArr = {
   // раб. с массивами
   customArrs: [],
+  // отд.блок.код fetch
+  customArrsMany: [],
 };
-// попытка исправ ошб. от composeWithDevTools - Ни одна перегрузка не соответствует этому вызову
-// interface defStArr {
-//   // раб. с массивами
-//   custom: any[];
-// }
-// const defaultState: defStArr = {
-//   // раб. с массивами
-//   custom: [],
-// };
 
 // les4. рефакторинг типов(стр.значен.) выносов отдел. константы
 const ADD_CUSTOM = "ADD_CUSTOM";
 const REMOVE_CUSTOM = "REMOVE_CUSTOM";
 // les5. + конст. для многих польз-лей
 const ADD_MANY_CUSTOM = "ADD_MANY_CUSTOM";
+// проб
+export const ADD_FAVORITE_TERM = "ADD_FAVORITE_TERM";
 
 // логика обработки сост. по state и action
 export const customReducer = (
@@ -26,13 +39,6 @@ export const customReducer = (
 ) => {
   switch (action.type) {
     // les5. + нов. action к thunk для добавл. кучи польз-лей
-    case ADD_MANY_CUSTOM:
-      // возвращ.нов.объ.сост.{}, ...разворач.стар.сост., измен/присвой.нов.масс.:[] где ...разворач.стар.масс. + ...масс. с сервера переданый ч/з action
-      // return { ...state, customArrs: [...state.customArrs, ...action.payload] };
-      return {
-        ...state,
-        customArrs: [...state.customArrs, { ...action.payload }],
-      };
     case ADD_CUSTOM:
       // les4. добавл. нов.польз-ля переданого ч/з action. ч/з спрет ...разворач.стар.масс., возвращ.нов.объ.: присваиваем нов.масс.[], где ...разворач.сущ-щий масс. + в конце объ.переданый ч/з action
       return { ...state, customArrs: [...state.customArrs, action.payload] };
@@ -43,6 +49,15 @@ export const customReducer = (
         customArrs: state.customArrs.filter(
           (customArr: any) => customArr.id !== action.payload
         ),
+      };
+    case ADD_MANY_CUSTOM:
+      // возвращ.нов.объ.сост.{}, ...разворач.стар.сост., измен/присвой.нов.масс.:[] где ...разворач.стар.масс. + ...масс. с сервера переданый ч/з action
+      // return { ...state, customArrs: [...state.customArrs, ...action.payload] };
+      return {
+        ...state,
+        customArrs: [...state.customArrs, ...action.payload],
+        // отд.блок.код fetch
+        customArrsMany: [...state.customArrsMany, ...action.payload],
       };
     default:
       return state;

@@ -17,7 +17,7 @@ import { fetchManyCustomApi } from "./scr/asyncActions/manyCustom.api.js";
 export function RR_ULBITV() {
   // function RR_UlbiTV() {
   // получ. диспетчер ч/з хук. для измен. сост. передавая action в reducer
-  const dispatch = useDispatch();
+  const dispatch = useDispatch([]);
   // получ сост. ч/з хук useSelector. парам-ом приним. fn, а fn приним. парам-ом state, а из state получ. переменную(счас cash). смотр в логах
   // const cash = useSelector((state: any) => state.cash);
   // после неск-их reducerов, из сост. получ. reducer, потом переменную
@@ -28,6 +28,9 @@ export function RR_ULBITV() {
   // les4. получ массив клиентов. обращ. к ключу reducerа и затем к перем.
   // const customArrs = useSelector((state: any) => state.customR.customArrs);
   const customArrs = useSelector((state) => state.customR.customArrs);
+
+  // отд. перем. fetch
+  const customArrsMany = useSelector((state) => state.customR.customArrsMany);
 
   // fn для string по изменению суммы. указ по умолча. фиксир 5
   // const addCash = () => {
@@ -51,7 +54,7 @@ export function RR_ULBITV() {
     const customer = {
       name,
       id: Date.now(),
-      // key: Date.now(),
+      key: Date.now(),
     };
     // в dispatch передаём action(объ. с типом и данными)
     // dispatch({ type: "ADD_CUSTOM", payload: customer });
@@ -66,44 +69,7 @@ export function RR_ULBITV() {
     // рефактор. передача action ч/з removeCustomAction
     dispatch(removeCustomAction(customer.id));
   };
-  //  ----------------------------------------------------------------------------------
-  // useEffect(() => {
-  //   dispatch(fetchManyCustomApi());
-  // }, []);
-  // https://questu.ru/articles/168283/ ----------------------------------------------------------------------------------
-  // const [data, setData] = useState([]);
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState("");
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     try {
-  //       const response = await fetchManyCustomApi.getUsers();
-  //       const json = await response.json();
 
-  //       setData(json);
-  //     } catch (e) {
-  //       setError(e.message || "Unexpected error");
-  //     }
-
-  //     setLoading(false);
-  //   }
-
-  //   fetchData();
-  // }, []);
-  // if (loading) {
-  //   return <div>Loading</div>;
-  // }
-  // if (error) {
-  //   return <div style={{ color: "red" }}>ERROR: {error}</div>;
-  // }
-  // VM ----------------------------------------------------------------------------------
-  const {
-    isLoading2,
-    isError2,
-    data2: users2,
-    Date2,
-    json2,
-  } = fetchManyCustomApi();
   //  ----------------------------------------------------------------------------------
   return (
     <>
@@ -174,44 +140,33 @@ export function RR_ULBITV() {
                 )}
               </div>
             </div>
+            {/* отд.блок.код fetch */}
             <div className="content__fetch">
               <div className="fetch--button">
-                {/* при клик деспатчим fn асинхр action */}
                 <button
                   type="button"
-                  // по клик вызов fn getCash
-                  key={users2?.id}
-                  // onClick={() => dispatch(fetchManyCustomApi())}
-                >
-                  + Клиенты с базы {/* butt */}
-                </button>
-                {/* <div
-                  key={users2?.id}
                   onClick={() => dispatch(fetchManyCustomApi())}
                 >
-                  {" "}
-                  + Клиенты с базы div
-                </div> */}
+                  + Клиенты с базы
+                </button>
               </div>
               <div className="fetch--count">
-                {/* <ul> */}
-                {/* {items.map((item) => (
-                    <li key={item.id}>{item.label}</li>
-                  ))} */}
-                {/* //  ---------------------------------------------------------------------------------- */}
-                {users2}
-                {json2}
-                {users2?.map((u) => (
-                  <div key={u.id}>
-                    <p key={u.name}>{u.name}</p>
-                    <p>{u}</p>
-                    {/* <li>{u.firstName}</li>
-                    <li>{u.lastName}</li>
-                    <li>{u.active ? "Yes" : "No"}</li>
-                    <li>{u.posts}</li>
-                    <li>{u.messages}</li> */}
-                  </div>
-                ))}
+                {customArrsMany.length > 0 ? (
+                  <>
+                    {customArrsMany.map((customArrM) => (
+                      <p
+                        style={{ display: "flex" }}
+                        key={customArrM.id}
+                        onClick={() => removeCustom(customArrM)}
+                      >
+                        {customArrM.name} - {customArrM.username}. Тел.:{" "}
+                        {customArrM.phone}
+                      </p>
+                    ))}
+                  </>
+                ) : (
+                  <>customArrsMany пуст...</>
+                )}
               </div>
             </div>
           </div>
