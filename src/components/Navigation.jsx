@@ -109,6 +109,11 @@ export function Navigation() {
                       Lesson5
                     </Link>
                   </li>
+                  <li className="m-t-its-ul__li">
+                    <Link to="Lesson6" className="">
+                      Lesson6
+                    </Link>
+                  </li>
                 </ul>
               </span>
               <span className="menu-top__items m-t-items">

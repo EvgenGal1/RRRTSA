@@ -8,10 +8,17 @@ import { Lesson2 } from "./scr/pages/Lesson2";
 import { Lesson3 } from "./scr/pages/Lesson3";
 import { Lesson4 } from "./scr/pages/Lesson4";
 import { Lesson5 } from "./scr/pages/Lesson5";
+import { Lesson6 } from "./scr/pages/Lesson6";
 
+// les4. импорт fn()оптимизации `Добавьте/удалите пользовательское действие`
 import { addCustomAction, removeCustomAction } from "./scr/store/customReducer";
 // les5. fn асинхроного запроса
 import { fetchManyCustomApi } from "./scr/asyncActions/manyCustom.api.js";
+// les6. импорт fn()оптимизации
+import {
+  incrementCreatorSg,
+  decrementCreatorSg,
+} from "./scr/store/countReducerSg";
 
 // export function RR_UlbiTV() {
 export function RR_ULBITV() {
@@ -29,7 +36,7 @@ export function RR_ULBITV() {
   // const customArrs = useSelector((state: any) => state.customR.customArrs);
   const customArrs = useSelector((state) => state.customR.customArrs);
 
-  // отд. перем. fetch
+  // les5. доп. отд. перем. fetch.
   const customArrsMany = useSelector((state) => state.customR.customArrsMany);
 
   // fn для string по изменению суммы. указ по умолча. фиксир 5
@@ -54,7 +61,7 @@ export function RR_ULBITV() {
     const customer = {
       name,
       id: Date.now(),
-      key: Date.now(),
+      // key: Date.now(),
     };
     // в dispatch передаём action(объ. с типом и данными)
     // dispatch({ type: "ADD_CUSTOM", payload: customer });
@@ -69,6 +76,10 @@ export function RR_ULBITV() {
     // рефактор. передача action ч/з removeCustomAction
     dispatch(removeCustomAction(customer.id));
   };
+
+  // les6. redux saga
+  const countSg = useSelector((state) => state.countRSg.counNumSg);
+  const usersSg = useSelector((state) => state.usersRSg.userArrSg);
 
   //  ----------------------------------------------------------------------------------
   return (
@@ -140,7 +151,7 @@ export function RR_ULBITV() {
                 )}
               </div>
             </div>
-            {/* отд.блок.код fetch */}
+            {/* les5. доп. отд.блок.код fetch. */}
             <div className="content__fetch">
               <div className="fetch--button">
                 <button
@@ -169,6 +180,36 @@ export function RR_ULBITV() {
                 )}
               </div>
             </div>
+            {/* les6.  */}
+            <div className="content__saga">
+              <div>{countSg}</div>
+              <div className="saga--button">
+                <button
+                  type="button"
+                  onClick={() => dispatch(incrementCreatorSg())}
+                >
+                  ++
+                </button>
+                <button
+                  type="button"
+                  onClick={() => dispatch(decrementCreatorSg())}
+                >
+                  --
+                </button>
+                <button type="button">юзер</button>
+              </div>
+              <div className="saga--count">
+                {usersSg.map((user) => (
+                  <div
+                    style={{ display: "flex" }}
+                    key={user.id}
+                    // onClick={() => removeCustom(user)}
+                  >
+                    {user.name}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         <hr />
@@ -178,6 +219,7 @@ export function RR_ULBITV() {
             <NavLink to="Lesson3">Lesson3</NavLink>
             <NavLink to="Lesson4">Lesson4</NavLink>
             <NavLink to="Lesson5">Lesson5</NavLink>
+            <NavLink to="Lesson6">Lesson6</NavLink>
             {/* <li>
             <NavLink to="/ThirdPage">Lesson4</NavLink>
           </li> */}
@@ -190,6 +232,7 @@ export function RR_ULBITV() {
             <Route path="Lesson3" element={<Lesson3 />} />
             <Route path="Lesson4" element={<Lesson4 />} />
             <Route path="Lesson5" element={<Lesson5 />} />
+            <Route path="Lesson6" element={<Lesson6 />} />
           </Routes>
         </div>
       </div>

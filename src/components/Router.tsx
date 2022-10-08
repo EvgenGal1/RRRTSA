@@ -23,6 +23,7 @@ import { Lesson2 } from "../projects/RR_ULBITV/scr/pages/Lesson2";
 import { Lesson3 } from "../projects/RR_ULBITV/scr/pages/Lesson3";
 import { Lesson4 } from "../projects/RR_ULBITV/scr/pages/Lesson4";
 import { Lesson5 } from "../projects/RR_ULBITV/scr/pages/Lesson5";
+import { Lesson6 } from "../projects/RR_ULBITV/scr/pages/Lesson6";
 //
 import { RR_MN } from "../projects/RR_MN/RR_MN";
 import { FirstPage } from "../projects/RR_MN/src/pages/FirstPage";
@@ -51,6 +52,7 @@ export function Router() {
           <Route path="Lesson3" element={<Lesson3 />} />
           <Route path="Lesson4" element={<Lesson4 />} />
           <Route path="Lesson5" element={<Lesson5 />} />
+          <Route path="Lesson6" element={<Lesson6 />} />
           {/*  */}
           <Route path="/RRTS_ULBITV" element={<RRTS_ULBITV />} />
           {/*  */}
@@ -70,30 +72,7 @@ export function Router() {
   );
 }
 
-// залито в отдельн файл
-// function Users() {
-//   return (
-//     <div>
-//       <b>перед Link</b>
-//       <nav>
-//         <Link to="HomePage">My HomePage</Link>
-//         <Link to="favorites">My favorites</Link>
-//       </nav>
-//       <b>после Link</b>
-//       <b>перед Router</b>
-//       <Routes>
-//         222
-//         <Route path="HomePage" element={<HomePage />} />
-//         <Route path="favorites" element={<FavoritesPage />} />
-//         333 444
-//         {/* <Route path=":id" element={<UserProfile />} /> */}
-//         {/* <Route path="me" element={<OwnUserProfile />} /> */}
-//       </Routes>
-//       <b>после Router</b>
-//     </div>
-//   );
-// }
-
+// пример вложенных файлов. залито в отдельн файл
 // function Users2() {
 //   return (
 //     <div>
@@ -109,5 +88,3 @@ export function Router() {
 //     </div>
 //   );
 // }
-
-// export default App;

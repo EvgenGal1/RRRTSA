@@ -23,6 +23,18 @@ main > div > div > div {
     // margin: 10px 0px;
     padding: 10px 0px;
     line-height: 22px;
+    @media (max-width: $md1NoErr) {
+      padding: 8px 0px;
+      // line-height: 20px;
+    }
+    @media (max-width: $md2NoErr) {
+      padding: 6px 0px;
+      line-height: 20px;
+    }
+    @media (max-width: $md3NoErr) {
+      padding: 4px 0px;
+      // line-height: 16px;
+    }
   }
   span {
     font-weight: bold;
@@ -72,6 +84,20 @@ main > div > div > div {
       &:hover {
         background-color: #dfbd2e;
         font-weight: bold;
+      }
+      @media (max-width: $md1NoErr) {
+        // button {
+        width: 125px;
+        padding: 12.5px 0px;
+        margin-right: 5px;
+        // }
+      }
+      @media (max-width: $md2NoErr) {
+        // button {
+        width: 100px;
+        padding: 10px 0px;
+        margin-right: 5px;
+        // }
       }
     }
   }

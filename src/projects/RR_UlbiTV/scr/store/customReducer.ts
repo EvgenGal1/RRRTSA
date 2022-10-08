@@ -14,13 +14,13 @@
 interface defStArr {
   // раб. с массивами
   customArrs: any[];
-  // отд.блок.код fetch
+  // отд.блок.код fetch. для доп. les5.
   customArrsMany: any[];
 }
 const defaultState: defStArr = {
   // раб. с массивами
   customArrs: [],
-  // отд.блок.код fetch
+  // отд.блок.код fetch. для доп. les5.
   customArrsMany: [],
 };
 
@@ -29,8 +29,6 @@ const ADD_CUSTOM = "ADD_CUSTOM";
 const REMOVE_CUSTOM = "REMOVE_CUSTOM";
 // les5. + конст. для многих польз-лей
 const ADD_MANY_CUSTOM = "ADD_MANY_CUSTOM";
-// проб
-export const ADD_FAVORITE_TERM = "ADD_FAVORITE_TERM";
 
 // логика обработки сост. по state и action
 export const customReducer = (
@@ -38,18 +36,18 @@ export const customReducer = (
   action: any
 ) => {
   switch (action.type) {
-    // les5. + нов. action к thunk для добавл. кучи польз-лей
+    // les4. добавл. нов.польз-ля переданого ч/з action. ч/з спрет ...разворач.стар.масс., возвращ.нов.объ.: присваиваем нов.масс.[], где ...разворач.сущ-щий масс. + в конце объ.переданый ч/з action
     case ADD_CUSTOM:
-      // les4. добавл. нов.польз-ля переданого ч/з action. ч/з спрет ...разворач.стар.масс., возвращ.нов.объ.: присваиваем нов.масс.[], где ...разворач.сущ-щий масс. + в конце объ.переданый ч/з action
       return { ...state, customArrs: [...state.customArrs, action.payload] };
+    // удаляем польз-ля переданого ч/з action. ...разворач.сост., получ.нов.объ.: масс. фильтруем(возвращ.нов.масс.) и получ. нов.объ. где id.кл. = id.переданого, не попадает в нов.масс.
     case REMOVE_CUSTOM:
-      // удаляем польз-ля переданого ч/з action. ...разворач.сост., получ.нов.объ.: масс. фильтруем(возвращ.нов.масс.) и получ. нов.объ. где id.кл. = id.переданого, не попадает в нов.масс.
       return {
         ...state,
         customArrs: state.customArrs.filter(
           (customArr: any) => customArr.id !== action.payload
         ),
       };
+    // les5. + нов. action к thunk для добавл. кучи польз-лей
     case ADD_MANY_CUSTOM:
       // возвращ.нов.объ.сост.{}, ...разворач.стар.сост., измен/присвой.нов.масс.:[] где ...разворач.стар.масс. + ...масс. с сервера переданый ч/з action
       // return { ...state, customArrs: [...state.customArrs, ...action.payload] };

@@ -7,6 +7,9 @@ import {
 // подкл. reducerы
 import { cashReducer } from "./cashReducer";
 import { customReducer } from "./customReducer";
+// les6.
+import { countReducerSg } from "./countReducerSg";
+import { usersReducerSg } from "./usersReducerSg";
 
 // подкл. инстр.разраб. для удобства разработки/отслеж. сост в redux
 // стар способ
@@ -20,6 +23,9 @@ const rootReducer = combineReducers({
   // fn приним. парам-ом объ., куда добавл. reducerы назв.|ключ-значением
   cashR: cashReducer,
   customR: customReducer,
+  // les6.
+  countRSg: countReducerSg,
+  usersRSg: usersReducerSg,
 });
 
 // создан. store
