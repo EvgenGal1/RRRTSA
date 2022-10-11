@@ -2,9 +2,9 @@
 // fn() для глобал. watcher для слеж за всеми watchers, типо ~ combineReducer.
 import { all } from "redux-saga/effects";
 import { countWatcher } from "./countSaga";
-import { userWather } from "./userSaga";
+import { userWatсher } from "./userSaga";
 
 export function* rootWatcher() {
-  // dspjd all приним. массив
-  yield all([countWatcher(), userWather()]);
+  // вызов all приним. массив
+  yield all([countWatcher(), userWatсher()]);
 }

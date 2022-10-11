@@ -21,7 +21,7 @@ import thunk from "redux-thunk";
 // les6. fn создаёт middleware sagи и сразу её вызоа
 import createSagaMiddleware from "redux-saga";
 import { countWatcher } from "../saga/countSaga";
-import { rootWatcher } from "../saga";
+import { rootWatcher } from "../saga/index";
 const sagaMiddleware = createSagaMiddleware();
 
 // Объединяем редукторы ч/з объ. rootR и вызов fn combineR.
@@ -44,7 +44,7 @@ export const store = createStore(
     // 2ой парам в createStore, передаём `промежут.ПО` ч/з applyMiddleware
     applyMiddleware(
       // les5.
-      // thunk,
+      thunk,
       // les6.
       sagaMiddleware
     )

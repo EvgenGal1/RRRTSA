@@ -10,12 +10,12 @@ import {
 import { fetchUsers } from "../store/usersReducerSg";
 
 export function Lesson6() {
-  // получ. диспетчер ч/з хук. для измен. сост. передавая action в reducer
-  const dispatch = useDispatch();
-
   // les6. redux saga
   const countSg = useSelector((state: any) => state.countRSg.counNumSg);
   const usersSg = useSelector((state: any) => state.usersRSg.userArrSg);
+
+  // получ. диспетчер ч/з хук. для измен. сост. передавая action в reducer
+  const dispatch = useDispatch();
 
   return (
     <div className="RR_ULBITV--body--lesson6">
@@ -44,6 +44,7 @@ export function Lesson6() {
           </button>
         </div>
         <div className="saga--count">
+          {/* {usersSg} */}
           {usersSg.map((user: any) => (
             <div
               style={{ display: "flex" }}
@@ -105,10 +106,39 @@ export function Lesson6() {
           </p>
         </div>
         <div>
-          <p></p>
+          <p>Пока без описания</p>
         </div>
         <div>
-          <p></p>
+          <p>Счётчик работает</p>
+          <p>
+            <span>Ошибки в асинхр методе запроса</span>
+          </p>
+          <p style={{ color: "red", backgroundColor: "black" }}>
+            TypeError: Cannot read properties of undefined (reading 'json')
+          </p>
+          <p style={{ color: "red", backgroundColor: "black" }}>
+            The above error occurred in task fetchUsersWorker
+            <br />
+            created by takeEvery(FETCH_USERS, fetchUsersWorker)
+            <br />
+            created by rootWatcher
+            <br />
+            created by rootWatcher
+            <br />
+            Tasks cancelled due to error: takeEvery(FETCH_USERS,
+            fetchUsersWorker)
+          </p>
+          <p>
+            Различные выриации выгрузки json, data и их преобразования не
+            помогли
+          </p>
+          <p>
+            Периодически выскакивали и такая ошибка -{" "}
+            <span style={{ color: "red", backgroundColor: "black" }}>
+              Uncaught TypeError: usersSg.map is not a function at Lesson6
+              (Lesson6.tsx:46:1)
+            </span>
+          </p>
         </div>
       </div>
     </div>
