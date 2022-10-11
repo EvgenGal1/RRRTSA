@@ -73,6 +73,15 @@ main > div > div > div {
   li {
     list-style: inside;
   }
+  // div кл. на конце __content
+  div[class$="__content"] {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+  // div кл. на конце --button
   div[class$="--button"] {
     button {
       // display: flex;
@@ -101,6 +110,7 @@ main > div > div > div {
       }
     }
   }
+
   // }
 }
 

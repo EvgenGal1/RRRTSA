@@ -14,11 +14,6 @@ import { Lesson6 } from "./scr/pages/Lesson6";
 import { addCustomAction, removeCustomAction } from "./scr/store/customReducer";
 // les5. fn асинхроного запроса
 import { fetchManyCustomApi } from "./scr/asyncActions/manyCustom.api.js";
-// les6. импорт fn()оптимизации
-import {
-  incrementCreatorSg,
-  decrementCreatorSg,
-} from "./scr/store/countReducerSg";
 
 // export function RR_UlbiTV() {
 export function RR_ULBITV() {
@@ -76,10 +71,6 @@ export function RR_ULBITV() {
     // рефактор. передача action ч/з removeCustomAction
     dispatch(removeCustomAction(customer.id));
   };
-
-  // les6. redux saga
-  const countSg = useSelector((state) => state.countRSg.counNumSg);
-  const usersSg = useSelector((state) => state.usersRSg.userArrSg);
 
   //  ----------------------------------------------------------------------------------
   return (
@@ -178,36 +169,6 @@ export function RR_ULBITV() {
                 ) : (
                   <>customArrsMany пуст...</>
                 )}
-              </div>
-            </div>
-            {/* les6.  */}
-            <div className="content__saga">
-              <div>{countSg}</div>
-              <div className="saga--button">
-                <button
-                  type="button"
-                  onClick={() => dispatch(incrementCreatorSg())}
-                >
-                  ++
-                </button>
-                <button
-                  type="button"
-                  onClick={() => dispatch(decrementCreatorSg())}
-                >
-                  --
-                </button>
-                <button type="button">юзер</button>
-              </div>
-              <div className="saga--count">
-                {usersSg.map((user) => (
-                  <div
-                    style={{ display: "flex" }}
-                    key={user.id}
-                    // onClick={() => removeCustom(user)}
-                  >
-                    {user.name}
-                  </div>
-                ))}
               </div>
             </div>
           </div>

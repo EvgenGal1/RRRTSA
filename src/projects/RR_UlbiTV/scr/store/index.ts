@@ -11,12 +11,18 @@ import { customReducer } from "./customReducer";
 import { countReducerSg } from "./countReducerSg";
 import { usersReducerSg } from "./usersReducerSg";
 
-// подкл. инстр.разраб. для удобства разработки/отслеж. сост в redux
+// les5. подкл. инстр.разраб. для удобства разработки/отслеж. сост в redux
 // стар способ
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 // нов. способ
 // import { composeWithDevTools } from "@redux-devtools/extension/lib/types/logOnly";
+
+// les6. fn создаёт middleware sagи и сразу её вызоа
+import createSagaMiddleware from "redux-saga";
+import { countWatcher } from "../saga/countSaga";
+import { rootWatcher } from "../saga";
+const sagaMiddleware = createSagaMiddleware();
 
 // Объединяем редукторы ч/з объ. rootR и вызов fn combineR.
 const rootReducer = combineReducers({
@@ -33,5 +39,18 @@ const rootReducer = combineReducers({
 // les5. подкл redux-thunk для алинхр. ч/з applyMiddleware
 export const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(thunk))
+  // инстр.разраб
+  composeWithDevTools(
+    // 2ой парам в createStore, передаём `промежут.ПО` ч/з applyMiddleware
+    applyMiddleware(
+      // les5.
+      // thunk,
+      // les6.
+      sagaMiddleware
+    )
+  )
 );
+
+// les6. запуск saga с переданым парам. watcher `наблюдателем`
+// sagaMiddleware.run(countWatcher);
+sagaMiddleware.run(rootWatcher);

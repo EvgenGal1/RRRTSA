@@ -6,12 +6,12 @@ export function RRRTS_EG() {
     <>
       <div className="RRRTS_EG">
         <h1
-          style={{
-            margin: "20px",
-            fontSize: "20px",
-            textAlign: "center",
-            fontWeight: "bold",
-          }}
+        // style={{
+        //   margin: "20px",
+        //   fontSize: "20px",
+        //   textAlign: "center",
+        //   fontWeight: "bold",
+        // }}
         >
           Изучение React.Redux.Router.TypeScript
         </h1>

@@ -31,7 +31,11 @@ const Layout = () => {
       <Navigation />
       <main
         className="container"
-        style={{ position: "relative", height: "150vmax", overflow: "hidden" }}
+        style={{
+          position: "relative",
+          height: "150vmax",
+          //   overflow: "hidden"
+        }}
       >
         {/* // ^ зараб - после добавления обёртки transitions.animated.location, при наведение на .menu-top__items, блоки .m-t-items__ul видны только в header. е/и курсор уйдёт с header, то hover откл - исправл. доав. к .m-t-items__ul z-индекса в css */}
         {transitions((props, item) => (
