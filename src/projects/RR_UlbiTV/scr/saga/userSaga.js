@@ -7,55 +7,50 @@ import { FETCH_USERS, setUsers } from "../store/usersReducerSg";
 
 // fn() для отправки API запроса
 const fetchUsersFromApi = () => {
-  fetch("https://jsonplaceholder.typicode.com/users?_limit=10");
+  // !!! не раб - (0) по видео
+  fetch("https://jsonplaceholder.typicode.com/users?_limit=5");
+  // !!! не раб - (3) из переделки thunk (простая)
+  // .then((response) => response.json())
+  // .then((users) => users);
+  // !!! не раб - (3) из переделки thunk
+  // .then((response) => {
+  //   if (!response.ok) {
+  // throw Error(response.statusText);
+  //   }
+  //   // this.setState({ isLoading: false });
+  //   return response.json();
+  // })
+  // .then((users) => users);
 };
 
 // рабочий для асинхр запросов на сервер
 // function* fetchUsersWorker(): any {
 function* fetchUsersWorker() {
-  // подобие async await. сохран их в перем. вызов call куда передали Promise с возвращаемыми данными
-  const data = yield call(fetchUsersFromApi);
-  // console.log("1 : " + 1);
-  // преобразов в json
+  // !!! не раб - (0) undefined (reading 'json') | fetchUsersWorker - created by takeEvery(FETCH_USERS, fetchUsersWorker)
+  // // подобие async await. сохран их в перем. вызов call куда передали Promise с возвращаемыми данными
+  // const data = yield fetchUsersFromApi();
+  // // преобразов в json
   // const json = yield call((response) => response(data.json()));
-  // как данные получены, вызов dispatch переданого ч/з параметры. в него передать actionCreate addManyCustomAction который вернёт action (+ много польз-ей), и туда передаём json(массив польз-ей с сервера)
+  // // вызов put (тип dispatch), с передачей экшна|actionCreator. fn() возвращ объ экшна
   // yield put(setUsers(json));
-  //  ----------------------------------------------------------------------------------
-  // const json = yield call(() => new Promise((res) => res(data.json())));
-  // const json = yield call(() => new Promise((res) => res(json())));
-  // const json = yield call((response) => response(json()));
-  // const json = yield call((response) => response.json());
-  // const json = yield call((response) => response.data.json());
-  const json = call((response) => response(data.json()));
-  // const json = call((response) => response(json()));
-  // console.log("2 : " + 2);
-  // .then((response) => response.json())
-  //     .then((json) => console.log(json));
-  // const json = yield call((res) => res(data.json()));
-  // const json = yield call((res) => res.json());
-  // .then((json) => dispatch(addManyCustomAction(json)));
-  // вызов put (тип dispatch), с передачей экшна|actionCreator. fn() возвращ объ экшна
-
-  // .then((response) => {
-  //   if (!response.ok) {
-  //     throw Error(response.statusText);
-  //   }
-  //   // this.setState({ isLoading: false });
-  //   return response.json();
-  // })
-  // .then((json) => dispatch(addManyCustomAction(json)));
-
-  // yield console.log(data);
-  // yield console.log(json);
+  // !!! не раб - (1) undefined (reading 'map') ---------------------------------------------------------------
+  // const data = yield fetchUsersFromApi();
+  // yield put(setUsers(data));
+  // ^^^ раб ---------------------------------------------------------------
+  const json = yield call(() =>
+    fetch("https://jsonplaceholder.typicode.com/users?_limit=5")
+      // .then((response) => response.json())
+      // .then((users) => users)
+      .then((response) => {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+        // this.setState({ isLoading: false });
+        return response.json();
+      })
+      .then((users) => users)
+  );
   yield put(setUsers(json));
-  // yield put(console.log(json));
-  //  ----------------------------------------------------------------------------------
-  // const json = yield call(() =>
-  //   fetch("https://jsonplaceholder.typicode.com/users?_limit=10")
-  //     .then((response) => response.json())
-  //     .then((myJson) => myJson)
-  // );
-  // yield put({ type: "FETCH_USERS", json: json });
 }
 
 // наблюдатель за экшенами

@@ -105,13 +105,23 @@ export function Lesson6() {
             <span>userSaga.ts</span> (экшны польз-лей)
           </p>
         </div>
-        <div>
+        <div style={{ color: "red", backgroundColor: "black" }}>
           <p>Пока без описания</p>
         </div>
         <div>
-          <p>Счётчик работает</p>
           <p>
-            <span>Ошибки в асинхр методе запроса</span>
+            <b>Счётчик работает</b>
+          </p>
+          <p>
+            <b>Список работает. Но не с видео</b>
+          </p>
+        </div>
+        <div>
+          <p>
+            <span>
+              Были ошибки толли в <b>fetchUsersFromApi</b>, толи в{" "}
+              <b>fetchUsersWorker</b>
+            </span>
           </p>
           <p style={{ color: "red", backgroundColor: "black" }}>
             TypeError: Cannot read properties of undefined (reading 'json')
@@ -119,11 +129,11 @@ export function Lesson6() {
           <p style={{ color: "red", backgroundColor: "black" }}>
             The above error occurred in task fetchUsersWorker
             <br />
-            created by takeEvery(FETCH_USERS, fetchUsersWorker)
+            {"    "}created by takeEvery(FETCH_USERS, fetchUsersWorker)
             <br />
-            created by rootWatcher
+            {"  "}created by rootWatcher
             <br />
-            created by rootWatcher
+            {"      "}created by rootWatcher
             <br />
             Tasks cancelled due to error: takeEvery(FETCH_USERS,
             fetchUsersWorker)
@@ -132,13 +142,25 @@ export function Lesson6() {
             Различные выриации выгрузки json, data и их преобразования не
             помогли
           </p>
-          <p>
-            Периодически выскакивали и такая ошибка -{" "}
-            <span style={{ color: "red", backgroundColor: "black" }}>
-              Uncaught TypeError: usersSg.map is not a function at Lesson6
-              (Lesson6.tsx:46:1)
-            </span>
-          </p>
+          <div>
+            Периодически выскакивали такие ошибки:
+            <p>
+              <span style={{ color: "red", backgroundColor: "black" }}>
+                Uncaught TypeError: usersSg.map is not a function at Lesson6
+                (Lesson6.tsx:46:1)
+              </span>
+            </p>
+            <p>
+              <span style={{ color: "red", backgroundColor: "black" }}>
+                TypeError: Cannot read properties of undefined (reading 'map')
+              </span>
+            </p>
+            <p>
+              <span style={{ color: "red", backgroundColor: "black" }}>
+                TypeError: Cannot read properties of null (reading 'setState')
+              </span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
