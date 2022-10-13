@@ -46,6 +46,11 @@ export const githubApi = createApi({
         url: `users/${username}/repos`,
       }),
     }),
+    // 0.33. для созд пользователям (здесь не поддерж). типиз. 1ый что вернул сервер, 2ым что принимаем. + export
+    // createUser: build.mutation<any, void>({
+    //   query: () => ({
+    //   })
+    // }),
   }),
 });
 

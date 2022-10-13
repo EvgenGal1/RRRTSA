@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { RepoCard } from "../components/RepoCard";
 import { useDebounce } from "../hooks/debounce";
 import {
   useLazyGetUserReposQuery,
@@ -54,6 +55,8 @@ export function HomePage() {
     // console.log(username);
     // 0.25. загрузка данных
     fetchRepos(username);
+    // 0.31. откл. лист после клик по repo usera
+    setDropdown(false);
   };
   return (
     <>
@@ -108,7 +111,11 @@ export function HomePage() {
               )}
               {/* // 0.28. вывод репозиториев через map */}
               {repoUsers?.map((repo) => (
-                <p key={repo.id}>{repo.url}</p>
+                // <p key={repo.id}>
+                //   {repo.url}
+                // </p>
+                // 0.30. вместо параграфа выводим компонент
+                <RepoCard repo={repo} key={repo.id} />
               ))}
             </div>
           </div>
