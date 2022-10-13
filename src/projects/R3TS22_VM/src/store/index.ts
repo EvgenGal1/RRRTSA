@@ -15,5 +15,5 @@ export const store = configureStore({
     getDefaultMiddleware().concat(githubApi.middleware),
 });
 
-// 0.19.
+// 0.19. расшир.настр. для refetchOnFocus `переориентироваться на фокусе`
 setupListeners(store.dispatch);

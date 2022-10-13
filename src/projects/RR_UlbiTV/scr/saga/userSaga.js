@@ -7,12 +7,12 @@ import { FETCH_USERS, setUsers } from "../store/usersReducerSg";
 
 // fn() для отправки API запроса
 const fetchUsersFromApi = () => {
-  // !!! не раб - (0) по видео
+  // ??? не раб - (0) по видео
   fetch("https://jsonplaceholder.typicode.com/users?_limit=5");
-  // !!! не раб - (3) из переделки thunk (простая)
+  // ??? не раб - (3) из переделки thunk (простая)
   // .then((response) => response.json())
   // .then((users) => users);
-  // !!! не раб - (3) из переделки thunk
+  // ??? не раб - (3) из переделки thunk
   // .then((response) => {
   //   if (!response.ok) {
   // throw Error(response.statusText);
@@ -26,14 +26,14 @@ const fetchUsersFromApi = () => {
 // рабочий для асинхр запросов на сервер
 // function* fetchUsersWorker(): any {
 function* fetchUsersWorker() {
-  // !!! не раб - (0) undefined (reading 'json') | fetchUsersWorker - created by takeEvery(FETCH_USERS, fetchUsersWorker)
+  // ??? не раб - (0) undefined (reading 'json') | fetchUsersWorker - created by takeEvery(FETCH_USERS, fetchUsersWorker)
   // // подобие async await. сохран их в перем. вызов call куда передали Promise с возвращаемыми данными
   // const data = yield fetchUsersFromApi();
   // // преобразов в json
   // const json = yield call((response) => response(data.json()));
   // // вызов put (тип dispatch), с передачей экшна|actionCreator. fn() возвращ объ экшна
   // yield put(setUsers(json));
-  // !!! не раб - (1) undefined (reading 'map') ---------------------------------------------------------------
+  // ??? не раб - (1) undefined (reading 'map') ---------------------------------------------------------------
   // const data = yield fetchUsersFromApi();
   // yield put(setUsers(data));
   // ^^^ раб ---------------------------------------------------------------

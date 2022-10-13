@@ -1,6 +1,6 @@
 // 0.4. настройка API для раб. с поиском
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IUser, ServerResponse } from "../../modals/modals";
+import { IRepo, IUser, ServerResponse } from "../../modals/modals";
 // 0.4. при import fn из redux, добавл префикс /react для генерации хуков
 
 // 0.4. экпорт конст githubApi, созд API ч/з fn createApi
@@ -11,7 +11,7 @@ export const githubApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://api.github.com/",
   }),
-  // 0.19.
+  // 0.19. расшир.настр. Обновл. данн. при смене фокуса
   refetchOnFocus: true,
   // 0.4. 'конечные точки' это fn приним парам build(`строить`). возвращ объ. с перечислением всех конеч.точек
   endpoints: (build) => ({
@@ -39,8 +39,16 @@ export const githubApi = createApi({
       // 0.7. колбэк для трансформ. данных из ответа
       transformResponse: (response: ServerResponse<IUser>) => response.items,
     }),
+    // 0.22. доп.запрос на сервер
+    // 0.27. any типизировали в IRepo[]
+    getUserRepos: build.query<IRepo[], string>({
+      query: (username: string) => ({
+        url: `users/${username}/repos`,
+      }),
+    }),
   }),
 });
 
 // 0.4. при обращении `const {} = githubApi`, в скобках (подсказка ctrl+пробел) видно автосгенерированй кастомный хук(useSearchUsersQuery). Генерация зависит от настроек endpoints
-export const { useSearchUsersQuery } = githubApi;
+// 0.23. получ доп хуки. Передаём useLazyGet... для вызова запроса по желанию
+export const { useSearchUsersQuery, useLazyGetUserReposQuery } = githubApi;

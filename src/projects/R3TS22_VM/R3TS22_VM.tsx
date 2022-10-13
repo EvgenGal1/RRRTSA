@@ -16,37 +16,37 @@ export function R3TS22_VM() {
   return (
     <>
       {/* 0.3 */}
-      {/* <Provider store={store}> */}
-      <div className="R3TS22_VM">
-        <div className="R3TS22_VM__nav">
-          {/* <b>перед NavLink</b> */}
-          <nav>
-            <NavLink to="HomePage">My HomePage</NavLink>
-            <NavLink to="favorites">My favorites</NavLink>
-          </nav>
-          {/* <b>после NavLink</b> */}
+      <Provider store={store}>
+        <div className="R3TS22_VM">
+          <div className="R3TS22_VM__nav">
+            {/* <b>перед NavLink</b> */}
+            <nav>
+              <NavLink to="HomePage">My HomePage</NavLink>
+              <NavLink to="favorites">My favorites</NavLink>
+            </nav>
+            {/* <b>после NavLink</b> */}
+          </div>
+          <hr />
+          <div className="R3TS22_VM__body">
+            <h1>R3TS22_VM</h1>
+            <p>
+              По видео "React стек 2022. TypeScript, Redux Toolkit, RTKQuery,
+              Tailwind" - https://www.youtube.com/watch?v=lkbm-zlcFvs
+            </p>
+          </div>
+          <hr />
+          <div className="R3TS22_VM__pages">
+            {/* <b>перед Router</b> */}
+            <Routes>
+              222
+              <Route path="HomePage" element={<HomePage />} />
+              <Route path="favorites" element={<FavoritesPage />} />
+              333 444
+            </Routes>
+            {/* <b>после Router</b> */}
+          </div>
         </div>
-        <hr />
-        <div className="R3TS22_VM__body">
-          <h1>R3TS22_VM</h1>
-          <p>
-            По видео "React стек 2022. TypeScript, Redux Toolkit, RTKQuery,
-            Tailwind" - https://www.youtube.com/watch?v=lkbm-zlcFvs
-          </p>
-        </div>
-        <hr />
-        <div className="R3TS22_VM__pages">
-          {/* <b>перед Router</b> */}
-          <Routes>
-            222
-            <Route path="HomePage" element={<HomePage />} />
-            <Route path="favorites" element={<FavoritesPage />} />
-            333 444
-          </Routes>
-          {/* <b>после Router</b> */}
-        </div>
-      </div>
-      {/* </Provider> */}
+      </Provider>
     </>
   );
 }

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDebounce } from "../hooks/debounce";
-import { useSearchUsersQuery } from "../store/github/github.api";
+import {
+  useLazyGetUserReposQuery,
+  useSearchUsersQuery,
+} from "../store/github/github.api";
 
 export function HomePage() {
   // 0.9. состояние/изменен. для поиска
@@ -9,6 +12,7 @@ export function HomePage() {
   const debounced = useDebounce(search);
   // 0.18. сост для выпад. списка по условию в useEff для очистки списка
   const [dropdown, setDropdown] = useState(false);
+
   // 0.5. использ. кастом. хук. в подсказе поля для раб с запросами {индикатор загрузки, ошибки при загрузке, получаемые данные}.
   // в хуке TS ошибка т.к. не передали параметры, исправ в github.api.ts
   // 0.6. временно передаём строку (EvGenGal), по которой будет идти поиск в пользователях
@@ -26,11 +30,15 @@ export function HomePage() {
     {
       // в строке поиска меньше 3 символов
       skip: debounced.length < 3,
-      // 0.19.
+      // 0.19. расшир.настр. Обновл. данн. при смене фокуса `переориентироваться на фокусе`
       refetchOnFocus: true,
     }
   );
   // console.log(data);
+
+  // 0.24. использ. доп.кастом.хук для дом.запроса. 1ый эл.масс. fn загружающая данные, 2ой эл.масс. получ. объ. с помощниками запроса (loading, error и т.д.)
+  const [fetchRepos, { isLoading: areReposLoading, data: repoUsers }] =
+    useLazyGetUserReposQuery();
 
   // 0.11. смотрим за измен. поиска. не оптимально - запрос на каждое нажатие
   useEffect(() => {
@@ -40,6 +48,13 @@ export function HomePage() {
     setDropdown(debounced.length > 3 && users?.length! > 0);
     // 0.13. следим за измен. `задержки` поиска и после setDropdown ещё за users
   }, [debounced, users]);
+
+  // 0.21. fn для доп.запроса при клик по user
+  const clickHendler = (username: string) => {
+    // console.log(username);
+    // 0.25. загрузка данных
+    fetchRepos(username);
+  };
   return (
     <>
       {/* по БЭМ */}
@@ -78,12 +93,24 @@ export function HomePage() {
                     key={user.id}
                     className="py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer"
                     style={{ listStyle: "none" }}
+                    // 0.20. клик по эл. для доп.запроса на сервер с передачей user.login
+                    onClick={() => clickHendler(user.login)}
                   >
                     {user.login}
                   </li>
                 ))}
               </ul>
             )}
+            {/* // 0.25. вывод данных из дом запроса (репозитории usera на которого нажали) */}
+            <div className="container">
+              {areReposLoading && (
+                <p className="text-center">Репо загружаются...</p>
+              )}
+              {/* // 0.28. вывод репозиториев через map */}
+              {repoUsers?.map((repo) => (
+                <p key={repo.id}>{repo.url}</p>
+              ))}
+            </div>
           </div>
         </div>
       </div>
