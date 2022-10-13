@@ -113,8 +113,8 @@ $md5NoErr: 576px;
 // настройка блока #root от горизонтального скрола изза ошибок верстки (чтоб не вылазилило за пределы экрана)
 #root {
   width: 100%;
-  min-height: 100%;
-  overflow: hidden;
+  // min-height: 100%;
+  // overflow: hidden;
   // background: $WetAsphalt;
   // &.loaded {
   // }
