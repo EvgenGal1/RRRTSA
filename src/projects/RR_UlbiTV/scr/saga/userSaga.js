@@ -36,7 +36,7 @@ function* fetchUsersWorker() {
   // ??? не раб - (1) undefined (reading 'map') ---------------------------------------------------------------
   // const data = yield fetchUsersFromApi();
   // yield put(setUsers(data));
-  // ^^^ раб ---------------------------------------------------------------
+  // ^^^ раб сборка с нэта ----------------------------------------------------------
   const json = yield call(() =>
     fetch("https://jsonplaceholder.typicode.com/users?_limit=5")
       // .then((response) => response.json())

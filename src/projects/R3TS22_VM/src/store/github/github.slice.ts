@@ -11,7 +11,9 @@ interface GithubState {
 
 // нач.сост.
 const initialState: GithubState = {
-  favorites: [],
+  // favorites: [],
+  // 0.36. favorites забираем из localStorage по ключу предварительно разпарсив е/и есть иначе парсим пустой массив
+  favorites: JSON.parse(localStorage.getItem(LS_FAV_KEY) ?? "[]"),
 };
 
 // созд методом createSlice const gitnubSlice
@@ -36,3 +38,7 @@ export const gitnubSlice = createSlice({
     },
   },
 });
+
+// 0.37. экспорт конст 2 сущностей
+export const githubActions = gitnubSlice.actions;
+export const githubReducer = gitnubSlice.reducer;
