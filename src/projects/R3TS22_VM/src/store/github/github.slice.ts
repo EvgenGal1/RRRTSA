@@ -1,4 +1,4 @@
-// 0.34. добав. repo в избран. Пробы раб. с обычн. reducerами
+// 0.34. добав. repo в избран. Пробы раб. с обычн. reducerами. Подход обычн. Redux в оболочке ReduxToolkit (меняем stete по желанию, НЕ опис.сост.объ., TS помогаем автокомплитом)
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // 0.35. ключ для localStorage
@@ -23,7 +23,7 @@ export const gitnubSlice = createSlice({
   // Slice ~ как reducer но удобнее (нет измен объ., мутации и пр.)
   reducers: {
     // reducer добавл. в избран. Приним state = GithubState, action с тип PayloadAction с джейнериком типов данных string
-    addFavorites(state, action: PayloadAction<string>) {
+    addFavorite(state, action: PayloadAction<string>) {
       // добав. ч/з обращ. к sate.favorites + добавить action.payload (строка хранящ. например в url repo т.к. уникальна)
       state.favorites.push(action.payload);
       // сохран с localStorage. 1ый ключ, приведен к строке

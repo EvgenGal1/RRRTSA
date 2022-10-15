@@ -12,7 +12,7 @@ export const store = configureStore({
     [githubApi.reducerPath]: githubApi.reducer,
 
     // 0.38. регистр. reducer в store
-    github: githubReducer,
+    githubR: githubReducer,
   },
   // 0.8. парам `промежуточное ПО`: получ метод getDefaultMiddleware, возвращ вызом метода получая массив + конкат (сливаем вместе) с middleware от githubApi
   middleware: (getDefaultMiddleware) =>

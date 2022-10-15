@@ -1,4 +1,4 @@
-// 0.4. настройка API для раб. с поиском
+// 0.4. настройка API для раб. с поиском. Подход RTQuery(ReduxToolkitQuery) с созд. API и его настр. + автосозд.хуки для автоматиз.раб. + доп.функ-ал(кеширование, точн.запросы, и т.д.)
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { IRepo, IUser, ServerResponse } from "../../modals/modals";
 // 0.4. при import fn из redux, добавл префикс /react для генерации хуков
