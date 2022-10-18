@@ -14,6 +14,7 @@ import "./index.css";
 
 // RR_UlbiTV ----------------------------------------------------------------------------------
 import { store } from "./projects/RR_ULBITV/scr/store";
+// import { store } from "./projects/R3TS22_VM/src/store";
 // import { legacy_createStore as createStore } from "redux";
 
 // состояние по умолчанию

@@ -12,22 +12,11 @@ export function RR_MN() {
   return (
     <div className="RR_MN">
       <div className="RR_MN__nav">
-        {/* <b>перед Link в RR_MN 0</b> */}
-        {/* <Link to="firstPage">1</Link> */}
         <nav>
-          {/* <ul> */}
-          {/* <li> */}
           <Link to="/FirstPage">FirstPage link</Link>
-          {/* </li> */}
-          {/* <li> */}
           <Link to="/SecondPage">NavLink</Link>
-          {/* </li> */}
-          {/* <li> */}
           <Link to="/ThirdPage">ThirdPage link</Link>
-          {/* </li> */}
-          {/* </ul> */}
         </nav>
-        {/* <b>после Link в RR_MN 1</b> */}
       </div>
       <hr />
       <div className="RR_MN__body">
