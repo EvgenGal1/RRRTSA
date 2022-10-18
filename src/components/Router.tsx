@@ -41,7 +41,7 @@ export function Router() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<RRRTS_EG />} />
-          <Route path="RR_DOC" element={<RR_DOC />} />
+          <Route path="RR_DOC/" element={<RR_DOC />} />
           {/*  */}
           <Route path="R3TS22_VM/*" element={<R3TS22_VM />} />
           <Route path="favorites" element={<FavoritesPage />} />
@@ -63,9 +63,9 @@ export function Router() {
           {/*  */}
           <Route path="Users/*" element={<Users />} />
           {/* <Route path="Users2/*" element={<Users />}>
-            <Route path="favorites" element={<FavoritesPage />} />
-            <Route path="HomePage" element={<HomePage />} />
-          </Route> */}
+              <Route path="favorites" element={<FavoritesPage />} />
+              <Route path="HomePage" element={<HomePage />} />
+            </Route> */}
         </Route>
       </Routes>
     </>
