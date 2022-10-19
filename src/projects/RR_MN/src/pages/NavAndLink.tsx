@@ -1,10 +1,10 @@
 import React from "react";
 // import { useSearchUsersQuery } from "../store/github/github.api";
 
-export function SecondPage() {
+export function NavAndLink() {
   // const [, set] = use();
   return (
-    <div className="RR_MN SecondPage">
+    <div className="RR_MN NavLink">
       <h1>NavLink и его кастомизация</h1>
       <h2>Автоподсветка NavLink</h2>
       <p>

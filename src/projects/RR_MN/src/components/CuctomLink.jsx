@@ -1,9 +1,9 @@
 import { Link, useMatch } from "react-router-dom";
 // хук useMatch (опред актив-ть ссылки)
 
-// передаем props. children - передаём дочь эл. + to, + др. props (стили,)
+// передаем props. children (дочь.эл.) + to (путь?), + др. props (стили,)
 const CuctomLink = ({ children, to, ...props }) => {
-  //  резулт. выполню что-то приним. Для подробностей по хуку ctrl + ЛКМ
+  //  резулт. выполн. что-то приним. Для подробностей по хуку ctrl + ЛКМ
   // приним. pattern`шаблон` или стр. Здесь прост варик стр - to
   // возвращ. true(PathMatch(гибк.настр.) | null) е/и ссылка в параметре равна открытой
   const match = useMatch(to);
@@ -23,4 +23,5 @@ const CuctomLink = ({ children, to, ...props }) => {
   );
 };
 
+// экспорт кастомной ссылки в использ. комп и замена на Link/NavLink
 export { CuctomLink };

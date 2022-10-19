@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.scss";
+import "./RRRTS_EG.scss";
 
 export function RRRTS_EG() {
   return (
