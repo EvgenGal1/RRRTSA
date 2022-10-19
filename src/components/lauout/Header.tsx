@@ -138,12 +138,12 @@ export function Header() {
                     </Link>
                   </li>
                   <li className="m-t-its-ul__li">
-                    <Link to="/BlogParam" className="">
+                    <Link to="BlogParam" className="">
                       BlogParam
                     </Link>
                   </li>
                   <li className="m-t-its-ul__li">
-                    <Link to="/ThirdPage" className="">
+                    <Link to="ThirdPage" className="">
                       ThirdPage
                     </Link>
                   </li>

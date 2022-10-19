@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 //
-import { Layout } from "./Layout";
+import { Layout } from "./Layout.jsx";
 import "./Router.scss";
 
 // Главная Страница
@@ -27,6 +27,10 @@ import { RR_MN } from "../../projects/RR_MN/RR_MN";
 import { OutletOpt } from "../../projects/RR_MN/src/pages/OutletOpt";
 import { NavAndLink } from "../../projects/RR_MN/src/pages/NavAndLink";
 import { BlogParam } from "../../projects/RR_MN/src/pages/BlogParam";
+// отдельн. динам. страница.
+import { SinglePage } from "../../projects/RR_MN/src/pages/SinglePage";
+import { CreatePost } from "../../projects/RR_MN/src/pages/CreatePost";
+import { EditPost } from "../../projects/RR_MN/src/pages/EditPost";
 import { ThirdPage } from "../../projects/RR_MN/src/pages/ThirdPage";
 
 export function Router() {
@@ -41,22 +45,27 @@ export function Router() {
           <Route path="favorites" element={<FavoritesPage />} />
           <Route path="HomePage" element={<HomePage />} />
           {/*  */}
-          <Route path="RR_ULBITV/*" element={<RR_ULBITV />}>
-            <Route path="Lesson2" element={<Lesson2 />} />
-            <Route path="Lesson3" element={<Lesson3 />} />
-            <Route path="Lesson4" element={<Lesson4 />} />
-            <Route path="Lesson5" element={<Lesson5 />} />
-            <Route path="Lesson6" element={<Lesson6 />} />
-          </Route>
+          <Route path="RR_ULBITV/*" element={<RR_ULBITV />}></Route>
+          <Route path="Lesson2" element={<Lesson2 />} />
+          <Route path="Lesson3" element={<Lesson3 />} />
+          <Route path="Lesson4" element={<Lesson4 />} />
+          <Route path="Lesson5" element={<Lesson5 />} />
+          <Route path="Lesson6" element={<Lesson6 />} />
           {/*  */}
           <Route path="/RRTS_ULBITV" element={<RRTS_ULBITV />} />
           {/*  */}
-          <Route path="RR_MN/*" element={<RR_MN />}>
-            <Route path="OutletOpt" element={<OutletOpt />} />
-            <Route path="NavAndLink" element={<NavAndLink />} />
-            <Route path="BlogParam" element={<BlogParam />} />
-            <Route path="ThirdPage" element={<ThirdPage />} />
-          </Route>
+          <Route path="RR_MN/*" element={<RR_MN />}></Route>
+          <Route path="OutletOpt" element={<OutletOpt />} />
+          <Route path="NavAndLink" element={<NavAndLink />} />
+          <Route path="BlogParam" element={<BlogParam />} />
+          {/* отдельн. динам. страница. в path + /: для парам.(любое кол-во, здесь id), в element отдельн. приложение */}
+          {/* раб. только в стр. дочки BlogParam. На родителе RR_MN/BlogParam не раб */}
+          <Route path="BlogParam/:id" element={<SinglePage />} />
+          {/* комп. для редактирования поста. завязан на id но c доп.адр. edit */}
+          <Route path="BlogParam/:id/edit" element={<EditPost />} />
+          {/* комп. для создания поста. использ не парам. переход при наборе любого адреса после слэша */}
+          <Route path="BlogParam/new" element={<CreatePost />} />
+          <Route path="ThirdPage" element={<ThirdPage />} />
           {/*  */}
           {/* <Route path="Users2/*" element={<Users />}>
               <Route path="favorites" element={<FavoritesPage />} />

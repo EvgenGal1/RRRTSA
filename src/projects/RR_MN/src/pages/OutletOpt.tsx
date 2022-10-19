@@ -8,23 +8,25 @@ export function OutletOpt() {
       <h1>Разметка и комп. Outlet</h1>
       {/* <h2>Автоподсветка NavLink</h2> */}
 
-      <h2>Есть несколько подходов для отражения вложеных страниц</h2>
-      <ul>
-        <li>
-          <span>Без Outlet</span>
-        </li>
-        <li>
-          <span>Outlet</span> - описать предыдущ видео
-        </li>
-      </ul>
-      <p>
-        Сейчас есть два варианта - <span>RR_MN</span> и{" "}
-        <span>users/R3TS22_VMVlos</span> <b>(последний удалён)</b>
-      </p>
-      <p>
-        Сейчас в <b>Routes</b> все обёрнуто в <b>Layout</b> - сбор главных
-        файлов шаблона, anim и <b>Outlet</b>
-      </p>
+      <div>
+        <h2>Есть несколько подходов для отражения вложеных страниц</h2>
+        <ul>
+          <li>
+            <span>Без Outlet</span>
+          </li>
+          <li>
+            <span>Outlet</span> - описать предыдущ видео
+          </li>
+        </ul>
+        <p>
+          Сейчас есть два варианта - <span>RR_MN</span> и{" "}
+          <span>users/R3TS22_VMVlos</span> <b>(последний удалён)</b>
+        </p>
+        <p>
+          Сейчас в <b>Routes</b> все обёрнуто в <b>Layout</b> - сбор главных
+          файлов шаблона, anim и <b>Outlet</b>
+        </p>
+      </div>
       <div>
         <h2>RR_MN</h2>
         <p>

@@ -12,8 +12,8 @@ const Layout = () => {
   const transitions = useTransition(location, {
     from: {
       opacity: 0,
-      // transform: "translateX(100%)",
-      transform: "scale(1.5) ",
+      transform: "translateX(100%)",
+      // transform: "scale(1.5) ",
       // transform: "scale(1.1) translateY(-150px)",
       // transform: "translateY(-150px)",
       transitionTimingFunction: "ease",
@@ -21,8 +21,8 @@ const Layout = () => {
     },
     enter: {
       opacity: 1,
-      // transform: "translateX(0%)",
-      transform: "scale(1) ",
+      transform: "translateX(0%)",
+      // transform: "scale(1) ",
       // transform: "scale(1) translateY(0%)",
       // transform: "translateY(0%)",
       transitionTimingFunction: "ease",
@@ -30,8 +30,8 @@ const Layout = () => {
     },
     leave: {
       opacity: 0,
-      // transform: "translateX(-100%)",
-      transform: "scale(0.5)",
+      transform: "translateX(-100%)",
+      // transform: "scale(0.5)",
       // transform: "scale(0.9) translateY(-100px)",
       // transform: "translateY(-150px)",
       transitionTimingFunction: "ease",

@@ -1,17 +1,14 @@
 import React from "react";
-import { Routes, Route, /* NavLink, */ NavLink } from "react-router-dom";
+import { Routes, Route, NavLink, Outlet } from "react-router-dom";
 
 import { OutletOpt } from "./src/pages/OutletOpt";
 import { NavAndLink } from "./src/pages/NavAndLink";
 import { BlogParam } from "./src/pages/BlogParam";
 import { ThirdPage } from "./src/pages/ThirdPage";
-// import { use  } from "react";
+
 import "./RR_MN.scss";
 
-import { Outlet, useLocation } from "react-router-dom";
-
 export function RR_MN() {
-  // const [, set] = use();
   return (
     <div className="RR_MN">
       <div className="RR_MN__body">
@@ -34,18 +31,14 @@ export function RR_MN() {
       </div>
       <hr />
       <div className="RR_MN__pages">
-        {/* <b>перед Routes в RR_MN 0</b> */}
-        {/* для вложенности в Routes. Отражает страницы вместе с данными вверху */}
-        {/* <Routes>
-            <Route path="Lesson2" element={<Lesson2 />} /> */}
         <Routes>
           <Route path="OutletOpt" element={<OutletOpt />} />
           <Route path="NavAndLink" element={<NavAndLink />} />
           <Route path="BlogParam" element={<BlogParam />} />
           <Route path="ThirdPage" element={<ThirdPage />} />
         </Routes>
+        {/* чёт не раб */}
         {/* <Outlet /> */}
-        {/* <b>после Routes в RR_MN 1</b> */}
       </div>
     </div>
   );
