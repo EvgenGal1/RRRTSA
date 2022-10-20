@@ -31,7 +31,7 @@ import { BlogParam } from "../../projects/RR_MN/src/pages/BlogParam";
 import { SinglePage } from "../../projects/RR_MN/src/pages/SinglePage";
 import { CreatePost } from "../../projects/RR_MN/src/pages/CreatePost";
 import { EditPost } from "../../projects/RR_MN/src/pages/EditPost";
-import { ThirdPage } from "../../projects/RR_MN/src/pages/ThirdPage";
+import { ColLocPriv } from "../../projects/RR_MN/src/pages/ColLocPriv";
 
 export function Router() {
   return (
@@ -65,7 +65,7 @@ export function Router() {
           <Route path="BlogParam/:id/edit" element={<EditPost />} />
           {/* комп. для создания поста. использ не парам. переход при наборе любого адреса после слэша */}
           <Route path="BlogParam/new" element={<CreatePost />} />
-          <Route path="ThirdPage" element={<ThirdPage />} />
+          <Route path="ColLocPriv" element={<ColLocPriv />} />
           {/*  */}
           {/* <Route path="Users2/*" element={<Users />}>
               <Route path="favorites" element={<FavoritesPage />} />

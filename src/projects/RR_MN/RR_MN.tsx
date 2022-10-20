@@ -4,7 +4,7 @@ import { Routes, Route, NavLink, Outlet } from "react-router-dom";
 import { OutletOpt } from "./src/pages/OutletOpt";
 import { NavAndLink } from "./src/pages/NavAndLink";
 import { BlogParam } from "./src/pages/BlogParam";
-import { ThirdPage } from "./src/pages/ThirdPage";
+import { ColLocPriv } from "./src/pages/ColLocPriv";
 
 import "./RR_MN.scss";
 
@@ -26,7 +26,7 @@ export function RR_MN() {
           <NavLink to="OutletOpt">OutletOpt</NavLink>
           <NavLink to="NavAndLink">NavAndLink</NavLink>
           <NavLink to="BlogParam">BlogParam</NavLink>
-          <NavLink to="ThirdPage">ThirdPage</NavLink>
+          <NavLink to="ColLocPriv">ColLocPriv</NavLink>
         </nav>
       </div>
       <hr />
@@ -35,7 +35,7 @@ export function RR_MN() {
           <Route path="OutletOpt" element={<OutletOpt />} />
           <Route path="NavAndLink" element={<NavAndLink />} />
           <Route path="BlogParam" element={<BlogParam />} />
-          <Route path="ThirdPage" element={<ThirdPage />} />
+          <Route path="ColLocPriv" element={<ColLocPriv />} />
         </Routes>
         {/* чёт не раб */}
         {/* <Outlet /> */}

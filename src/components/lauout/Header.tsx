@@ -143,8 +143,8 @@ export function Header() {
                     </Link>
                   </li>
                   <li className="m-t-its-ul__li">
-                    <Link to="ThirdPage" className="">
-                      ThirdPage
+                    <Link to="ColLocPriv" className="">
+                      ColLocPriv
                     </Link>
                   </li>
                 </ul>

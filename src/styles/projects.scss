@@ -130,6 +130,17 @@ main {
   }
 }
 
+.goback {
+  margin: 5px 0px;
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-weight: 900;
+  &:hover {
+    background: #333;
+    color: gold;
+  }
+}
+
 // RR_ULBITV
 
 // RR_ULBITV__body
