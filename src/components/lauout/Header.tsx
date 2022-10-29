@@ -123,7 +123,7 @@ export function Header() {
               </span>
               {/* RR_MN */}
               <span className="menu-top__items m-t-items">
-                <NavLink to="RR_MN" className="m-t-items__navlink">
+                <NavLink to="RR_MN/*" className="m-t-items__navlink">
                   RR_MN
                 </NavLink>
                 <ul className="m-t-items__ul m-t-its-ul">

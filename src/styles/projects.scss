@@ -1,12 +1,13 @@
 // main > div > div > div {
 main {
   padding: 0px 3%;
+  background-color: #e9da96;
   & > div {
     background-color: #e9da96;
     // padding: 15px 2%;
     padding: 10px 2%;
     hr {
-      margin: 10px -2%;
+      margin: 10px -5%;
     }
     .SecondPage {
       background-color: #685d2f;

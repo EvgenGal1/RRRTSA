@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // les6. импорт fn()оптимизации
 import {
@@ -10,6 +10,9 @@ import {
 import { fetchUsers } from "../store/usersReducerSg";
 
 export function Lesson6() {
+  // стат.для accordion|spoiler
+  const [openClass, setOpenClass] = useState("section");
+
   // les6. redux saga
   const countSg = useSelector((state: any) => state.countRSg.counNumSg);
   const usersSg = useSelector((state: any) => state.usersRSg.userArrSg);
@@ -19,8 +22,8 @@ export function Lesson6() {
 
   return (
     <div className="RR_ULBITV--body--lesson6">
-      <h2>Lesson6</h2>
-      <h3>Redux Saga асинхронные actions</h3>
+      {/* <h2>Lesson6</h2>
+      <h3>Redux Saga асинхронные actions</h3> */}
       {/* les6.  */}
       <div className="les6--saga__content">
         <div>{countSg}</div>
@@ -56,7 +59,14 @@ export function Lesson6() {
           ))}
         </div>
       </div>
-      <div className="les6--saga__descript">
+      <div className={`les6--saga__descript ${openClass}`}>
+        <h1
+          onClick={() =>
+            setOpenClass(openClass === "section" ? "section open" : "section")
+          }
+        >
+          Lesson6. Redux Saga асинхронные actions
+        </h1>
         <div>
           <p>
             <span>Redux-Saga - библ., для побочных эффектов приложений</span>{" "}
@@ -119,7 +129,7 @@ export function Lesson6() {
         <div>
           <p>
             <span>
-              Были ошибки толли в <b>fetchUsersFromApi</b>, толи в{" "}
+              Были ошибки то ли в <b>fetchUsersFromApi</b>, то ли в{" "}
               <b>fetchUsersWorker</b>
             </span>
           </p>

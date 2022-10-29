@@ -9,6 +9,9 @@ import { IPosts } from "../modals/modals";
 //   },
 
 export function BlogParam() {
+  // стат.для accordion|spoiler
+  const [openClass, setOpenClass] = useState("section");
+
   // масс.получ.данн. из fetch > usE
   const [posts, setPosts] = useState<IPosts[]>([]);
   // получ.данн.и запись json в state
@@ -22,9 +25,15 @@ export function BlogParam() {
   return (
     <>
       <div className="RR_MN BlogParam">
-        <div className="BlogParam__descript">
+        <div className={`BlogParam__descript ${openClass}`}>
+          <h1
+            onClick={() =>
+              setOpenClass(openClass === "section" ? "section open" : "section")
+            }
+          >
+            Параметры в ссылка
+          </h1>
           <div>
-            <h1>Параметры в ссылка</h1>
             <p>
               Загрузка списка новостей и отдельную новость выводить на отдельную
               динамическую страницу
