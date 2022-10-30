@@ -32,20 +32,21 @@ main {
         margin: 0px 0px 4px;
       }
     }
-    div {
+    // div {
+    div:has(p) {
       // margin: 10px 0px;
-      margin: 0px 0px 20px;
+      margin: 20px 0px 0px;
       line-height: 22px;
       @media (max-width: $md1NoErr) {
-        margin: 0px 0px 18px;
+        margin: 18px 0px 0px;
         // line-height: 20px;
       }
       @media (max-width: $md2NoErr) {
-        margin: 0px 0px 16px;
+        margin: 16px 0px 0px;
         line-height: 20px;
       }
       @media (max-width: $md3NoErr) {
-        margin: 0px 0px 4px;
+        margin: 04px 0px 0px;
         // line-height: 16px;
       }
     }

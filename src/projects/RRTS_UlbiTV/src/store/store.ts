@@ -1,6 +1,11 @@
 // инициализация store приложения
-import {  createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { legacy_createStore as createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import { rootReducer } from "./reducers/rootReducer";
+
+// в перем. хранилище создаём хран-ще где приним. парам.Ж 1ый reducer, 2ой промеж.ПО(здесь thunk для асинхр. экшенов)
+export const store = createStore(rootReducer, applyMiddleware(thunk));
+
 // import {legacy_createStore as Createstore} from 'redux'
 // Мы рекомендуем использовать метод Configurestore пакета @Reduxjs/Toolkit, который заменяет Createstore.
 

@@ -68,6 +68,7 @@ export function Lesson6() {
           Lesson6. Redux Saga асинхронные actions
         </h1>
         <div>
+          {/* <div> */}
           <p>
             <span>Redux-Saga - библ., для побочных эффектов приложений</span>{" "}
             (асинхрон извлеч. данных, до ступ к кешу браузера) направленым на
@@ -170,6 +171,7 @@ export function Lesson6() {
                 TypeError: Cannot read properties of null (reading 'setState')
               </span>
             </p>
+            {/* </div> */}
           </div>
         </div>
       </div>
