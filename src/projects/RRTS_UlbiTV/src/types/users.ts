@@ -1,4 +1,4 @@
-// типы для useReducer (пока ток.для него)
+// типы для usersReducer (отраж.списка польз-ей с сервера)
 const FETCH_USERS = "FETCH_USERS";
 const FETCH_USERS_SUCCESS = "FETCH_USERS_SUCCESS";
 const FETCH_USERS_ERROR = "FETCH_USERS_ERROR";

@@ -11,8 +11,10 @@ export function RRTS_ULBITV() {
     <Provider store={store}>
       <div className="RRTS_ULBITV">
         <div className="__descript">
-          По видео "React & Redux & TypeScript" -
-          https://www.youtube.com/watch?v=ETWABFYv0GM&t
+          <p>
+            По видео "React & Redux & TypeScript" -
+            https://www.youtube.com/watch?v=ETWABFYv0GM&t
+          </p>
         </div>
         <div className="__content">
           <UserList />

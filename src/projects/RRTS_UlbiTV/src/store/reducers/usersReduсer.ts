@@ -11,8 +11,8 @@ const initialState: UserState = {
   error: null,
 };
 
-// reducer взаимодейств. со списком пользователеё (приним state и action)
-export const useReducer = (
+// reducer взаимодейств. со списком пользователей (приним state и action)
+export const usersReducer = (
   state = initialState,
   action: UserAction
 ): UserState => {
