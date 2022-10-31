@@ -170,6 +170,15 @@ main {
   }
 }
 
+.RRTS_ULBITV {
+  .TodoList {
+    width: 100%;
+    div[class$="__content"] {
+      display: block;
+    }
+  }
+}
+
 // scroll бар
 html {
   // overflow: -moz-scrollbars-vertical;

@@ -1,5 +1,5 @@
 // reducer для отражения списка польз-ей
-import { UserAction, UserActionTypes, UserState } from "../../types/users";
+import { UserAction, UserActionTypes, UserState } from "../../types/usersT";
 
 // сост. по умолч. + указ. тип
 const initialState: UserState = {

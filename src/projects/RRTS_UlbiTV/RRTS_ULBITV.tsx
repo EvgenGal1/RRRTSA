@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { store } from "./src/store/store";
 // подкл. компоненты
 import { UserList } from "./src/components/UserList";
+import { TodoList } from "./src/components/TodoList";
 
 export function RRTS_ULBITV() {
   // const [varlet, setvarlet] = useState(false);
@@ -18,6 +19,8 @@ export function RRTS_ULBITV() {
         </div>
         <div className="__content">
           <UserList />
+          <hr />
+          <TodoList />
         </div>
       </div>
     </Provider>

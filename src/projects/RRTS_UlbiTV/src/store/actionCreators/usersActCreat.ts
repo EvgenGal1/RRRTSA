@@ -1,7 +1,7 @@
 // все actionCreator для польз-ей
 // actionCreatorы `Создатель действий` (fn возвращ. объ. экшена) оптимизация передачи action в dispatch.
 
-import { UserAction, UserActionTypes } from "../../types/users";
+import { UserAction, UserActionTypes } from "../../types/usersT";
 import { Dispatch } from "react";
 import axios from "axios";
 
