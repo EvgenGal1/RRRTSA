@@ -76,15 +76,27 @@ main {
     // для div(кроме 1го) в которых есть параграф
     // div:has(p):not(:first-child) {
     // для div в которых есть параграф|h1 и братский div
-    div:has(p):has(+ div),
-    div:has(h1):has(+ div) {
-      line-height: 22px;
-      @include adaptiv-val("margin-top", 10, 2);
+    // div:has(p):has(+ div),
+    // div:has(h1):has(+ div) {
+    div:has(+ div) {
+      &:has(div),
+      &:has(h1),
+      &:has(p) {
+        line-height: 22px;
+        @include adaptiv-val("margin-top", 10, 2);
+      }
     }
     // для div.__descript где есть параграф|h1 и братский div
-    div[class$="__descript"]:has(h1):has(+ div),
-    div[class$="__descript"]:has(p):has(+ div) {
-      @include adaptiv-value-all("margin", 0, 0, 0, 0, 20, 4);
+    // div[class$="__descript"]:has(h1):has(+ div),
+    // div[class$="__descript"]:has(p):has(+ div) {
+    // для div.__content c братским div
+    div[class$="__descript"]:has(+ div) {
+      // у которого есть div,h1,p
+      &:has(div),
+      &:has(h1),
+      &:has(p) {
+        @include adaptiv-value-all("margin", 0, 0, 0, 0, 20, 4);
+      }
     }
     // div кл. на конце __content
     div[class$="__content"] {
@@ -93,6 +105,15 @@ main {
       align-content: center;
       align-items: center;
       justify-content: center;
+    }
+    // для div.__content c братским div
+    div[class$="__content"]:has(+ div) {
+      // у которого есть div,h1,p
+      &:has(div),
+      &:has(h1),
+      &:has(p) {
+        @include adaptiv-value-all("margin", 0, 0, 0, 0, 20, 4);
+      }
     }
     // div кл. на конце --button
     div[class$="--button"] {
@@ -148,36 +169,38 @@ main {
 //               cashNum--button
 .RR_ULBITV {
   &__body {
-    .body--content {
+    div[class$="__content"] {
       display: flex;
-      align-content: center;
+      flex-direction: row;
+      align-items: flex-start;
       justify-content: space-evenly;
-      // align-items: center;
-      > div[class^="content__"] {
-        // RR_ULBITV--body__content
+      div[class^="content__"] {
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 0px 5px;
         align-items: center;
-        div[class$="--count"] {
-          font-size: 20px;
-          font-weight: bold;
-          // margin-right: 5px;
-        }
+        display: flex;
+        align-content: center;
+        justify-content: space-evenly;
+      }
+      div[class$="--count"] {
+        font-size: 20px;
+        font-weight: bold;
+        // margin-right: 5px;
       }
     }
   }
 }
 
-.RRTS_ULBITV {
-  .TodoList {
-    width: 100%;
-    div[class$="__content"] {
-      display: block;
-    }
+// .RRTS_ULBITV {
+.TodoList {
+  width: 100%;
+  div[class$="__content"] {
+    display: block;
   }
 }
+// }
 
 // scroll бар
 html {

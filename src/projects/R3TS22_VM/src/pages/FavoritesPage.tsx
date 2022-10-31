@@ -3,15 +3,6 @@ import { useActions } from "../hooks/actions";
 import { useAppSelector } from "../hooks/redux";
 import { IRepo } from "../modals/modals";
 
-interface Props
-  extends React.DetailedHTMLProps<
-    React.LabelHTMLAttributes<HTMLLabelElement>,
-    HTMLLabelElement
-  > {
-  display: boolean;
-  preventDefault: () => void;
-}
-
 export function FavoritesPage() {
   // export function FavoritesPage({ repo }: { repo: IRepo }) {
   // 0.47. в const получ. все эл. из store по кастом.хуку из state.githubR

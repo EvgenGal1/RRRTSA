@@ -84,7 +84,7 @@ export function BlogParam() {
               Достаём передан.парам. -{" "}
               <span>const &#123;id&#125; = useParams();</span>
             </p>
-            <p>
+            <div>
               Загр./Сохр. даннные ч/з <b>fetch</b>&gt;<b>useEff</b>&gt;
               <b>useSt</b> только уже для одного эл. Концовка в <b>fetch</b> -{" "}
               <span>posts/$&#123;id&#125;`</span>, в <b>state</b> -{" "}
@@ -96,7 +96,7 @@ export function BlogParam() {
                   (&lt;div&gt;&#123;post.title&#125;&lt;/div&gt;)&#125;
                 </span>
               </p>
-            </p>
+            </div>
           </div>
           <div>
             <h2>Route для редактирования страниц</h2>

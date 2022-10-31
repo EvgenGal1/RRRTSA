@@ -84,12 +84,14 @@ export const RR_ULBITV: React.FC = () => {
       {/* <Provider store={store}> */}
       <div className="RR_ULBITV">
         <div className="RR_ULBITV__body">
-          <h1>RR_ULBITV</h1>
-          <p>
-            По видео "Redux и React" -
-            https://www.youtube.com/watch?v=5Qtqzeh5FeM
-          </p>
-          <div className="body--content">
+          <div className="RR_ULBITV__descript">
+            <h1>RR_ULBITV</h1>
+            <p>
+              По видео "Redux и React" -
+              https://www.youtube.com/watch?v=5Qtqzeh5FeM
+            </p>
+          </div>
+          <div className="body__content">
             {/* cashNum" */}
             <div className="content__cashNum">
               <div className="cashNum--button">
