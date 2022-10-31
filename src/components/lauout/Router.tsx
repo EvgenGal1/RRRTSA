@@ -15,13 +15,15 @@ import { HomePage } from "../../projects/R3TS22_VM/src/pages/HomePage";
 import { FavoritesPage } from "../../projects/R3TS22_VM/src/pages/FavoritesPage";
 //
 import { RR_ULBITV } from "../../projects/RR_ULBITV/RR_ULBITV";
+import { Lesson2 } from "../../projects/RR_ULBITV/src/pages/Lesson2";
+import { Lesson3 } from "../../projects/RR_ULBITV/src/pages/Lesson3";
+import { Lesson4 } from "../../projects/RR_ULBITV/src/pages/Lesson4";
+import { Lesson5 } from "../../projects/RR_ULBITV/src/pages/Lesson5";
+import { Lesson6 } from "../../projects/RR_ULBITV/src/pages/Lesson6";
 //
 import { RRTS_ULBITV } from "../../projects/RRTS_ULBITV/RRTS_ULBITV";
-import { Lesson2 } from "../../projects/RR_ULBITV/scr/pages/Lesson2";
-import { Lesson3 } from "../../projects/RR_ULBITV/scr/pages/Lesson3";
-import { Lesson4 } from "../../projects/RR_ULBITV/scr/pages/Lesson4";
-import { Lesson5 } from "../../projects/RR_ULBITV/scr/pages/Lesson5";
-import { Lesson6 } from "../../projects/RR_ULBITV/scr/pages/Lesson6";
+import { UserList } from "../../projects/RRTS_ULBITV/src/pages/UserList";
+import { TodoList } from "../../projects/RRTS_ULBITV/src/pages/TodoList";
 //
 import { RR_MN } from "../../projects/RR_MN/RR_MN";
 import { OutletOpt } from "../../projects/RR_MN/src/pages/OutletOpt";
@@ -52,7 +54,9 @@ export function Router() {
           <Route path="Lesson5" element={<Lesson5 />} />
           <Route path="Lesson6" element={<Lesson6 />} />
           {/*  */}
-          <Route path="/RRTS_ULBITV" element={<RRTS_ULBITV />} />
+          <Route path="RRTS_ULBITV/*" element={<RRTS_ULBITV />} />
+          <Route path="UserList" element={<UserList />} />
+          <Route path="TodoList" element={<TodoList />} />
           {/*  */}
           <Route path="RR_MN/*" element={<RR_MN />}></Route>
           <Route path="OutletOpt" element={<OutletOpt />} />

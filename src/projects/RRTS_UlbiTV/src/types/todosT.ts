@@ -1,12 +1,19 @@
 // тип сост.
 export interface TodosState {
-  todos: any[];
+  todos: TodosArr[];
   loading: boolean;
   error: null | string;
   // номер стр.
   page: number;
   // кол-во на 1ой стр.
   limit: number;
+}
+
+export interface TodosArr {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
 }
 
 // типы для todosReducer (отраж.списка дел)

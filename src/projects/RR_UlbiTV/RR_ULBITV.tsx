@@ -1,57 +1,62 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
 
-import { store } from "./scr/store";
+import { store } from "./src/store";
 import { Provider, useDispatch, useSelector } from "react-redux";
 
-import { Lesson2 } from "./scr/pages/Lesson2";
-import { Lesson3 } from "./scr/pages/Lesson3";
-import { Lesson4 } from "./scr/pages/Lesson4";
-import { Lesson5 } from "./scr/pages/Lesson5";
-import { Lesson6 } from "./scr/pages/Lesson6";
+import { Lesson2 } from "./src/pages/Lesson2";
+import { Lesson3 } from "./src/pages/Lesson3";
+import { Lesson4 } from "./src/pages/Lesson4";
+import { Lesson5 } from "./src/pages/Lesson5";
+import { Lesson6 } from "./src/pages/Lesson6";
 
 // les4. импорт fn()оптимизации `Добавьте/удалите пользовательское действие`
-import { addCustomAction, removeCustomAction } from "./scr/store/customReducer";
+import { addCustomAction, removeCustomAction } from "./src/store/customReducer";
 // les5. fn асинхроного запроса
-import { fetchManyCustomApi } from "./scr/asyncActions/manyCustom.api.js";
+import { fetchManyCustomApi } from "./src/asyncActions/manyCustom.api";
+import { defStNum } from "./src/store/cashReducer";
 
 // export function RR_UlbiTV() {
-export function RR_ULBITV() {
+export const RR_ULBITV: React.FC = () => {
+  // export function RR_ULBITV() {
   // function RR_UlbiTV() {
   // получ. диспетчер ч/з хук. для измен. сост. передавая action в reducer
-  const dispatch = useDispatch([]);
+  const dispatch = useDispatch();
   // получ сост. ч/з хук useSelector. парам-ом приним. fn, а fn приним. парам-ом state, а из state получ. переменную(счас cash). смотр в логах
   // const cash = useSelector((state: any) => state.cash);
   // после неск-их reducerов, из сост. получ. reducer, потом переменную
   // const cashNum = useSelector((state: any) => state.cashR.cashNum);
-  const cashNum = useSelector((state) => state.cashR.cashNum);
+  // const cashNum = useSelector((state) => state.cashR.cashNum);
+  const cashNum = useSelector((state: defStNum) => state.cashR.cashNum);
   // console.log("cash : " + cash);
 
   // les4. получ массив клиентов. обращ. к ключу reducerа и затем к перем.
   // const customArrs = useSelector((state: any) => state.customR.customArrs);
-  const customArrs = useSelector((state) => state.customR.customArrs);
+  const customArrs = useSelector((state: any) => state.customR.customArrs);
 
   // les5. доп. отд. перем. fetch.
-  const customArrsMany = useSelector((state) => state.customR.customArrsMany);
+  const customArrsMany = useSelector(
+    (state: any) => state.customR.customArrsMany
+  );
 
   // fn для string по изменению суммы. указ по умолча. фиксир 5
   // const addCash = () => {
   // передаём парам из клик и указ в payload .измен сумму не фикс, а самостоятельно
   // const addCash = (cash: number) => {
-  const addCash = (cash) => {
+  const addCash = (cash: number) => {
     // вызов fn dispatch. передаём объ. action с типом(указ. в reducer) и данные(здесь сумма)
     // dispatch({ type: "ADD_CASH", payload: 5 });
     // указ. суммы самостоятельно
     dispatch({ type: "ADD_CASH", payload: cash });
   };
   // const getCash = (cash: number) => {
-  const getCash = (cash) => {
+  const getCash = (cash: number) => {
     dispatch({ type: "GET_CASH", payload: cash });
   };
 
   // les4. fn для массива/строки?  добавл. польз-ля по клик. приним имя
   // const addCustom = (name: string | number | null) => {
-  const addCustom = (name) => {
+  const addCustom = (name: string | null) => {
     // данные action - объ.полъз-ля. Парам. - имя и id.текущ.время
     const customer = {
       name,
@@ -65,7 +70,7 @@ export function RR_ULBITV() {
   };
   // fn удален польз-ля из списка
   // const removeCustom = (customer: any) => {
-  const removeCustom = (customer) => {
+  const removeCustom = (customer: { id: any }) => {
     // передаем тип и перебраный id customer
     // dispatch({ type: "REMOVE_CUSTOM", payload: customer.id });
     // рефактор. передача action ч/з removeCustomAction
@@ -126,16 +131,32 @@ export function RR_ULBITV() {
                 {customArrs.length > 0 ? (
                   <>
                     {/* е/и массив не пусто - ч\з map итерируем мас.customArrs и el.mame разворач в div */}
-                    {customArrs.map((customArr) => (
-                      // + слушатель клик на каждого для удаления из списка
-                      <li
-                        onClick={() => removeCustom(customArr)}
-                        key={customArr.id}
-                        style={{ listStyle: "none" }}
-                      >
-                        {customArr.name}
-                      </li>
-                    ))}
+                    {customArrs.map(
+                      (customArr: {
+                        id: React.Key | null | undefined;
+                        name:
+                          | string
+                          | number
+                          | boolean
+                          | React.ReactElement<
+                              any,
+                              string | React.JSXElementConstructor<any>
+                            >
+                          | React.ReactFragment
+                          | React.ReactPortal
+                          | null
+                          | undefined;
+                      }) => (
+                        // + слушатель клик на каждого для удаления из списка
+                        <li
+                          onClick={() => removeCustom(customArr)}
+                          key={customArr.id}
+                          style={{ listStyle: "none" }}
+                        >
+                          {customArr.name}
+                        </li>
+                      )
+                    )}
                   </>
                 ) : (
                   <>customArrs пуст...</>
@@ -155,16 +176,56 @@ export function RR_ULBITV() {
               <div className="fetch--count">
                 {customArrsMany.length > 0 ? (
                   <>
-                    {customArrsMany.map((customArrM) => (
-                      <p
-                        style={{ display: "flex" }}
-                        key={customArrM.id}
-                        onClick={() => removeCustom(customArrM)}
-                      >
-                        {customArrM.name} - {customArrM.username}. Тел.:{" "}
-                        {customArrM.phone}
-                      </p>
-                    ))}
+                    {customArrsMany.map(
+                      (customArrM: {
+                        id: React.Key | null | undefined;
+                        name:
+                          | string
+                          | number
+                          | boolean
+                          | React.ReactElement<
+                              any,
+                              string | React.JSXElementConstructor<any>
+                            >
+                          | React.ReactFragment
+                          | React.ReactPortal
+                          | null
+                          | undefined;
+                        username:
+                          | string
+                          | number
+                          | boolean
+                          | React.ReactElement<
+                              any,
+                              string | React.JSXElementConstructor<any>
+                            >
+                          | React.ReactFragment
+                          | React.ReactPortal
+                          | null
+                          | undefined;
+                        phone:
+                          | string
+                          | number
+                          | boolean
+                          | React.ReactElement<
+                              any,
+                              string | React.JSXElementConstructor<any>
+                            >
+                          | React.ReactFragment
+                          | React.ReactPortal
+                          | null
+                          | undefined;
+                      }) => (
+                        <p
+                          style={{ display: "flex" }}
+                          key={customArrM.id}
+                          onClick={() => removeCustom(customArrM)}
+                        >
+                          {customArrM.name} - {customArrM.username}. Тел.:{" "}
+                          {customArrM.phone}
+                        </p>
+                      )
+                    )}
                   </>
                 ) : (
                   <>customArrsMany пуст...</>
@@ -200,5 +261,5 @@ export function RR_ULBITV() {
       {/* </Provider> */}
     </>
   );
-}
+};
 // export { RR_UlbiTV };

@@ -1,17 +1,17 @@
 import React from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
 
-import { store } from "./scr/store";
+import { store } from "./src/store";
 import { Provider, useDispatch, useSelector } from "react-redux";
 
-import { Lesson2 } from "./scr/pages/Lesson2";
-import { Lesson3 } from "./scr/pages/Lesson3";
-import { Lesson4 } from "./scr/pages/Lesson4";
-import { Lesson5 } from "./scr/pages/Lesson5";
+import { Lesson2 } from "./src/pages/Lesson2";
+import { Lesson3 } from "./src/pages/Lesson3";
+import { Lesson4 } from "./src/pages/Lesson4";
+import { Lesson5 } from "./src/pages/Lesson5";
 
-import { addCustomAction, removeCustomAction } from "./scr/store/customReducer";
+import { addCustomAction, removeCustomAction } from "./src/store/customReducer";
 // les5. fn асинхроного запроса
-import { fetchManyCustomApi } from "./scr/asyncActions/manyCustom.api.js";
+import { fetchManyCustomApi } from "./src/asyncActions/manyCustom.api.js";
 
 // export function RR_UlbiTV() {
 export function RR_ULBITV() {

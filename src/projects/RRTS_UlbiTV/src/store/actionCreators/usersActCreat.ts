@@ -26,7 +26,7 @@ export const fetchUsers = () => {
           type: UserActionTypes.FETCH_USERS_SUCCESS,
           payload: response.data,
         });
-      }, 500);
+      }, 250);
     } catch (error) {
       // при ошб. передача типа ошибки
       dispatch({

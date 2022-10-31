@@ -49,7 +49,7 @@ export const TodoList: React.FC = () => {
             {/* добавл.цифры из масс. ч/з перебор */}
             {pages.map((p) => (
               <div
-                // key={p.id}
+                key={p}
                 // стили по условию. е/и итерац. = сост. то зелён рамка
                 style={{
                   border: p === page ? "2px solid green" : "1px solid gray",
