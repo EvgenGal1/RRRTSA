@@ -1,5 +1,6 @@
 // main > div > div > div {
 main {
+  margin: 0;
   padding: 0px 3%;
   background-color: #e9da96;
   & > div {
@@ -32,23 +33,25 @@ main {
         margin: 0px 0px 4px;
       }
     }
-    // div {
-    div:has(p) {
-      // margin: 10px 0px;
-      margin: 20px 0px 0px;
+    // для div(кроме 1го) в которых есть параграф
+    // div:has(p):not(:first-child) {
+    // для div в которых есть параграф и братский div
+    div:has(p):has(+ div) {
       line-height: 22px;
-      @media (max-width: $md1NoErr) {
-        margin: 18px 0px 0px;
-        // line-height: 20px;
-      }
-      @media (max-width: $md2NoErr) {
-        margin: 16px 0px 0px;
-        line-height: 20px;
-      }
-      @media (max-width: $md3NoErr) {
-        margin: 04px 0px 0px;
-        // line-height: 16px;
-      }
+      @include adaptiv-val("margin-top", 20, 4);
+      // margin: 20px 0px 0px;
+      // @media (max-width: $md1NoErr) {
+      //   margin: 18px 0px 0px;
+      //   // line-height: 20px;
+      // }
+      // @media (max-width: $md2NoErr) {
+      //   margin: 16px 0px 0px;
+      //   line-height: 20px;
+      // }
+      // @media (max-width: $md3NoErr) {
+      //   margin: 04px 0px 0px;
+      //   // line-height: 16px;
+      // }
     }
     span {
       font-weight: bold;
@@ -89,6 +92,21 @@ main {
     }
     li {
       list-style: inside;
+    }
+    // для div.__descript где есть параграф и братский div
+    div[class$="__descript"]:has(p):has(+ div) {
+      // margin: 0 0 20px;
+      // @include adaptiv-val("margin-bottom", 20, 4);
+      @include adaptiv-value-all("margin", 0, 0, 0, 0, 20, 4);
+      // @media (max-width: $md1NoErr) {
+      //   margin: 0 0 18px;
+      // }
+      // @media (max-width: $md2NoErr) {
+      //   margin: 0 0 16px;
+      // }
+      // @media (max-width: $md3NoErr) {
+      //   margin: 0 0 04px;
+      // }
     }
     // div кл. на конце __content
     div[class$="__content"] {
