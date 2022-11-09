@@ -68,7 +68,7 @@ export function Header() {
                 >
                   R3TS22_VM
                 </NavLink>
-                {/* // ^ данная вложеность и переход на стр. возможен е/и сами влож.стр. добав. в общ. Routes, на один уровень с верхним NavLink */}
+                {/* // ^ данная вложеность и переход на стр. возможен е/и сами влож.стр. добав. в общ. Routes, на один уровень с верхним NavLink родителя */}
                 <ul className="m-t-items__ul m-t-its-ul">
                   <li className="m-t-its-ul__li">
                     <Link to="/HomePage" className="">
