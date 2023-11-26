@@ -44,7 +44,7 @@ export function Router() {
           <Route path="RR_DOC/" element={<RR_DOC />} />
           {/*  */}
           <Route path="R3TS22_VM/*" element={<R3TS22_VM />} />
-          <Route path="favorites" element={<FavoritesPage />} />
+          <Route path="Favorites" element={<FavoritesPage />} />
           <Route path="HomePage" element={<HomePage />} />
           {/*  */}
           <Route path="RR_ULBITV/*" element={<RR_ULBITV />}></Route>

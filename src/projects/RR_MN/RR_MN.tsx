@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, NavLink, Outlet } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 
 import { OutletOpt } from "./src/pages/OutletOpt";
 import { NavAndLink } from "./src/pages/NavAndLink";
@@ -23,10 +23,10 @@ export function RR_MN() {
       <hr />
       <div className="RR_MN__nav">
         <nav>
-          <NavLink to="OutletOpt">OutletOpt</NavLink>
-          <NavLink to="NavAndLink">NavAndLink</NavLink>
-          <NavLink to="BlogParam">BlogParam</NavLink>
-          <NavLink to="ColLocPriv">ColLocPriv</NavLink>
+          <NavLink to="/RR_MN/OutletOpt">OutletOpt</NavLink>
+          <NavLink to="/RR_MN/NavAndLink">NavAndLink</NavLink>
+          <NavLink to="/RR_MN/BlogParam">BlogParam</NavLink>
+          <NavLink to="/RR_MN/ColLocPriv">ColLocPriv</NavLink>
         </nav>
       </div>
       <hr />

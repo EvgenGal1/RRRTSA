@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
 
-import { store } from "./src/store";
-import { Provider, useDispatch, useSelector } from "react-redux";
+// import { store } from "./src/store";
+import { useDispatch, useSelector } from "react-redux";
 
 import { Lesson2 } from "./src/pages/Lesson2";
 import { Lesson3 } from "./src/pages/Lesson3";
@@ -239,11 +239,11 @@ export const RR_ULBITV: React.FC = () => {
         <hr />
         <div className="RR_ULBITV__nav">
           <nav>
-            <NavLink to="Lesson2">Lesson2</NavLink>
-            <NavLink to="Lesson3">Lesson3</NavLink>
-            <NavLink to="Lesson4">Lesson4</NavLink>
-            <NavLink to="Lesson5">Lesson5</NavLink>
-            <NavLink to="Lesson6">Lesson6</NavLink>
+            <NavLink to="/RR_UlbiTV/Lesson2">Lesson2</NavLink>
+            <NavLink to="/RR_UlbiTV/Lesson3">Lesson3</NavLink>
+            <NavLink to="/RR_UlbiTV/Lesson4">Lesson4</NavLink>
+            <NavLink to="/RR_UlbiTV/Lesson5">Lesson5</NavLink>
+            <NavLink to="/RR_UlbiTV/Lesson6">Lesson6</NavLink>
             {/* <li>
             <NavLink to="/ThirdPage">Lesson4</NavLink>
           </li> */}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, NavLink } from "react-router-dom";
+import { Routes, Route, NavLink, useNavigate } from "react-router-dom";
 
 // 0.2
 // import { BrowserRouter } from "react-router-dom";
@@ -26,14 +26,14 @@ export function R3TS22_VM() {
         <hr />
         <div className="R3TS22_VM__nav">
           <nav>
-            <NavLink to="HomePage">My HomePage</NavLink>
-            <NavLink to="favorites">My favorites</NavLink>
+            <NavLink to="/R3TS22_VM/HomePage">My HomePage</NavLink>
+            <NavLink to="/R3TS22_VM/Favorites">My favorites</NavLink>
           </nav>
         </div>
         <hr />
         <Routes>
           <Route path="HomePage" element={<HomePage />} />
-          <Route path="favorites" element={<FavoritesPage />} />
+          <Route path="Favorites" element={<FavoritesPage />} />
         </Routes>
       </div>
       {/* </Provider> */}

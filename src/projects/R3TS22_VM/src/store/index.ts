@@ -1,6 +1,7 @@
 // 0.3. настр. store(`Хранилище`)
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
+
 import { githubApi } from "./github/github.api";
 import { githubReducer } from "./github/github.slice";
 

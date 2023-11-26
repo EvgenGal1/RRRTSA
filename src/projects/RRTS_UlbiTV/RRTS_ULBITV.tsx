@@ -1,7 +1,7 @@
 import React from "react";
 // подкл Provider и store времмено здесь (чтоб раб в др, проектах)
-import { Provider } from "react-redux";
-import { store } from "./src/store/store";
+// import { Provider } from "react-redux";
+// import { store } from "./src/store/store";
 // Router
 import { NavLink, Route, Routes } from "react-router-dom";
 // подкл. компоненты
@@ -29,8 +29,8 @@ export function RRTS_ULBITV() {
       <hr />
       <div className="RR_ULBITV__nav">
         <nav>
-          <NavLink to="UserList">UserList</NavLink>
-          <NavLink to="TodoList">TodoList</NavLink>
+          <NavLink to="/RRTS_UlbiTV/UserList">UserList</NavLink>
+          <NavLink to="/RRTS_UlbiTV/TodoList">TodoList</NavLink>
           {/* <li>
             <NavLink to="/ThirdPage">Lesson4</NavLink>
           </li> */}

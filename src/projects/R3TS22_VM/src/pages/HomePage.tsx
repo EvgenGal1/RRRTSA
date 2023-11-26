@@ -58,6 +58,7 @@ export function HomePage() {
     // 0.31. откл. лист после клик по repo usera
     setDropdown(false);
   };
+
   return (
     <>
       {/* по БЭМ */}
